@@ -2572,14 +2572,24 @@ function imgFallback(img,mono,icon,sub){
     <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
   </div>
 
-  <!-- Mobile / tablet — horizontal scroll -->
-  <div class="aw3d-flat-row">
-    <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
-    <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
-    <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
-    <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
-    <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
-    <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+  <!-- Auto-scrolling track (mobile/tablet) -->
+  <div class="aw-scroll-outer">
+    <div class="aw-scroll-track" id="awScrollTrack">
+      <!-- Set A -->
+      <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+      <!-- Set B — duplicate for seamless loop -->
+      <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+      <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+    </div>
   </div>
 
   <!-- Desktop — 3D circular rotating carousel -->
@@ -2598,14 +2608,23 @@ function imgFallback(img,mono,icon,sub){
 <script>
 (function(){
   function kickAwardsRing(){
-    var ring=document.getElementById('awRing');
+    var ring = document.getElementById('awRing');
     if(!ring) return;
-    ring.style.animation='none';
+    ring.style.animation = 'none';
     void ring.offsetWidth;
-    ring.style.animation='';
+    ring.style.animation = 'aw3dSpin 46s linear infinite';
+    ring.style.willChange = 'transform';
+
+    // Pause on hover
+    ring.addEventListener('mouseenter', function(){ ring.style.animationPlayState = 'paused'; });
+    ring.addEventListener('mouseleave', function(){ ring.style.animationPlayState = 'running'; });
   }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',kickAwardsRing);}else{kickAwardsRing();}
-  window.addEventListener('load',function(){setTimeout(kickAwardsRing,150);});
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', kickAwardsRing);
+  } else {
+    kickAwardsRing();
+  }
+  window.addEventListener('load', function(){ setTimeout(kickAwardsRing, 200); });
 })();
 </script>
 
