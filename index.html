@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="page.title">Maître Khalid Chafai — Lawyer at the Tangier Bar</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}[id]{scroll-margin-top:80px}
 :root{
@@ -24,7 +26,7 @@ body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opa
 .ambient-glow .orb:nth-child(2){width:450px;height:450px;background:radial-gradient(circle,var(--gold4),transparent);bottom:-5%;right:-5%;animation-delay:-7s}
 .ambient-glow .orb:nth-child(3){width:380px;height:380px;background:radial-gradient(circle,var(--gold2),transparent);top:40%;left:60%;animation-delay:-14s}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-30px) scale(1.05)}50%{transform:translate(-20px,20px) scale(.95)}75%{transform:translate(20px,30px) scale(1.02)}}
-nav{position:fixed;top:0;width:100%;z-index:1000;padding:30px 70px;display:flex;justify-content:space-between;align-items:center;transition:.6s cubic-bezier(.25,1,.5,1)}
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:30px 70px;display:flex;justify-content:space-between;align-items:center;gap:20px;transition:.6s cubic-bezier(.25,1,.5,1)}
 nav.s{background:rgba(6,5,4,.94);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,.12);padding:18px 70px}
 .nlogo{font-family:'Cinzel',serif;font-size:12px;letter-spacing:5px;color:var(--gold);text-decoration:none;position:relative}
 .nlogo .logo-gold{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold4),var(--gold2));background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
@@ -33,13 +35,11 @@ nav.s{background:rgba(6,5,4,.94);backdrop-filter:blur(24px);border-bottom:1px so
 .nav-line{position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .8s cubic-bezier(.25,1,.5,1)}
 nav.s .nav-line{transform:scaleX(1)}
 .nlinks{display:flex;gap:44px}
-.nlinks a{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text);text-decoration:none;transition:.3s;position:relative;overflow:hidden;padding:4px 0}
-.nlinks a span{display:block;transition:transform .4s cubic-bezier(.25,1,.5,1)}
-.nlinks a::after{content:attr(data-text);position:absolute;top:100%;left:0;color:var(--gold);font-size:12px;letter-spacing:3.5px;transition:transform .4s cubic-bezier(.25,1,.5,1)}
-.nlinks a:hover span{transform:translateY(-100%)}
-.nlinks a:hover::after{transform:translateY(-100%)}
-.nlink-line{position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
-.nlinks a:hover .nlink-line{transform:scaleX(1)}
+.nlinks a{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text);text-decoration:none;position:relative;padding:4px 0;transition:color .45s cubic-bezier(.25,1,.5,1),letter-spacing .45s cubic-bezier(.25,1,.5,1)}
+.nlinks a span{display:block}
+.nlinks a:hover{color:var(--gold);letter-spacing:4px}
+.nlink-line{position:absolute;bottom:0;left:50%;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-50%) scaleX(0);transform-origin:center;transition:transform .5s cubic-bezier(.25,1,.5,1)}
+.nlinks a:hover .nlink-line{transform:translateX(-50%) scaleX(1)}
 section{position:relative;z-index:2}
 .slabel{font-family:'Cinzel',serif;font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:18px;margin-bottom:18px}
 .slabel::before{content:'';width:44px;height:1px;background:var(--gold);opacity:.4}
@@ -112,11 +112,28 @@ section{position:relative;z-index:2}
 ::selection{background:rgba(201,168,76,.28);color:var(--white)}
 a:focus-visible,button:focus-visible,.btn-p:focus-visible,.btn-s:focus-visible,.sec-dot:focus-visible,[role="button"]:focus-visible{outline:1px solid var(--gold);outline-offset:4px;border-radius:2px}
 
-/* ===== LANG SWITCHER ===== */
-.lang-bar{position:fixed;top:90px;right:30px;z-index:1001;display:flex;gap:0;border:1px solid rgba(201,168,76,.2);background:rgba(6,5,4,.7);backdrop-filter:blur(12px);padding:3px;transition:background .4s}.lang-btn{background:transparent;border:none;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text);padding:6px 12px;cursor:none;transition:all .4s;position:relative;opacity:.5}.lang-btn.active{opacity:1;color:var(--gold);background:rgba(201,168,76,.1)}.lang-btn:not(.active):hover{opacity:1;color:var(--white)}@media(max-width:1100px){.lang-bar{right:20px;top:70px}.lang-btn{padding:5px 8px;font-size:7px}}@media(max-width:768px){.lang-bar{right:16px;top:72px;gap:0}.lang-btn{padding:4px 6px;font-size:6px;letter-spacing:1px}}
+/* ===== LANG SWITCHER — inline inside nav ===== */
+.lang-bar{display:flex;gap:0;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.04);padding:2px;flex-shrink:0;position:static;z-index:auto;backdrop-filter:none}
+.lang-btn{background:transparent;border:none;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text);padding:7px 11px;cursor:pointer;transition:all .3s;opacity:.5}
+.lang-btn.active{opacity:1;color:var(--gold);background:rgba(201,168,76,.12)}
+.lang-btn:not(.active):hover{opacity:1;color:var(--white)}
 
-/* ===== RTL SUPPORT ===== */
-html[dir="rtl"]{text-align:right;font-size:1.05rem}html[dir="rtl"] .slabel{flex-direction:row-reverse}html[dir="rtl"] .slabel::before{display:none}html[dir="rtl"] .slabel::after{content:'';width:44px;height:1px;background:var(--gold);opacity:.4}html[dir="rtl"] .ornament{direction:ltr}html[dir="rtl"] .cinfo{flex-direction:row-reverse}html[dir="rtl"] .cdetail{flex-direction:row-reverse}html[dir="rtl"] .about-quote{border-left:none;border-right:2px solid var(--gold);padding:30px 36px}html[dir="rtl"] .about-quote::before{left:auto;right:20px}html[dir="rtl"] .why-card{direction:rtl}html[dir="rtl"] .licard{direction:rtl}html[dir="rtl"] .licard::before{left:auto;right:0}html[dir="rtl"] .licard:hover{transform:translateX(-8px)}html[dir="rtl"] .licard-num{right:auto;left:32px}html[dir="rtl"] .process-step{direction:rtl}html[dir="rtl"] .step-connector{transform:scaleX(-1)}html[dir="rtl"] .featured-qmark{left:auto;right:-30px}html[dir="rtl"] .lmap-wrap{padding-right:0;padding-left:60px}html[dir="rtl"] .linfo{padding-left:0;padding-right:60px}html[dir="rtl"] .sec-dot .dot-label{right:auto;left:20px}html[dir="rtl"] .nlinks a{font-size:14px}html[dir="rtl"] .htitle{font-size:clamp(3.5rem,8vw,7rem)}html[dir="rtl"] .hsub{font-size:clamp(1.5rem,3vw,2rem)}html[dir="rtl"] .htag{font-size:clamp(1.3rem,2.5vw,1.8rem)}html[dir="rtl"] .hcount-num{font-size:clamp(2.3rem,4vw,3.5rem)}html[dir="rtl"] .hcount-label{font-size:1rem}html[dir="rtl"] .hbadge{font-size:15px}@media(max-width:1100px){html[dir="rtl"] .lmap-wrap{padding-left:0}html[dir="rtl"] .linfo{padding-right:0}html[dir="rtl"] .nlinks a{font-size:12px}html[dir="rtl"] .htitle{font-size:clamp(2.8rem,10vw,4.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1.2rem,4vw,1.5rem)}html[dir="rtl"] .htag{font-size:clamp(1.1rem,3.5vw,1.4rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.8rem,8vw,2.3rem)}html[dir="rtl"] .hcount-label{font-size:.85rem}}@media(max-width:768px){html[dir="rtl"] .htitle{font-size:clamp(2.5rem,11vw,3.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1rem,4.5vw,1.3rem)}html[dir="rtl"] .htag{font-size:clamp(1rem,4vw,1.2rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.6rem,8vw,2rem)}}
+html[dir="rtl"]{text-align:right;font-size:1.05rem}html[dir="rtl"] .slabel{flex-direction:row-reverse}html[dir="rtl"] .slabel::before{display:none}html[dir="rtl"] .slabel::after{content:'';width:44px;height:1px;background:var(--gold);opacity:.4}html[dir="rtl"] .ornament{direction:ltr}html[dir="rtl"] .cinfo{flex-direction:row-reverse}html[dir="rtl"] .cdetail{flex-direction:row-reverse}html[dir="rtl"] .about-quote{border-left:none;border-right:2px solid var(--gold);padding:30px 36px}html[dir="rtl"] .about-quote::before{left:auto;right:20px}html[dir="rtl"] .why-card{direction:rtl}html[dir="rtl"] .licard{direction:rtl}html[dir="rtl"] .licard::before{left:auto;right:0}html[dir="rtl"] .licard:hover{transform:translateX(-8px)}html[dir="rtl"] .licard-num{right:auto;left:32px}html[dir="rtl"] .process-step{direction:rtl}html[dir="rtl"] .step-connector{transform:scaleX(-1)}html[dir="rtl"] .featured-qmark{left:auto;right:-30px}html[dir="rtl"] .lmap-wrap{padding-right:0;padding-left:60px}html[dir="rtl"] .linfo{padding-left:0;padding-right:60px}html[dir="rtl"] .sec-dot .dot-label{right:auto;left:20px}html[dir="rtl"] .nlinks a{font-size:14px}html[dir="rtl"] .htitle{font-size:clamp(3.5rem,8vw,7rem)}html[dir="rtl"] .hsub{font-size:clamp(1.5rem,3vw,2rem)}html[dir="rtl"] .htag{font-size:clamp(1.3rem,2.5vw,1.8rem)}html[dir="rtl"] .hcount-num{font-size:clamp(2.3rem,4vw,3.5rem)}html[dir="rtl"] .hcount-label{font-size:1rem}html[dir="rtl"] .hbadge{font-size:15px}
+/* RTL: keep phone numbers, hero name, stats numbers in LTR direction */
+html[dir="rtl"] .cinfo .phone,
+html[dir="rtl"] .cdval[data-type="phone"],
+html[dir="rtl"] .hcount-num,
+html[dir="rtl"] .hcount-div,
+html[dir="rtl"] .hero-counter{direction:ltr;unicode-bidi:embed}
+html[dir="rtl"] .htitle{direction:rtl;unicode-bidi:embed}
+html[dir="rtl"] #khalid-el,html[dir="rtl"] #maitre-el,html[dir="rtl"] .htitle .gold-line,html[dir="rtl"] .htitle .glitch{direction:ltr;unicode-bidi:embed;display:inline-block}
+html[dir="rtl"] .faq-q{text-align:right}
+html[dir="rtl"] .hbadge{direction:ltr}
+html[dir="rtl"] .gps-coords{direction:ltr}
+html[dir="rtl"] .march-inner{animation-direction:reverse}
+/* Phone numbers: always LTR */
+html[dir="rtl"] a[href^="tel"],html[dir="rtl"] a[href^="https://wa"],html[dir="rtl"] .phone{direction:ltr;display:inline-block;unicode-bidi:embed}
+@media(max-width:1100px){html[dir="rtl"] .lmap-wrap{padding-left:0}html[dir="rtl"] .linfo{padding-right:0}html[dir="rtl"] .nlinks a{font-size:12px}html[dir="rtl"] .htitle{font-size:clamp(2.8rem,10vw,4.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1.2rem,4vw,1.5rem)}html[dir="rtl"] .htag{font-size:clamp(1.1rem,3.5vw,1.4rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.8rem,8vw,2.3rem)}html[dir="rtl"] .hcount-label{font-size:.85rem}}@media(max-width:768px){html[dir="rtl"] .htitle{font-size:clamp(2.5rem,11vw,3.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1rem,4.5vw,1.3rem)}html[dir="rtl"] .htag{font-size:clamp(1rem,4vw,1.2rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.6rem,8vw,2rem)}}
 
 /* ===== COMPREHENSIVE RESPONSIVE ===== */
 /* 2560px+ ultra-wide */
@@ -193,8 +210,8 @@ html[dir="rtl"] .fab-wa:hover .fab-tooltip{transform:translateY(-50%) translateX
 .img-ph-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--gold);opacity:.4;text-transform:uppercase}
 
 /* ----- FAQ accordion ----- */
-#faq{padding:140px 80px;max-width:920px;margin:0 auto;position:relative;z-index:2}
-.faq-header{text-align:center;max-width:760px;margin:0 auto 60px}
+#faq{padding:80px 80px 140px;max-width:920px;margin:0 auto;position:relative;z-index:2}
+.faq-header{text-align:center;max-width:760px;margin:0 auto 50px}
 .faq-list{display:flex;flex-direction:column;border-top:1px solid rgba(201,168,76,.1)}
 .faq-item{border-bottom:1px solid rgba(201,168,76,.1);transition:background .4s}
 .faq-item.open{background:rgba(201,168,76,.025)}
@@ -322,7 +339,7 @@ body::after {
 @keyframes arabicFloat { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-52%) translateX(-15px)} }
 
 /* === NAV MEGA UPGRADE === */
-nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 30px 70px; display: flex; justify-content: space-between; align-items: center; transition: .6s cubic-bezier(.25,1,.5,1); }
+nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 30px 70px; display: flex; justify-content: space-between; align-items: center; gap: 20px; transition: .6s cubic-bezier(.25,1,.5,1); }
 nav.s { background: rgba(6,5,4,.94); backdrop-filter: blur(24px) saturate(1.8); border-bottom: 1px solid rgba(201,168,76,.12); padding: 18px 70px; }
 
 /* === GLOWING NAV LOGO === */
@@ -1125,25 +1142,6 @@ footer::after {
 /* === SECTION TRANSITIONS === */
 section, .section-divider { position: relative; z-index: 2; }
 
-/* === GOLD SHIMMER DIVIDER UPGRADE === */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,.3), transparent);
-  position: relative;
-  margin: 0;
-  overflow: visible;
-}
-.section-divider::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,.1), transparent);
-  filter: blur(3px);
-}
-
 /* === ANIMATED GOLD LINE BORDERS === */
 .gline { 
   position: relative;
@@ -1884,7 +1882,7 @@ h1.revealed::after, h2.revealed::after {
 #stats{padding:120px clamp(16px,5vw,80px)!important}
 #local{padding:120px clamp(16px,5vw,80px)!important}
 #contact{padding:120px clamp(16px,5vw,80px)!important}
-#testi{padding:80px 0 100px!important}
+#testi{padding:80px 0 30px!important}
 #google-reviews-section{padding:40px clamp(16px,4vw,60px)!important}
 #rating-summary{padding:0 clamp(16px,4vw,60px) 60px!important}
 #timeline{padding:120px clamp(16px,5vw,80px)!important}
@@ -2077,17 +2075,157 @@ footer{padding:70px clamp(16px,5vw,80px)!important}
   #process{padding:60px 16px!important}
 }
 
-/* === LANG BAR RESPONSIVE === */
+/* === LANG BAR RESPONSIVE — inline in nav === */
 @media(max-width:480px){
-  .lang-bar{right:8px!important;top:64px!important}
-  .lang-btn{padding:4px 6px!important;font-size:6px!important}
+  .lang-btn{padding:5px 5px!important;font-size:6px!important;letter-spacing:0!important}
 }
 
 /* === FULL-WIDTH OVERFLOW FIX === */
 html,body{overflow-x:hidden!important;max-width:100vw!important}
+
+/* ========== FINAL COMPREHENSIVE FIXES ========== */
+
+/* --- Hero name: never wrap on any screen --- */
+#khalid-el { white-space: nowrap !important; display: inline-block !important; }
+.htitle { white-space: normal; }
+
+/* --- Hero SVG scales: hidden per user request --- */
+#hero-svg-scales, .hero-scales-bg { display: none !important; }
+
+/* --- Hero bg: better mobile crop --- */
+@media(max-width:768px){
+  .hero-office-bg { background-position: 30% top !important; }
+}
+
+/* --- Lang bar: inline inside nav, no fixed/absolute overlap --- */
+.lang-bar { position: static !important; top: auto !important; right: auto !important; z-index: auto !important; border-radius: 3px !important; }
+@media(max-width:768px){ .lang-btn { padding: 6px 7px !important; font-size: 6px !important; } }
+@media(max-width:480px){ .lang-btn { padding: 5px 5px !important; font-size: 6px !important; letter-spacing: 0 !important; } }
+
+/* --- Awards carousel: smooth and visible --- */
+.awards-carousel-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 16px 0 36px !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
+}
+.awards-track {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 20px !important;
+  width: max-content !important;
+  animation: awardsRoll 38s linear infinite !important;
+  will-change: transform !important;
+}
+.awards-track:hover { animation-play-state: paused !important; }
+.award-slide-card {
+  flex-shrink: 0 !important;
+  width: 300px !important;
+  min-height: 200px !important;
+  background: linear-gradient(145deg, #191510, #0f0c08) !important;
+  border: 1px solid rgba(201,168,76,.1) !important;
+  border-top: 2px solid rgba(201,168,76,.3) !important;
+  padding: 32px 26px !important;
+  position: relative !important;
+  transition: transform .45s cubic-bezier(.25,1,.5,1), box-shadow .45s !important;
+}
+.award-slide-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 28px 60px rgba(0,0,0,.65), 0 0 30px rgba(201,168,76,.1) !important;
+  border-top-color: var(--gold) !important;
+}
+.award-slide-icon { font-size: 30px !important; margin-bottom: 14px !important; }
+.award-slide-year { font-family:'Cinzel',serif; font-size: 9px !important; letter-spacing: 3px !important; color: var(--gold) !important; opacity: .65 !important; margin-bottom: 10px !important; }
+.award-slide-title { font-family:'Cinzel',serif; font-size: 12px !important; letter-spacing: 2px !important; color: var(--white) !important; margin-bottom: 12px !important; line-height: 1.4 !important; }
+.award-slide-desc { font-family:'Cormorant Garamond',serif; font-size: 1rem !important; color: var(--text) !important; line-height: 1.7 !important; opacity: .85 !important; }
+@media(max-width:768px){ .award-slide-card { width: 260px !important; padding: 24px 20px !important; } }
+@media(max-width:480px){ .award-slide-card { width: 220px !important; } }
+
+/* ===== ARABIC RTL — COMPLETE FIX =====
+   Strategy: set html[dir=rtl] globally, but keep purely numeric/Latin
+   elements (phone, name, counters) in LTR so they don't get mirrored.
+*/
+/* Numbers & Latin names: always LTR */
+html[dir="rtl"] .htitle,
+html[dir="rtl"] #htitle-el { direction: rtl; }
+
+html[dir="rtl"] #khalid-el,
+html[dir="rtl"] #maitre-el { direction: ltr !important; unicode-bidi: embed !important; display: inline !important; }
+
+/* Hero counters: LTR (digits must not reverse) */
+html[dir="rtl"] .hero-counter { direction: ltr !important; justify-content: center !important; }
+html[dir="rtl"] .hcount-num,
+html[dir="rtl"] .hcount-label { direction: ltr !important; }
+
+/* Badge: centered, LTR so decoration lines stay symmetric */
+html[dir="rtl"] .hbadge { direction: ltr !important; justify-content: center !important; }
+
+/* Phone & WhatsApp numbers */
+html[dir="rtl"] a[href^="tel"],
+html[dir="rtl"] a[href^="https://wa"],
+html[dir="rtl"] .cdval { direction: ltr !important; display: inline-block !important; text-align: left !important; unicode-bidi: embed !important; }
+
+/* Contact details row: flip to RTL naturally */
+html[dir="rtl"] .cdetail { flex-direction: row-reverse !important; }
+html[dir="rtl"] .cdetail .cicon { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* GPS coords: keep LTR */
+html[dir="rtl"] .gps-coords { direction: ltr !important; }
+
+/* FAQ questions: right-aligned text */
+html[dir="rtl"] .faq-q { text-align: right !important; }
+html[dir="rtl"] .faq-a-inner { text-align: right !important; }
+
+/* Stats numbers: LTR */
+html[dir="rtl"] .stat-num,
+html[dir="rtl"] .snum,
+html[dir="rtl"] .astat-num { direction: ltr !important; unicode-bidi: embed !important; }
+
+/* Nav logo: keep LTR */
+html[dir="rtl"] .nlogo { direction: ltr !important; }
+
+/* Process steps: right-align text but keep icons centered */
+html[dir="rtl"] .process-step { text-align: right !important; }
+html[dir="rtl"] .step-icon-wrap { margin: 0 auto 20px !important; }
+
+/* About quote: flip border side */
+html[dir="rtl"] .about-quote { border-left: none !important; border-right: 2px solid var(--gold) !important; padding: 30px 36px 30px 16px !important; }
+
+/* Footer copyright */
+html[dir="rtl"] .fcopy,
+html[dir="rtl"] .ftag { direction: rtl !important; }
+
+/* Why cards: RTL text */
+html[dir="rtl"] .why-card { text-align: right !important; }
+
+/* --- General mobile improvements --- */
+@media(max-width:480px){
+  .htitle { font-size: clamp(1.8rem, 10vw, 2.5rem) !important; }
+  #khalid-el { font-size: 0.92em !important; }
+  .hero-inner { padding: 80px 14px 60px !important; }
+}
+
+/* --- Remove all transform from btn-mag so magnetic is truly gone --- */
+.btn-mag { will-change: auto !important; }
+.btn-mag, .btn-mag > * { transition: none !important; }
+.magnetic-btn { transform: none !important; }
 </style>
 </head>
 <body>
+<script>
+function imgFallback(img,mono,icon,sub){
+  const parent=img.parentElement;if(!parent)return;
+  parent.classList.add('img-failed');
+  if(parent.querySelector('.img-ph'))return;
+  const ph=document.createElement('div');ph.className='img-ph';
+  let html='';
+  if(icon)html+=`<div class="img-ph-icon">${icon}</div>`;
+  if(mono)html+=`<div class="img-ph-mono">${mono}</div>`;
+  if(sub)html+=`<div class="img-ph-sub">${sub}</div>`;
+  ph.innerHTML=html;parent.appendChild(ph);
+}
+</script>
 
 <div class="nav-transition" id="navTransition"><div class="nav-t-bar"></div><div class="nav-t-bar bot"></div></div>
 <div id="cinematic-overlay"><div class="cin-bar"></div><div class="cin-bar"></div></div>
@@ -2109,12 +2247,6 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
   </a>
 </div>
 
-<div class="lang-bar" id="langBar">
-  <button class="lang-btn active" data-lang="en">EN</button>
-  <button class="lang-btn" data-lang="fr">FR</button>
-  <button class="lang-btn" data-lang="ar">ع</button>
-  <button class="lang-btn" data-lang="es">ES</button>
-</div>
 
 <nav id="nav">
   <div class="nav-line"></div>
@@ -2127,6 +2259,12 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
     <a href="#testi" data-text="Reviews"><span data-i18n="nav.testi">Reviews</span><div class="nlink-line"></div></a>
     <a href="#local" data-text="Access"><span data-i18n="nav.access">Access</span><div class="nlink-line"></div></a>
     <a href="#contact" data-text="Contact"><span data-i18n="nav.contact">Contact</span><div class="nlink-line"></div></a>
+  </div>
+  <div class="lang-bar" id="langBar">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="ar">ع</button>
+    <button class="lang-btn" data-lang="es">ES</button>
   </div>
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
@@ -2143,7 +2281,8 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 
 <style>
 #hero{position:relative;height:100vh;width:100vw;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;z-index:2;perspective:1200px}
-.hero-office-bg{position:absolute;inset:0;width:100%;height:100%;background-image:url('bureau.png');background-size:cover;background-position:center;z-index:1;opacity:1;pointer-events:none;filter:brightness(.55) contrast(1.1) sepia(15%);transform:scale(1.04)}
+.hero-office-bg{position:absolute;inset:0;width:100%;height:100%;background-image:url('bureau.png');background-size:cover;background-position:center top;z-index:1;opacity:1;pointer-events:none;filter:brightness(.55) contrast(1.1) sepia(15%);transform:scale(1.04)}
+@media(max-width:768px){.hero-office-bg{background-position:30% top}}
 .hero-office-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,4,.55) 0%,rgba(6,5,4,.3) 40%,rgba(6,5,4,.5) 80%,rgba(6,5,4,.9) 100%),linear-gradient(90deg,rgba(6,5,4,.4) 0%,transparent 30%,transparent 70%,rgba(6,5,4,.4) 100%);pointer-events:none}
 .hero-office-mask{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 45%,rgba(6,5,4,.65) 85%,var(--noir) 100%);z-index:2;pointer-events:none}
 .hero-inner{position:relative;z-index:10;width:100%;max-width:1200px;padding:100px 20px 90px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform-style:preserve-3d}
@@ -2267,7 +2406,7 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
     <p class="hbadge" id="hbadge-el" data-i18n="hero.badge">Lawyer · Doctoral Researcher · Tangier Bar</p>
     <h1 class="htitle cine-in" id="htitle-el">
       <span class="htitle-wrap"><div class="name-aura"></div><span class="glitch" data-text="Maître" id="maitre-el">Maître</span></span><br>
-      <span class="gold-line" data-text="Khalid Chafai" id="khalid-el" style="color:var(--white);-webkit-text-fill-color:var(--white);background:none;animation:none">Khalid Chafai</span>
+      <span class="gold-line" data-text="Khalid Chafai" id="khalid-el" style="color:var(--white);-webkit-text-fill-color:var(--white);background:none;animation:none;white-space:nowrap">Khalid Chafai</span>
     </h1>
     <p class="hsub" data-i18n="hero.sub">Lawyer · Doctoral Researcher · Tangier Bar</p>
     <p class="htag"><strong class="tag-pulse" data-i18n="hero.tagline">« Your rights, our priority »</strong><br><span data-i18n="hero.tag">Listening. Trust. Defense. Commitment.</span></p>
@@ -2309,7 +2448,7 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 .cinfo:hover .phone{text-shadow:0 0 20px rgba(201,168,76,.4)}
 .cinfo .lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--text);opacity:.55;margin-bottom:4px}
 .cvline{width:1px;height:44px;background:rgba(201,168,76,.2);margin:0 4px}
-.about-right{position:relative;height:640px}
+.about-right{position:relative;height:auto;min-height:640px}
 .lawyer-profile-wrapper{position:relative;width:100%;max-width:460px;margin:0 auto}
 .lawyer-frame{position:relative;width:100%;aspect-ratio:4/5;background:var(--dark2);border:1px solid rgba(201,168,76,.2);padding:14px;overflow:hidden;transition:all .6s cubic-bezier(.25,1,.5,1);box-shadow:0 30px 60px rgba(0,0,0,.8)}
 .lawyer-img{width:100%;height:100%;object-fit:cover}
@@ -2321,10 +2460,10 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 .lawyer-caption p{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--gold);letter-spacing:1px}
 
 .mini-cards-container{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:55px}
-.mini-fcard{background:rgba(24,20,16,.45);border:1px solid rgba(201,168,76,.1);padding:16px;text-align:center;transition:.4s}
+.mini-fcard{background:rgba(24,20,16,.45);border:1px solid rgba(201,168,76,.1);padding:20px 16px;text-align:center;transition:.4s;height:auto;min-height:0;overflow:visible}
 .mini-fcard:hover{background:var(--dark3);border-color:var(--gold);transform:translateY(-5px)}
-.mini-fcard h3{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold);margin:6px 0 4px}
-.mini-fcard p{font-size:12px;color:var(--text);line-height:1.45;opacity:.8}
+.mini-fcard h3{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold);margin:8px 0 6px}
+.mini-fcard p{font-size:12px;color:var(--text);line-height:1.55;opacity:.8}
 
 .about-stats{display:flex;gap:0;border:1px solid rgba(201,168,76,.12);margin-top:44px;overflow:hidden}.astat{flex:1;padding:24px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.1);transition:.4s;position:relative;overflow:hidden;opacity:0}.rvs.on .astat{animation:aup .5s cubic-bezier(.22,1,.36,1) forwards}.rvs.on .astat:nth-child(1){animation-delay:.1s}.rvs.on .astat:nth-child(2){animation-delay:.2s}.rvs.on .astat:nth-child(3){animation-delay:.3s}.rvs.on .astat:nth-child(4){animation-delay:.4s}
 .astat:last-child{border-right:none}
@@ -2425,22 +2564,152 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 @media(max-width:480px){#why-us{padding:50px 16px}}
 </style>
 
-<section id="why-us" class="rv">
-  <div class="why-pattern"></div>
-  <div class="why-header">
-    <div class="slabel" style="justify-content:center" data-i18n="why.label">Why Choose Us</div>
-    <h2 class="stitle"><span class="title-reveal"><span data-i18n="why.title1">Legal excellence</span></span><br><span class="title-reveal"><span data-i18n="why.title2">at your <em>service</em></span></span></h2>
+<section id="awards" class="rv">
+  <div class="awards-bg-pattern"></div>
+  <div class="awards-header rv" style="text-align:center;margin-bottom:50px;">
+    <div class="slabel" style="justify-content:center" data-i18n="awards.label">Recognition & Trust</div>
+    <h2 class="stitle"><span class="title-reveal"><span data-i18n="awards.title1">Recognized for</span></span> <span class="title-reveal"><span><em data-i18n="awards.title2">excellence</em></span></span></h2>
     <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
   </div>
-  <div class="why-grid">
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">01</div><div class="why-card-icon">🎯</div><h3 data-i18n="why.c1t">Sharp Expertise</h3><p data-i18n="why.c1p">Over 15 years of practice in 12 legal areas for tailored defense.</p></div>
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">02</div><div class="why-card-icon">🤝</div><h3 data-i18n="why.c2t">Trust Relationship</h3><p data-i18n="why.c2p">Total transparency, attentive listening and constant availability for each client.</p></div>
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">03</div><div class="why-card-icon">⚡</div><h3 data-i18n="why.c3t">Maximum Responsiveness</h3><p data-i18n="why.c3p">Fast processing of each case with effective legal solutions.</p></div>
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">04</div><div class="why-card-icon">🌍</div><h3 data-i18n="why.c4t">International Vision</h3><p data-i18n="why.c4p">Practice in Arabic, French, English and Spanish for an international clientele.</p></div>
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">05</div><div class="why-card-icon">🏆</div><h3 data-i18n="why.c5t">High Success Rate</h3><p data-i18n="why.c5p">98% of cases won, hundreds of satisfied clients and tangible results.</p></div>
-    <div class="why-card" data-tilt><div class="why-shine"></div><div class="why-card-num">06</div><div class="why-card-icon">📍</div><h3 data-i18n="why.c6t">Proximity &amp; Access</h3><p data-i18n="why.c6p">Office in the heart of Tangier, near the Palace of Justice, with easy parking.</p></div>
+
+  <!-- Mobile / tablet — horizontal scroll -->
+  <div class="aw3d-flat-row">
+    <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+  </div>
+
+  <!-- Desktop — 3D circular rotating carousel -->
+  <div class="aw3d-stage">
+    <div class="aw3d-ring" id="awRing">
+      <div class="aw3d-card" style="transform:rotateY(0deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(60deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(120deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(180deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(240deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(300deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+    </div>
   </div>
 </section>
+
+<script>
+(function(){
+  function kickAwardsRing(){
+    var ring=document.getElementById('awRing');
+    if(!ring) return;
+    ring.style.animation='none';
+    void ring.offsetWidth;
+    ring.style.animation='';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',kickAwardsRing);}else{kickAwardsRing();}
+  window.addEventListener('load',function(){setTimeout(kickAwardsRing,150);});
+})();
+</script>
+
+<style>
+/* ===== AWARDS — 3D circular carousel (desktop) + scroll fallback (mobile/tablet) ===== */
+#awards { padding: 100px clamp(16px,5vw,80px); position:relative; z-index:2; overflow:hidden; }
+
+/* ---- mobile / tablet: horizontal scroll ---- */
+.aw3d-flat-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 30px;
+}
+.aw3d-flat-row::-webkit-scrollbar { display: none; }
+.aw3d-flat-card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 78vw;
+  max-width: 280px;
+  background: linear-gradient(145deg, #181410, #0f0c08);
+  border: 1px solid rgba(201,168,76,.08);
+  border-top: 2px solid rgba(201,168,76,.22);
+  padding: 28px 22px 24px;
+  border-radius: 4px;
+}
+
+/* ---- desktop: 3D circular stage ---- */
+.aw3d-stage { display: none; }
+
+@media(min-width:1024px){
+  .aw3d-flat-row { display: none; }
+
+  .aw3d-stage {
+    --aw3d-radius: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 440px;
+    perspective: 1600px;
+    position: relative;
+  }
+  .aw3d-stage::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    width: min(700px,80vw); height: 320px;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(ellipse, rgba(201,168,76,.08), transparent 70%);
+    pointer-events: none; z-index: -1;
+  }
+  .aw3d-ring {
+    position: relative;
+    width: 1px; height: 1px;
+    transform-style: preserve-3d;
+    animation: aw3dSpin 46s linear infinite;
+    will-change: transform;
+  }
+  .aw3d-ring:hover { animation-play-state: paused; }
+  @keyframes aw3dSpin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+  }
+
+  .aw3d-card {
+    position: absolute; top: 50%; left: 50%;
+    width: 220px; height: 270px;
+    margin: -135px 0 0 -110px;
+    background: linear-gradient(145deg, #181410, #0f0c08);
+    border: 1px solid rgba(201,168,76,.1);
+    border-top: 2px solid rgba(201,168,76,.28);
+    border-radius: 14px;
+    padding: 26px 20px;
+    backface-visibility: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,.55);
+    transition: border-color .4s, box-shadow .4s;
+  }
+  .aw3d-card:hover {
+    border-color: rgba(201,168,76,.4);
+    box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 40px rgba(201,168,76,.12);
+  }
+}
+
+@media(min-width:1440px){
+  .aw3d-stage { --aw3d-radius: 460px; height: 500px; }
+  .aw3d-card { width: 260px; height: 300px; margin: -150px 0 0 -130px; padding: 30px 24px; }
+}
+
+.aw3d-icon { font-size: 28px; display: block; margin-bottom: 14px; }
+.aw3d-year {
+  font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 3px;
+  color: var(--gold); opacity: .65; margin-bottom: 8px; text-transform: uppercase;
+}
+.aw3d-title {
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px;
+  color: var(--white); margin-bottom: 12px; line-height: 1.4;
+}
+.aw3d-desc {
+  font-family: 'Cormorant Garamond', serif; font-size: .93rem;
+  color: var(--text); line-height: 1.65; font-weight: 300;
+}
+@media(max-width:480px){ .aw3d-flat-card { width: 82vw; padding: 22px 18px 20px; } }
+</style>
 
 <div class="section-divider"><span class="sd-diamond"></span></div>
 
@@ -2504,8 +2773,8 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
   </div>
   <div class="tab-content-panel active" id="panel-entreprises">
     <div class="panel-side-hero">
-      <div><h3>Business</h3><p>Tailored legal support and engineering to structure, develop and secure your business activities in Morocco and internationally.</p></div>
-      <a href="#contact" class="panel-action-link">Discover corporate offer →</a>
+      <div><h3 data-i18n="panel.biz.title">Business</h3><p data-i18n="panel.biz.desc">Tailored legal support and engineering to structure, develop and secure your business activities in Morocco and internationally.</p></div>
+      <a href="#contact" class="panel-action-link" data-i18n="panel.biz.cta">Discover corporate offer →</a>
     </div>
     <div class="panel-expertises-grid">
       <div class="sub-expertise-card"><h4 data-i18n="d.d1t">Business Litigation</h4><div class="arab-sub" data-i18n="d.d1a">Business Litigation</div><div class="keywords-list" data-i18n="d.d1k">Emergency proceedings • Appeals • Commercial litigation</div></div>
@@ -2514,12 +2783,16 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
       <div class="sub-expertise-card"><h4 data-i18n="d.d4t">Commercial Contracts</h4><div class="arab-sub" data-i18n="d.d4a">Commercial Contracts</div><div class="keywords-list" data-i18n="d.d4k">Drafting • Negotiation • National & International agreements</div></div>
       <div class="sub-expertise-card"><h4 data-i18n="d.d5t">Commercial Leases</h4><div class="arab-sub" data-i18n="d.d5a">Commercial Leases</div><div class="keywords-list" data-i18n="d.d5k">Goodwill • Eviction • Lease negotiation</div></div>
       <div class="sub-expertise-card"><h4 data-i18n="d.d6t">Commercial Arbitration</h4><div class="arab-sub" data-i18n="d.d6a">Commercial Arbitration</div><div class="keywords-list" data-i18n="d.d6k">Fast resolution • Arbitration clause • Confidentiality</div></div>
+      <div class="sub-expertise-card"><h4 data-i18n="d.d13t">Competition Law</h4><div class="arab-sub" data-i18n="d.d13a">قانون المنافسة</div><div class="keywords-list" data-i18n="d.d13k">Anti-competitive practices • Market abuse • Unfair competition</div></div>
+      <div class="sub-expertise-card"><h4 data-i18n="d.d14t">Consumer Law</h4><div class="arab-sub" data-i18n="d.d14a">قانون الاستهلاك</div><div class="keywords-list" data-i18n="d.d14k">Consumer protection • Unfair terms • Product liability</div></div>
+      <div class="sub-expertise-card"><h4 data-i18n="d.d15t">Business Difficulties</h4><div class="arab-sub" data-i18n="d.d15a">قانون صعوبات المقاولة</div><div class="keywords-list" data-i18n="d.d15k">Prevention • Safeguard proceedings • Judicial recovery • Liquidation</div></div>
+      <div class="sub-expertise-card"><h4 data-i18n="d.d16t">Criminal Law</h4><div class="arab-sub" data-i18n="d.d16a">القانون الجنائي</div><div class="keywords-list" data-i18n="d.d16k">Defense • Criminal litigation • Economic crimes • Pre-trial detention</div></div>
     </div>
   </div>
   <div class="tab-content-panel" id="panel-particuliers">
     <div class="panel-side-hero">
-      <div><h3>Individuals</h3><p>Rigorous defense of your civil and property rights, and human resolution of your private disputes with total attention.</p></div>
-      <a href="#contact" class="panel-action-link">Discover private offer →</a>
+      <div><h3 data-i18n="panel.ind.title">Individuals</h3><p data-i18n="panel.ind.desc">Rigorous defense of your civil and property rights, and human resolution of your private disputes with total attention.</p></div>
+      <a href="#contact" class="panel-action-link" data-i18n="panel.ind.cta">Discover private offer →</a>
     </div>
     <div class="panel-expertises-grid">
       <div class="sub-expertise-card"><h4 data-i18n="d.d7t">Family Law</h4><div class="arab-sub" data-i18n="d.d7a">Family Law</div><div class="keywords-list" data-i18n="d.d7k">Divorce • Child custody • Alimony</div></div>
@@ -2539,15 +2812,15 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
   <div class="philosophy-bg"></div>
   <div class="philosophy-grid">
     <div class="philosophy-left rvl">
-      <div class="phil-label">Legal Philosophy</div>
-      <h2 class="stitle">Law as a <em>vocation</em></h2>
+      <div class="phil-label" data-i18n="phil.label">Legal Philosophy</div>
+      <h2 class="stitle"><span data-i18n="phil.title_prefix">Law as a</span> <em data-i18n="phil.titleem">vocation</em></h2>
       <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
-      <p>The law is not merely a set of rules — it is a living instrument of justice. At Maître Chafai's firm, every case is approached with the conviction that <strong style="color:var(--gold)">a client's right is non-negotiable</strong>, and that rigorous legal mastery, combined with genuine human attention, produces the best outcomes.</p>
-      <p>Grounded in Moroccan law and enriched by ongoing doctoral research in competition law at FSJES Fès, the firm operates at the intersection of academic rigor and courtroom practice — with one constant: <strong style="color:var(--gold)">unwavering commitment to your interests</strong>.</p>
+      <p data-i18n="phil.p1">The law is not merely a set of rules — it is a living instrument of justice. At Maître Chafai's firm, every case is approached with the conviction that <strong style="color:var(--gold)">a client's right is non-negotiable</strong>, and that rigorous legal mastery, combined with genuine human attention, produces the best outcomes.</p>
+      <p data-i18n="phil.p2">Grounded in Moroccan law and enriched by ongoing doctoral research in competition law at FSJES Fès, the firm operates at the intersection of academic rigor and courtroom practice — with one constant: <strong style="color:var(--gold)">unwavering commitment to your interests</strong>.</p>
       <div class="phil-signature">
         <div class="phil-sig-icon">⚖️</div>
         <div>
-          <div class="phil-sig-text">« The strength of my defense is measured by the trust you place in me. »</div>
+          <div class="phil-sig-text" data-i18n="phil.quote">« The strength of my defense is measured by the trust you place in me. »</div>
           <div class="phil-sig-name">Maître Khalid Chafai — Barreau de Tanger</div>
         </div>
       </div>
@@ -2556,32 +2829,32 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
       <div class="phil-pillar">
         <div class="phil-num">I</div>
         <div>
-          <h3>Rigorous Analysis</h3>
-          <p>Every file receives exhaustive legal research before any action is taken. No stone is left unturned — because the strength of a case is built in preparation.</p>
+          <h3 data-i18n="phil.c1t">Rigorous Analysis</h3>
+          <p data-i18n="phil.c1p">Every file receives exhaustive legal research before any action is taken. No stone is left unturned — because the strength of a case is built in preparation.</p>
         </div>
         <div class="phil-pillar-icon">🔍</div>
       </div>
       <div class="phil-pillar">
         <div class="phil-num">II</div>
         <div>
-          <h3>Strategic Thinking</h3>
-          <p>Each legal situation is unique. The firm crafts a tailored strategy — anticipating adversarial moves and positioning your interests for the strongest possible outcome.</p>
+          <h3 data-i18n="phil.c2t">Strategic Thinking</h3>
+          <p data-i18n="phil.c2p">Each legal situation is unique. The firm crafts a tailored strategy — anticipating adversarial moves and positioning your interests for the strongest possible outcome.</p>
         </div>
         <div class="phil-pillar-icon">♟️</div>
       </div>
       <div class="phil-pillar">
         <div class="phil-num">III</div>
         <div>
-          <h3>Transparent Communication</h3>
-          <p>You are informed at every step. Legal complexity is translated into clear, honest language — because you deserve to understand exactly where your case stands.</p>
+          <h3 data-i18n="phil.c3t">Transparent Communication</h3>
+          <p data-i18n="phil.c3p">You are informed at every step. Legal complexity is translated into clear, honest language — because you deserve to understand exactly where your case stands.</p>
         </div>
         <div class="phil-pillar-icon">💬</div>
       </div>
       <div class="phil-pillar">
         <div class="phil-num">IV</div>
         <div>
-          <h3>Ethical Integrity</h3>
-          <p>Bound by the ethics of the Tangier Bar Association, the firm upholds the highest standards of professional conduct — your trust is both earned and protected.</p>
+          <h3 data-i18n="phil.c4t">Ethical Integrity</h3>
+          <p data-i18n="phil.c4p">Bound by the ethics of the Tangier Bar Association, the firm upholds the highest standards of professional conduct — your trust is both earned and protected.</p>
         </div>
         <div class="phil-pillar-icon">🏛️</div>
       </div>
@@ -2626,28 +2899,28 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
   <div class="process-steps">
     <div class="process-step rv" style="transition-delay:0s">
       <div class="step-number">01</div>
-      <div class="step-icon-wrap">📞</div>
+      <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;color:var(--gold)"><path d="M8 9l3 3-3 3"/><path d="M13 15h3"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
       <div class="step-connector">▸</div>
       <h3 data-i18n="p.s1t">Consultation</h3>
       <p data-i18n="p.s1p">First exchange to understand your situation, analyze your needs and define a strategy.</p>
     </div>
     <div class="process-step rv" style="transition-delay:.15s">
       <div class="step-number">02</div>
-      <div class="step-icon-wrap">📋</div>
+      <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;color:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div>
       <div class="step-connector">▸</div>
       <h3 data-i18n="p.s2t">Analysis</h3>
       <p data-i18n="p.s2p">In-depth study of your file, legal research and development of the defense strategy.</p>
     </div>
     <div class="process-step rv" style="transition-delay:.3s">
       <div class="step-number">03</div>
-      <div class="step-icon-wrap">⚖️</div>
+      <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;color:var(--gold)"><path d="M14 6l4 4-8 8-4-4 8-8z"/><path d="M2 22l4-4"/><path d="M18 2l4 4"/><line x1="6" y1="18" x2="18" y2="6"/></svg></div>
       <div class="step-connector">▸</div>
       <h3 data-i18n="p.s3t">Action</h3>
       <p data-i18n="p.s3p">Implementation of necessary legal actions: pleadings, negotiations, procedures.</p>
     </div>
     <div class="process-step rv" style="transition-delay:.45s">
       <div class="step-number">04</div>
-      <div class="step-icon-wrap">✅</div>
+      <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
       <h3 data-i18n="p.s4t">Result</h3>
       <p data-i18n="p.s4p">Follow-up until complete resolution of your case with an optimal and lasting result.</p>
     </div>
@@ -2672,7 +2945,7 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 .stat-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--text);opacity:.6;margin-top:6px;display:block}
 .stat-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.6s}
 .stat-item:hover .stat-bar{opacity:.6}
-#featured{padding:80px;position:relative;z-index:2}
+#featured{padding:20px 80px 80px;position:relative;z-index:2}
 .featured-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:center}
 .featured-seal{position:relative;display:flex;justify-content:center;align-items:center}
 .seal-ring-rot{width:220px;height:220px;border-radius:50%;border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;position:relative;animation:sealRotate 40s linear infinite}
@@ -2720,7 +2993,7 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 
 /* ===== REVIEWS CAROUSEL — SINGLE ROW INFINITE AUTO-SCROLL ===== */
 #testi{padding:80px 0 120px;overflow:hidden;position:relative;z-index:2}
-.theader{text-align:center;max-width:720px;margin:0 auto 80px;padding:0 20px}
+.theader{text-align:center;max-width:720px;margin:0 auto 40px;padding:0 20px}
 
 /* Single-row infinite scroll */
 .reviews-carousel{
@@ -2993,7 +3266,30 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 <section id="featured">
   <div class="featured-inner rv">
     <div class="featured-seal"><div class="seal-ring-rot"></div><div class="seal-center-photo"><img src="avocat2.png" alt="Maître Khalid Chafai" class="seal-lawyer-img" onerror="imgFallback(this,'KC','⚖')"></div></div>
-    <div class="featured-quote"><div class="featured-qmark">"</div><div class="featured-stars">★★★★★</div><p class="featured-text" id="featuredText">Excellent lawyer in commercial and business law. He acted quickly — all trials were successful; he never lost a case. The company is now generating substantial revenue.</p><div class="featured-author">Business Client <span>Tangier — Commercial Law</span></div></div>
+    <div class="featured-quote">
+      <div class="featured-qmark">"</div>
+      <p class="featured-text" id="featuredText" data-i18n="featured.quote">Every mandate is a commitment. Every commitment, a matter of honour.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+        <div style="width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0.5"></div>
+        <div class="featured-author" style="margin-bottom:0">Maître Khalid Chafai <span data-i18n="about.caption">Lawyer at the Tangier Bar</span></div>
+      </div>
+      <div style="display:flex;gap:32px;flex-wrap:wrap">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--white);letter-spacing:-1px">+15</span>
+          <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);opacity:.7;text-transform:uppercase" data-i18n="about.stats1">Years of experience</span>
+        </div>
+        <div style="width:1px;background:rgba(201,168,76,.15)"></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--white);letter-spacing:-1px">98%</span>
+          <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);opacity:.7;text-transform:uppercase" data-i18n="about.stats3">Cases won</span>
+        </div>
+        <div style="width:1px;background:rgba(201,168,76,.15)"></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--white);letter-spacing:-1px">16</span>
+          <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);opacity:.7;text-transform:uppercase" data-i18n="stats.domains">Areas of expertise</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -3205,53 +3501,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <div class="section-divider"><span class="sd-diamond"></span></div>
 
-<section id="awards" class="rv">
-  <div class="awards-bg-pattern"></div>
-  <div class="awards-grid">
-    <div class="awards-header">
-      <div class="slabel" style="justify-content:center">Recognition & Trust</div>
-      <h2 class="stitle"><span class="title-reveal"><span>Recognized for</span></span> <span class="title-reveal"><span><em>excellence</em></span></span></h2>
-      <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
-    </div>
-    <div class="awards-items">
-      <div class="award-item rv" style="transition-delay:.1s">
-        <div class="award-icon">⭐</div>
-        <div class="award-year">Google Reviews · 2024</div>
-        <div class="award-title">4.9 / 5 Stars</div>
-        <div class="award-desc">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div>
-      </div>
-      <div class="award-item rv" style="transition-delay:.2s">
-        <div class="award-icon">🏛️</div>
-        <div class="award-year">Barreau de Tanger</div>
-        <div class="award-title">Member in Good Standing</div>
-        <div class="award-desc">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div>
-      </div>
-      <div class="award-item rv" style="transition-delay:.3s">
-        <div class="award-icon">🌍</div>
-        <div class="award-year">Multilingual Practice</div>
-        <div class="award-title">4 Languages · International</div>
-        <div class="award-desc">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div>
-      </div>
-      <div class="award-item rv" style="transition-delay:.4s">
-        <div class="award-icon">📊</div>
-        <div class="award-year">11 Years Track Record</div>
-        <div class="award-title">98% Success Rate</div>
-        <div class="award-desc">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client, over two decades.</div>
-      </div>
-      <div class="award-item rv" style="transition-delay:.5s">
-        <div class="award-icon">🤝</div>
-        <div class="award-year">Client Trust</div>
-        <div class="award-title">500+ Cases Resolved</div>
-        <div class="award-desc">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters — and received results.</div>
-      </div>
-      <div class="award-item rv" style="transition-delay:.6s">
-        <div class="award-icon">⚖️</div>
-        <div class="award-year">Pro Bono Commitment</div>
-        <div class="award-title">Access to Justice</div>
-        <div class="award-desc">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div>
-      </div>
-  </div>
-</section>
+
 
 <section id="local">
   <div class="loc-hero rv" style="text-align:center;margin-bottom:90px;display:flex;flex-direction:column;align-items:center">
@@ -3268,8 +3518,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         <div class="map-scan"></div>
         <div class="map-pin"><div class="map-pin-dot"></div></div>
         <div class="map-hud map-hud-tl"><div class="hud-chip">35.7705° N · 5.8005° O</div></div>
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-5.82%2C35.76%2C-5.78%2C35.78&amp;layer=mapnik&amp;marker=35.7705%2C-5.8005" allowfullscreen loading="lazy" title="Law Office Maître Chafai — Tangier"></iframe>
-        <div class="map-hud map-hud-br"><div class="map-footer"><span class="map-footer-label">Résidence Playa Mar — Bd Antaki</span><a href="https://www.openstreetmap.org/directions?from=&to=35.7705%2C-5.8005" target="_blank" class="map-footer-link" data-i18n="local.itin">Get directions</a></div></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.2!2d-5.8005!3d35.7705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b424bbf64a28b%3A0x5d6e7f8a9b1c2d3e!2sR%C3%A9sidence%20Playa%20Mar%2C%20Bd%20Antaki%2C%20Tanger!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Cabinet Maître Chafai — Tanger"></iframe>
+        <div class="map-hud map-hud-br"><div class="map-footer"><span class="map-footer-label">Résidence Playa Mar — Bd Antaki</span><a href="https://www.google.com/maps/dir/?api=1&destination=35.7705,-5.8005" target="_blank" class="map-footer-link" data-i18n="local.itin">Get directions</a></div></div>
       </div>
     </div>
     <div class="linfo">
@@ -3285,8 +3535,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <section id="timeline" class="rv">
   <div class="timeline-inner">
     <div class="timeline-header">
-      <div class="slabel" style="justify-content:center">Career Milestones</div>
-      <h2 class="stitle"><span class="title-reveal"><span>A career of</span></span> <span class="title-reveal"><span><em>conviction</em></span></span></h2>
+      <div class="slabel" style="justify-content:center" data-i18n="tl.label">Career Milestones</div>
+      <h2 class="stitle"><span class="title-reveal"><span data-i18n="tl.title1">A career of</span></span> <span class="title-reveal"><span><em data-i18n="tl.title2">conviction</em></span></span></h2>
       <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
     </div>
     <div class="timeline-track">
@@ -3419,8 +3669,7 @@ window.addEventListener('load',()=>{
 const hamburger=document.getElementById('hamburger'),mobileOverlay=document.getElementById('mobileOverlay');
 if(hamburger&&mobileOverlay){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');mobileOverlay.classList.toggle('active');document.body.style.overflow=mobileOverlay.classList.contains('active')?'hidden':''});mobileOverlay.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');mobileOverlay.classList.remove('active');document.body.style.overflow=''})})}
 
-const phoneEl=document.getElementById('phoneDisplay');
-if(phoneEl){let interval;phoneEl.parentElement.parentElement.addEventListener('mouseenter',()=>{const nums='0123456789';interval=setInterval(()=>{const txt=phoneEl.textContent;let newTxt='';for(let i=0;i<txt.length;i++){if(txt[i]===' ')newTxt+=' ';else newTxt+=nums[Math.floor(Math.random()*nums.length)]}phoneEl.textContent=newTxt},50)});phoneEl.parentElement.parentElement.addEventListener('mouseleave',()=>{clearInterval(interval);phoneEl.textContent='0661 797 469';phoneEl.style.transition='color .5s';phoneEl.style.color='var(--gold)';setTimeout(()=>{phoneEl.style.color=''},500)})}
+
 
 const triggers=document.querySelectorAll('.tab-trigger'),panels=document.querySelectorAll('.tab-content-panel');
 triggers.forEach(trigger=>{trigger.addEventListener('click',()=>{const target=trigger.dataset.target;triggers.forEach(t=>t.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));trigger.classList.add('active');document.getElementById(target).classList.add('active')})});
@@ -3526,6 +3775,17 @@ en:{
 'd.d7t':'Family Law','d.d8t':'Property Law','d.d9t':'Employment Law','d.d10t':'Civil Law','d.d11t':'Banking Law','d.d12t':'Administrative Law',
 'd.d7a':'Family Law','d.d8a':'Property Law','d.d9a':'Employment Law','d.d10a':'Civil Law','d.d11a':'Banking Law','d.d12a':'Administrative Law',
 'd.d7k':'Divorce • Child custody • Alimony','d.d8k':'Purchase • Sale • Co-ownership • Real estate transactions','d.d9k':'Dismissal • Compensation • Harassment • Litigation','d.d10k':'Liability • Obligations • Daily disputes','d.d11k':'Credit disputes • Financing • Debt recovery','d.d12k':'Public appeals • Permits • Administrative litigation',
+'d.d13t':'Competition Law','d.d14t':'Consumer Law','d.d15t':'Business Difficulties','d.d16t':'Criminal Law',
+'d.d13a':'Competition Law','d.d14a':'Consumer Law','d.d15a':'Business Difficulties','d.d16a':'Criminal Law',
+'d.d13k':'Anti-competitive practices • Market abuse • Unfair competition','d.d14k':'Consumer protection • Unfair terms • Product liability','d.d15k':'Prevention • Safeguard • Judicial recovery • Liquidation','d.d16k':'Defense • Criminal litigation • Economic crimes • Pre-trial detention',
+'phil.label':'Legal Philosophy','phil.titleem':'vocation',
+'phil.p1':'The law is not merely a set of rules — it is a living instrument of justice. At Maître Chafai\'s firm, every case is approached with the conviction that <strong style="color:var(--gold)">a client\'s right is non-negotiable</strong>, and that rigorous legal mastery, combined with genuine human attention, produces the best outcomes.',
+'phil.p2':'Grounded in Moroccan law and enriched by ongoing doctoral research in competition law at FSJES Fès, the firm operates at the intersection of academic rigor and courtroom practice — with one constant: <strong style="color:var(--gold)">unwavering commitment to your interests</strong>.',
+'phil.quote':'« The strength of my defense is measured by the trust you place in me. »',
+'phil.c1t':'Rigorous Analysis','phil.c1p':'Every file receives exhaustive legal research before any action is taken. No stone is left unturned — because the strength of a case is built in preparation.',
+'phil.c2t':'Strategic Thinking','phil.c2p':'Each legal situation is unique. The firm crafts a tailored strategy — anticipating adversarial moves and positioning your interests for the strongest possible outcome.',
+'phil.c3t':'Transparent Communication','phil.c3p':'You are informed at every step. Legal complexity is translated into clear, honest language — because you deserve to understand exactly where your case stands.',
+'phil.c4t':'Ethical Integrity','phil.c4p':'Bound by the ethics of the Tangier Bar Association, the firm upholds the highest standards of professional conduct — your trust is both earned and protected.',
 'process.label':'Our Process','process.title1':'How we','process.title2':'<em>support</em> you',
 'p.s1t':'Consultation','p.s1p':'First exchange to understand your situation, analyze your needs and define a strategy.',
 'p.s2t':'Analysis','p.s2p':'In-depth study of your file, legal research and development of the defense strategy.',
@@ -3552,7 +3812,18 @@ en:{
 'faq.q3':'Is my consultation confidential?','faq.a3':'Absolutely. Every file is treated under strict professional secrecy in accordance with the ethics of the Tangier Bar Association — your privacy is fully protected.',
 'faq.q4':'How are your fees determined?','faq.a4':'Fees depend on the complexity, urgency and nature of each case. Everything is explained transparently during the first consultation, with no hidden costs.',
 'faq.q5':'Do you handle cases outside Tangier?','faq.a5':'Yes. The firm represents clients throughout Morocco and can assist clients abroad remotely for international matters.',
-'footer.tag':'« Your rights, our priority »','footer.cr':'All rights reserved','tl.y1':'2012','tl.t1':'Master in Business Law','tl.p1':'Graduated with a Master\'s degree in Business Law from FSJES Fès — building the academic foundation for a career in corporate and commercial law.','tl.y2':'2013','tl.t2':'Advanced Research in Corporate Law','tl.p2':'Pursued advanced research in corporate law at FSJES Fès, deepening expertise in business structures, governance, and commercial regulation.','tl.y3':'2015','tl.t3':'Admission to the Tangier Bar','tl.p3':'Admitted to the Barreau de Tanger — beginning active practice as a licensed attorney, defending individuals and companies across all courts of Morocco.','tl.y4':'2020','tl.t4':'Doctoral Researcher in Competition Law','tl.p4':'Enrolled as a doctoral researcher in Competition Law at FSJES Fès, combining academic inquiry with active courtroom practice.','tl.y5':'Today','tl.t5':'Active Practice · Tangier Bar','tl.p5':'Practicing attorney at the Tangier Bar Association, combining doctoral-level research with hands-on litigation — scholarly rigor and strategic advocacy for every client.','hero.scale.left':'TANGIER BAR — 2025','hero.scale.right':'LAW · JUSTICE · TRUTH',
+'footer.tag':'« Your rights, our priority »','footer.cr':'All rights reserved','featured.quote':'Every mandate is a commitment. Every commitment, a matter of honour.','tl.y1':'2012','tl.t1':'Master in Business Law','tl.p1':'Graduated with a Master\'s degree in Business Law from FSJES Fès — building the academic foundation for a career in corporate and commercial law.','tl.y2':'2013','tl.t2':'Advanced Research in Corporate Law','tl.p2':'Pursued advanced research in corporate law at FSJES Fès, deepening expertise in business structures, governance, and commercial regulation.','tl.y3':'2015','tl.t3':'Admission to the Tangier Bar','tl.p3':'Admitted to the Barreau de Tanger — beginning active practice as a licensed attorney, defending individuals and companies across all courts of Morocco.','tl.y4':'2020','tl.t4':'Doctoral Researcher in Competition Law','tl.p4':'Enrolled as a doctoral researcher in Competition Law at FSJES Fès, combining academic inquiry with active courtroom practice.','tl.y5':'Today','tl.t5':'Active Practice · Tangier Bar','tl.p5':'Practicing attorney at the Tangier Bar Association, combining doctoral-level research with hands-on litigation — scholarly rigor and strategic advocacy for every client.','hero.scale.left':'TANGIER BAR — 2025','hero.scale.right':'LAW · JUSTICE · TRUTH',
+'awards.label':'Recognition & Trust','awards.title1':'Recognized for','awards.title2':'excellence',
+'aw.y1':'Google Reviews · 2024','aw.t1':'4.9 / 5 Stars','aw.d1':'Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.',
+'aw.y2':'Barreau de Tanger','aw.t2':'Member in Good Standing','aw.d2':'11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association\'s professional standards.',
+'aw.y3':'Multilingual Practice','aw.t3':'4 Languages · International','aw.d3':'One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.',
+'aw.y4':'11 Years Track Record','aw.t4':'98% Success Rate','aw.d4':'A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.',
+'aw.y5':'Client Trust','aw.t5':'500+ Cases Resolved','aw.d5':'Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.',
+'aw.y6':'Pro Bono Commitment','aw.t6':'Access to Justice','aw.d6':'Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one\'s means.',
+'panel.biz.title':'Business','panel.biz.desc':'Tailored legal support and engineering to structure, develop and secure your business activities in Morocco and internationally.','panel.biz.cta':'Discover corporate offer →',
+'panel.ind.title':'Individuals','panel.ind.desc':'Rigorous defense of your civil and property rights, and human resolution of your private disputes with total attention.','panel.ind.cta':'Discover private offer →',
+'phil.title_prefix':'Law as a',
+'tl.label':'Career Milestones','tl.title1':'A career of','tl.title2':'conviction',
 },
 fr:{
 'nav.about':'Cabinet','nav.why':'Pourquoi','nav.domains':'Domaines','nav.process':'Processus','nav.testi':'Avis','nav.access':'Accès','nav.contact':'Contact',
@@ -3589,6 +3860,17 @@ fr:{
 'd.d7t':'Droit de la Famille','d.d8t':'Droit Foncier','d.d9t':'Droit du Travail','d.d10t':'Droit Civil','d.d11t':'Droit Bancaire','d.d12t':'Droit Administratif',
 'd.d7a':'Droit de la Famille','d.d8a':'Droit Foncier','d.d9a':'Droit du Travail','d.d10a':'Droit Civil','d.d11a':'Droit Bancaire','d.d12a':'Droit Administratif',
 'd.d7k':'Divorce • Garde d\'enfants • Pension alimentaire','d.d8k':'Achat • Vente • Copropriété • Transactions immobilières','d.d9k':'Licenciement • Indemnisation • Harcèlement • Contentieux','d.d10k':'Responsabilité • Obligations • Litiges quotidiens','d.d11k':'Litiges de crédit • Financement • Recouvrement','d.d12k':'Recours publics • Autorisations • Contentieux administratif',
+'d.d13t':'Droit de la Concurrence','d.d14t':'Droit de la Consommation','d.d15t':'Entreprises en Difficulté','d.d16t':'Droit Pénal',
+'d.d13a':'Droit de la Concurrence','d.d14a':'Droit de la Consommation','d.d15a':'Entreprises en Difficulté','d.d16a':'Droit Pénal',
+'d.d13k':'Pratiques anticoncurrentielles • Abus de position • Concurrence déloyale','d.d14k':'Protection du consommateur • Clauses abusives • Responsabilité produit','d.d15k':'Prévention • Sauvegarde • Redressement judiciaire • Liquidation','d.d16k':'Défense pénale • Contentieux pénal • Infractions économiques • Détention provisoire',
+'phil.label':'Philosophie Juridique','phil.titleem':'vocation',
+'phil.p1':'Le droit n\'est pas seulement un ensemble de règles — c\'est un instrument vivant de justice. Au cabinet de Maître Chafai, chaque affaire est abordée avec la conviction que <strong style="color:var(--gold)">le droit d\'un client est non négociable</strong>, et que la maîtrise juridique rigoureuse, combinée à une attention humaine sincère, produit les meilleurs résultats.',
+'phil.p2':'Ancré dans le droit marocain et enrichi par une recherche doctorale en cours en droit de la concurrence à la FSJES Fès, le cabinet opère à l\'intersection de la rigueur académique et de la pratique judiciaire — avec une constante : <strong style="color:var(--gold)">un engagement indéfectible envers vos intérêts</strong>.',
+'phil.quote':'« La force de ma défense se mesure à la confiance que vous me témoignez. »',
+'phil.c1t':'Analyse Rigoureuse','phil.c1p':'Chaque dossier fait l\'objet de recherches juridiques approfondies avant toute action. Aucun détail n\'est négligé — car la solidité d\'un dossier se construit dans la préparation.',
+'phil.c2t':'Réflexion Stratégique','phil.c2p':'Chaque situation juridique est unique. Le cabinet élabore une stratégie sur mesure — anticipant les mouvements adverses et positionnant vos intérêts pour le meilleur résultat possible.',
+'phil.c3t':'Communication Transparente','phil.c3p':'Vous êtes informé à chaque étape. La complexité juridique est traduite en langage clair et honnête — car vous méritez de comprendre exactement où en est votre affaire.',
+'phil.c4t':'Intégrité Éthique','phil.c4p':'Lié par la déontologie du Barreau de Tanger, le cabinet respecte les normes professionnelles les plus élevées — votre confiance est à la fois méritée et préservée.',
 'process.label':'Notre Processus','process.title1':'Comment nous','process.title2':'vous <em>accompagnons</em>',
 'p.s1t':'Consultation','p.s1p':'Premier échange pour comprendre votre situation, analyser vos besoins et définir une stratégie.',
 'p.s2t':'Analyse','p.s2p':'Étude approfondie de votre dossier, recherche juridique et élaboration de la stratégie.',
@@ -3615,7 +3897,18 @@ fr:{
 'faq.q3':'Ma consultation est-elle confidentielle ?','faq.a3':'Absolument. Chaque dossier est traité dans le respect strict du secret professionnel, conformément à la déontologie du Barreau de Tanger — votre confidentialité est pleinement garantie.',
 'faq.q4':'Comment vos honoraires sont-ils fixés ?','faq.a4':'Les honoraires dépendent de la complexité, de l\'urgence et de la nature de chaque affaire. Tout est expliqué en toute transparence dès le premier entretien, sans frais cachés.',
 'faq.q5':'Traitez-vous des dossiers hors de Tanger ?','faq.a5':'Oui. Le cabinet représente des clients partout au Maroc et peut accompagner à distance une clientèle internationale pour des affaires transfrontalières.',
-'footer.tag':'« Votre droit, notre priorité »','tl.y1':'2012','tl.t1':'Master en Droit des Affaires','tl.p1':'Diplômé d\'un Master en Droit des Affaires à la FSJES Fès — fondation académique d\'une carrière dédiée à l\'excellence juridique.','tl.y2':'2013','tl.t2':'Recherche Avancée en Droit des Sociétés','tl.p2':'Recherches approfondies en droit des sociétés à la FSJES Fès, renforçant l\'expertise en structures d\'entreprise et en gouvernance.','tl.y3':'2015','tl.t3':'Admission au Barreau de Tanger','tl.p3':'Admis au Barreau de Tanger — début de la pratique active en tant qu\'avocat inscrit, défendant particuliers et entreprises devant tous les tribunaux du Maroc.','tl.y4':'2020','tl.t4':'Doctorant en Droit de la Concurrence','tl.p4':'Inscrit en doctorat de droit de la concurrence à la FSJES Fès, alliant recherche académique et pratique judiciaire active.','tl.y5':'Aujourd\'hui','tl.t5':'Pratique Active · Barreau de Tanger','tl.p5':'Avocat en exercice au Barreau de Tanger, combinant recherche doctorale en droit de la concurrence et plaidoirie — rigueur académique et stratégie au service de chaque client.','hero.scale.left':'BARREAU DE TANGER — 2025','hero.scale.right':'DROIT · JUSTICE · VÉRITÉ','footer.cr':'Tous droits réservés',
+'footer.tag':'« Votre droit, notre priorité »','tl.y1':'2012','featured.quote':'Chaque mandat est un engagement. Chaque engagement, une question d\'honneur.','tl.t1':'Master en Droit des Affaires','tl.p1':'Diplômé d\'un Master en Droit des Affaires à la FSJES Fès — fondation académique d\'une carrière dédiée à l\'excellence juridique.','tl.y2':'2013','tl.t2':'Recherche Avancée en Droit des Sociétés','tl.p2':'Recherches approfondies en droit des sociétés à la FSJES Fès, renforçant l\'expertise en structures d\'entreprise et en gouvernance.','tl.y3':'2015','tl.t3':'Admission au Barreau de Tanger','tl.p3':'Admis au Barreau de Tanger — début de la pratique active en tant qu\'avocat inscrit, défendant particuliers et entreprises devant tous les tribunaux du Maroc.','tl.y4':'2020','tl.t4':'Doctorant en Droit de la Concurrence','tl.p4':'Inscrit en doctorat de droit de la concurrence à la FSJES Fès, alliant recherche académique et pratique judiciaire active.','tl.y5':'Aujourd\'hui','tl.t5':'Pratique Active · Barreau de Tanger','tl.p5':'Avocat en exercice au Barreau de Tanger, combinant recherche doctorale en droit de la concurrence et plaidoirie — rigueur académique et stratégie au service de chaque client.','hero.scale.left':'BARREAU DE TANGER — 2025','hero.scale.right':'DROIT · JUSTICE · VÉRITÉ','footer.cr':'Tous droits réservés',
+'awards.label':'Reconnaissance & Confiance','awards.title1':'Reconnu pour','awards.title2':'l\'excellence',
+'aw.y1':'Google Reviews · 2024','aw.t1':'4,9 / 5 Étoiles','aw.d1':'Plus de 220 avis clients vérifiés sur Google, témoignant d\'une excellence constante en représentation juridique.',
+'aw.y2':'Barreau de Tanger','aw.t2':'Membre en règle','aw.d2':'11 ans de pratique éthique et rigoureuse, en pleine conformité avec les standards déontologiques du Barreau de Tanger.',
+'aw.y3':'Pratique Multilingue','aw.t3':'4 Langues · International','aw.d3':'L\'un des rares cabinets du nord du Maroc capable de représenter des clients en arabe, français, anglais et espagnol.',
+'aw.y4':'11 Ans de Résultats','aw.t4':'98 % de Succès','aw.d4':'Un bilan constant de résultats positifs dans 12 domaines juridiques — construit dossier par dossier, client par client.',
+'aw.y5':'Confiance Client','aw.t5':'500+ Dossiers Résolus','aw.d5':'Des centaines de particuliers et d\'entreprises ont confié à Maître Chafai leurs affaires juridiques les plus délicates.',
+'aw.y6':'Engagement Pro Bono','aw.t6':'Accès à la Justice','aw.d6':'Engagé à rendre la représentation juridique de qualité accessible — parce que le droit à une défense solide ne devrait pas dépendre des moyens.',
+'panel.biz.title':'Entreprises','panel.biz.desc':'Accompagnement juridique sur mesure pour structurer, développer et sécuriser vos activités au Maroc et à l\'international.','panel.biz.cta':'Découvrir l\'offre entreprises →',
+'panel.ind.title':'Particuliers','panel.ind.desc':'Défense rigoureuse de vos droits civils et patrimoniaux, résolution humaine de vos litiges privés avec une attention totale.','panel.ind.cta':'Découvrir l\'offre particuliers →',
+'phil.title_prefix':'Le droit comme',
+'tl.label':'Jalons de Carrière','tl.title1':'Une carrière de','tl.title2':'conviction',
 },
 ar:{
 'nav.about':'عن المكتب','nav.why':'لماذا نحن','nav.domains':'المجالات','nav.process':'الخطوات','nav.testi':'التقييمات','nav.access':'الوصول','nav.contact':'اتصل بنا',
@@ -3652,6 +3945,17 @@ ar:{
 'd.d7t':'قانون الأسرة','d.d8t':'القانون العقاري','d.d9t':'قانون الشغل','d.d10t':'القانون المدني','d.d11t':'القانون البنكي','d.d12t':'القانون الإداري',
 'd.d7a':'قانون الأسرة','d.d8a':'القانون العقاري','d.d9a':'قانون الشغل','d.d10a':'القانون المدني','d.d11a':'القانون البنكي','d.d12a':'القانون الإداري',
 'd.d7k':'طلاق • حضانة الأطفال • نفقة','d.d8k':'شراء • بيع • ملكية مشتركة • معاملات عقارية','d.d9k':'طرد • تعويضات • تحرش • نزاعات','d.d10k':'مسؤولية • التزامات • نزاعات يومية','d.d11k':'نزاعات الائتمان • تمويل • استرداد الديون','d.d12k':'طعون عامة • تراخيص • منازعات إدارية',
+'d.d13t':'قانون المنافسة','d.d14t':'قانون الاستهلاك','d.d15t':'قانون صعوبات المقاولة','d.d16t':'القانون الجنائي',
+'d.d13a':'قانون المنافسة','d.d14a':'قانون الاستهلاك','d.d15a':'قانون صعوبات المقاولة','d.d16a':'القانون الجنائي',
+'d.d13k':'ممارسات منافية للمنافسة • إساءة استخدام الهيمنة • منافسة غير مشروعة','d.d14k':'حماية المستهلك • بنود تعسفية • مسؤولية المنتج','d.d15k':'وقاية • تسوية • إنقاذ قضائي • تصفية','d.d16k':'دفاع جنائي • منازعات جنائية • جرائم اقتصادية • اعتقال احتياطي',
+'phil.label':'الفلسفة القانونية','phil.titleem':'رسالة',
+'phil.p1':'القانون ليس مجرد مجموعة من القواعد — بل هو أداة حية للعدالة. في مكتب الأستاذ الشافعي، تُعالج كل قضية بقناعة راسخة بأن <strong style="color:var(--gold)">حق الموكل غير قابل للتفاوض</strong>، وأن الإتقان القانوني الصارم، مقرونًا بالاهتمام الإنساني الحقيقي، يُفضي إلى أفضل النتائج.',
+'phil.p2':'متجذر في القانون المغربي ومُغتنٍ بالبحث الدكتوري الجاري في قانون المنافسة بكلية الحقوق بفاس، يعمل المكتب عند تقاطع الصرامة الأكاديمية والممارسة القضائية — مع ثابت واحد: <strong style="color:var(--gold)">الالتزام الراسخ بمصالحكم</strong>.',
+'phil.quote':'« تُقاس قوة دفاعي بمقدار الثقة التي تمنحونني إياها. »',
+'phil.c1t':'تحليل دقيق','phil.c1p':'تخضع كل قضية لبحث قانوني شامل قبل اتخاذ أي إجراء. لا يُترك حجر دون قلبه — لأن قوة القضية تُبنى في مرحلة الإعداد.',
+'phil.c2t':'تفكير استراتيجي','phil.c2p':'كل وضع قانوني فريد. يضع المكتب استراتيجية مخصصة — يستبق فيها تحركات الخصم ويضع مصالحكم في أفضل موقع ممكن.',
+'phil.c3t':'تواصل شفاف','phil.c3p':'أنتم على علم في كل مرحلة. يُترجَم التعقيد القانوني إلى لغة واضحة وصادقة — لأنكم تستحقون أن تعرفوا بالضبط أين تقف قضيتكم.',
+'phil.c4t':'نزاهة أخلاقية','phil.c4p':'ملتزم بأخلاقيات هيئة المحامين بطنجة، يرتكز المكتب على أعلى معايير السلوك المهني — ثقتكم مكتسبة ومصونة في آنٍ واحد.',
 'process.label':'خطواتنا','process.title1':'كيف','process.title2':'<em>نرافقكم</em>',
 'p.s1t':'استشارة','p.s1p':'تبادل أولي لفهم وضعيتك، تحليل احتياجاتك وتحديد استراتيجية.',
 'p.s2t':'تحليل','p.s2p':'دراسة معمقة لملفك، بحث قانوني وصياغة استراتيجية الدفاع.',
@@ -3678,7 +3982,20 @@ ar:{
 'faq.q3':'هل استشارتي سرية؟','faq.a3':'بكل تأكيد. تتم معالجة كل ملف في إطار سرية مهنية صارمة وفقاً لأخلاقيات هيئة المحامين بطنجة — خصوصيتكم محفوظة تماماً.',
 'faq.q4':'كيف يتم تحديد أتعابكم؟','faq.a4':'تعتمد الأتعاب على درجة تعقيد القضية وطبيعتها وإلحاحيتها. يتم توضيح كل شيء بشفافية خلال الاستشارة الأولى دون أي تكاليف مخفية.',
 'faq.q5':'هل تتعاملون مع قضايا خارج طنجة؟','faq.a5':'نعم. يمثل المكتب الزبناء في جميع أنحاء المغرب ويمكنه مساعدة الزبناء بالخارج عن بعد في القضايا الدولية.',
-'footer.tag':'« حقك، أولويتنا »','footer.cr':'جميع الحقوق محفوظة',
+'footer.tag':'« حقك، أولويتنا »','footer.cr':'جميع الحقوق محفوظة','featured.quote':'كل تفويض التزام. وكل التزام مسألة شرف.',
+'tl.label':'محطات المسيرة','tl.title1':'مسيرة','tl.title2':'ملتزمة',
+'tl.y1':'2012','tl.t1':'ماستر في قانون الأعمال','tl.p1':'حصل على ماستر في قانون الأعمال من كلية الحقوق والعلوم الاقتصادية بفاس — الأساس الأكاديمي لمسيرة في القانون التجاري والشركات.','tl.y2':'2013','tl.t2':'بحث متقدم في قانون الشركات','tl.p2':'متابعة بحث متقدم في قانون الشركات بكلية الحقوق بفاس، مع تعميق الخبرة في الهياكل التجارية والحوكمة.','tl.y3':'2015','tl.t3':'الالتحاق بهيئة محامين طنجة','tl.p3':'الانخراط في هيئة محامين طنجة — بداية الممارسة الفعلية كمحامٍ مرخص للدفاع عن حقوق الأفراد والشركات أمام جميع محاكم المغرب.','tl.y4':'2020','tl.t4':'باحث دكتوراه في قانون المنافسة','tl.p4':'الالتحاق بالدكتوراه في قانون المنافسة بكلية الحقوق بفاس، مع الجمع بين البحث الأكاديمي والممارسة القضائية.','tl.y5':'اليوم','tl.t5':'ممارسة نشطة · هيئة محامين طنجة','tl.p5':'محامٍ نشط بهيئة محامين طنجة، يجمع بين البحث الدكتوري في قانون المنافسة والمرافعة أمام المحاكم — صرامة أكاديمية واستراتيجية في خدمة كل موكل.','hero.scale.left':'هيئة المحامين بطنجة — 2025','hero.scale.right':'القانون · العدل · الحق','featured.quote':'كل تفويض التزام. وكل التزام مسألة شرف.',
+'awards.label':'تكريم وثقة','awards.title1':'معترف به من أجل','awards.title2':'التميز',
+'aw.y1':'تقييمات Google · 2024','aw.t1':'4.9 / 5 نجوم','aw.d1':'أكثر من 220 تقييم موثق على Google، يعكس تميزاً مستمراً في التمثيل القانوني وخدمة الموكلين.',
+'aw.y2':'هيئة المحامين بطنجة','aw.t2':'عضو نشط ومنتظم','aw.d2':'11 عاماً من الممارسة الأخلاقية الصارمة وفق معايير هيئة المحامين بطنجة.',
+'aw.y3':'ممارسة متعددة اللغات','aw.t3':'4 لغات · دولي','aw.d3':'من النادر في شمال المغرب تقديم خدمات قانونية بالعربية والفرنسية والإنجليزية والإسبانية في آنٍ واحد.',
+'aw.y4':'11 عاماً من الإنجازات','aw.t4':'98% نسبة النجاح','aw.d4':'سجل ثابت من النتائج الإيجابية في 12 مجالاً قانونياً، بُني قضية بقضية وموكلاً بموكل.',
+'aw.y5':'ثقة الموكلين','aw.t5':'500+ قضية محلولة','aw.d5':'مئات الأفراد والشركات وثقوا بالأستاذ الشافعي لتسيير قضاياهم القانونية الأكثر حساسية.',
+'aw.y6':'التزام بالمساعدة القانونية','aw.t6':'الوصول إلى العدالة','aw.d6':'ملتزم بجعل التمثيل القانوني الجيد في متناول الجميع — لأن الحق في الدفاع لا ينبغي أن يرتبط بالإمكانيات.',
+'panel.biz.title':'الشركات','panel.biz.desc':'مرافقة قانونية متكاملة لهيكلة أعمالكم وتطويرها وتأمينها في المغرب وعلى الصعيد الدولي.','panel.biz.cta':'اكتشف عرض الشركات ←',
+'panel.ind.title':'الأفراد','panel.ind.desc':'دفاع صارم عن حقوقكم المدنية والعقارية، وحل إنساني لنزاعاتكم الخاصة باهتمام كامل.','panel.ind.cta':'اكتشف عرض الأفراد ←',
+'phil.title_prefix':'القانون بوصفه',
+'tl.label':'محطات المسيرة','tl.title1':'مسيرة','tl.title2':'ملتزمة',
 },
 es:{
 'nav.about':'Despacho','nav.why':'Por Qué','nav.domains':'Áreas','nav.process':'Proceso','nav.testi':'Opiniones','nav.access':'Acceso','nav.contact':'Contacto',
@@ -3715,6 +4032,17 @@ es:{
 'd.d7t':'Derecho de Familia','d.d8t':'Derecho Inmobiliario','d.d9t':'Derecho Laboral','d.d10t':'Derecho Civil','d.d11t':'Derecho Bancario','d.d12t':'Derecho Administrativo',
 'd.d7a':'Derecho de Familia','d.d8a':'Derecho Inmobiliario','d.d9a':'Derecho Laboral','d.d10a':'Derecho Civil','d.d11a':'Derecho Bancario','d.d12a':'Derecho Administrativo',
 'd.d7k':'Divorcio • Custodia de hijos • Pensión alimenticia','d.d8k':'Compra • Venta • Copropiedad • Transacciones inmobiliarias','d.d9k':'Despido • Indemnización • Acoso • Litigios','d.d10k':'Responsabilidad • Obligaciones • Disputas cotidianas','d.d11k':'Disputas de crédito • Financiamiento • Recuperación de deudas','d.d12k':'Recursos públicos • Permisos • Litigios administrativos',
+'d.d13t':'Derecho de la Competencia','d.d14t':'Derecho del Consumidor','d.d15t':'Empresas en Dificultad','d.d16t':'Derecho Penal',
+'d.d13a':'Derecho de la Competencia','d.d14a':'Derecho del Consumidor','d.d15a':'Empresas en Dificultad','d.d16a':'Derecho Penal',
+'d.d13k':'Prácticas anticompetitivas • Abuso de posición • Competencia desleal','d.d14k':'Protección al consumidor • Cláusulas abusivas • Responsabilidad del producto','d.d15k':'Prevención • Salvaguarda • Recuperación judicial • Liquidación','d.d16k':'Defensa penal • Litigios penales • Delitos económicos • Detención provisional',
+'phil.label':'Filosofía Jurídica','phil.titleem':'vocación',
+'phil.p1':'La ley no es meramente un conjunto de normas — es un instrumento vivo de justicia. En el despacho de Maître Chafai, cada caso se aborda con la convicción de que <strong style="color:var(--gold)">el derecho de un cliente es innegociable</strong>, y que el dominio jurídico riguroso, combinado con una atención humana genuina, produce los mejores resultados.',
+'phil.p2':'Arraigado en el derecho marroquí y enriquecido por una investigación doctoral en curso en derecho de la competencia en la FSJES Fès, el despacho opera en la intersección del rigor académico y la práctica judicial — con una constante: <strong style="color:var(--gold)">un compromiso inquebrantable con sus intereses</strong>.',
+'phil.quote':'« La fortaleza de mi defensa se mide por la confianza que deposita en mí. »',
+'phil.c1t':'Análisis Riguroso','phil.c1p':'Cada expediente recibe una investigación jurídica exhaustiva antes de emprender cualquier acción. No se deja ningún detalle sin examinar — porque la solidez de un caso se construye en la preparación.',
+'phil.c2t':'Pensamiento Estratégico','phil.c2p':'Cada situación jurídica es única. El despacho elabora una estrategia a medida — anticipando los movimientos del adversario y posicionando sus intereses para el mejor resultado posible.',
+'phil.c3t':'Comunicación Transparente','phil.c3p':'Usted es informado en cada etapa. La complejidad jurídica se traduce en un lenguaje claro y honesto — porque merece entender exactamente en qué punto se encuentra su caso.',
+'phil.c4t':'Integridad Ética','phil.c4p':'Vinculado por la ética del Colegio de Abogados de Tánger, el despacho mantiene los más altos estándares de conducta profesional — su confianza es ganada y protegida a la vez.',
 'process.label':'Nuestro Proceso','process.title1':'Cómo le','process.title2':'<em>acompañamos</em>',
 'p.s1t':'Consulta','p.s1p':'Primer intercambio para entender su situación, analizar sus necesidades y definir una estrategia.',
 'p.s2t':'Análisis','p.s2p':'Estudio profundo de su expediente, investigación legal y elaboración de la estrategia.',
@@ -3741,7 +4069,13 @@ es:{
 'faq.q3':'¿Es confidencial mi consulta?','faq.a3':'Por supuesto. Cada expediente se trata bajo estricto secreto profesional conforme a la deontología del Colegio de Abogados de Tánger — su privacidad está totalmente garantizada.',
 'faq.q4':'¿Cómo se determinan sus honorarios?','faq.a4':'Los honorarios dependen de la complejidad, urgencia y naturaleza de cada caso. Todo se explica con transparencia durante la primera consulta, sin costos ocultos.',
 'faq.q5':'¿Atienden casos fuera de Tánger?','faq.a5':'Sí. El despacho representa a clientes en todo Marruecos y puede asistir a clientes en el extranjero de forma remota para asuntos internacionales.',
-  'footer.tag':'« Sus derechos, nuestra prioridad »','footer.cr':'Todos los derechos reservados',
+  'footer.tag':'« Sus derechos, nuestra prioridad »','footer.cr':'Todos los derechos reservados','featured.quote':'Cada mandato es un compromiso. Cada compromiso, una cuestión de honor.',
+'awards.label':'Reconocimiento y Confianza','awards.title1':'Reconocido por','awards.title2':'la excelencia',
+'tl.y1':'2012','tl.t1':'Máster en Derecho Mercantil','tl.p1':'Graduado con un Máster en Derecho Mercantil por la FSJES Fès — base académica para una carrera dedicada a la excelencia jurídica empresarial.','tl.y2':'2013','tl.t2':'Investigación Avanzada en Derecho Societario','tl.p2':'Investigación avanzada en derecho societario en la FSJES Fès, profundizando en estructuras empresariales, gobernanza y regulación comercial.','tl.y3':'2015','tl.t3':'Admisión al Colegio de Abogados de Tánger','tl.p3':'Admitido en el Barreau de Tanger — inicio de la práctica activa como abogado colegiado, defendiendo los derechos de particulares y empresas en todos los tribunales de Marruecos.','tl.y4':'2020','tl.t4':'Investigador Doctoral en Derecho de la Competencia','tl.p4':'Inscrito como investigador doctoral en Derecho de la Competencia en la FSJES Fès, combinando investigación académica rigurosa con práctica judicial activa.','tl.y5':'Hoy','tl.t5':'Práctica Activa · Colegio de Tánger','tl.p5':'Abogado en ejercicio en el Colegio de Abogados de Tánger, combinando investigación doctoral en derecho de la competencia con litigación — rigor académico y estrategia al servicio de cada cliente.','hero.scale.left':'COLEGIO DE TÁNGER — 2025','hero.scale.right':'DERECHO · JUSTICIA · VERDAD','featured.quote':'Cada mandato es un compromiso. Cada compromiso, una cuestión de honor.',
+'panel.biz.title':'Empresas','panel.biz.desc':'Apoyo jurídico personalizado para estructurar, desarrollar y asegurar sus actividades en Marruecos e internacionalmente.','panel.biz.cta':'Descubrir la oferta empresas →',
+'panel.ind.title':'Particulares','panel.ind.desc':'Defensa rigurosa de sus derechos civiles y patrimoniales, y resolución humana de sus litigios privados con plena atención.','panel.ind.cta':'Descubrir la oferta particulares →',
+'phil.title_prefix':'El derecho como',
+'tl.label':'Hitos de Carrera','tl.title1':'Una carrera de','tl.title2':'convicción',
 }};
 function applyLang(lang){
 localStorage.setItem('lang',lang);
@@ -3812,20 +4146,6 @@ function imgFallback(img,mono,icon,sub){
   document.addEventListener('mouseout',e=>{const to=e.relatedTarget;if(e.target.closest(hoverSel)&&!(to&&to.closest&&to.closest(hoverSel)))document.body.classList.remove('cursor-hover')});
 })();
 
-// Magnetic pull effect for primary buttons
-(function(){
-  if(window.matchMedia('(pointer:coarse)').matches)return;
-  document.querySelectorAll('.btn-mag').forEach(mag=>{
-    const inner=mag.querySelector('a,button');
-    mag.addEventListener('mousemove',e=>{
-      const r=mag.getBoundingClientRect();
-      const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
-      mag.style.transform=`translate(${x*.25}px,${y*.25}px)`;
-      if(inner)inner.style.transform=`translate(${x*.15}px,${y*.15}px)`;
-    });
-    mag.addEventListener('mouseleave',()=>{mag.style.transform='';if(inner)inner.style.transform=''});
-  });
-})();
 
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item=>{
@@ -3896,7 +4216,7 @@ window.addEventListener('resize',()=>{document.querySelectorAll('.faq-item.open 
       grd.addColorStop(1,'rgba(201,168,76,0)');
       ctx.fillStyle=grd;
       ctx.beginPath();
-      ctx.arc(nodes[i].x,nodes[i].y,nodes[i].r*3,0,Math.PI*2);
+      ctx.arc(nodes[i].x,nodes[i].y,Math.max(0.1,nodes[i].r*3),0,Math.PI*2);
       ctx.fill();
     }
     requestAnimationFrame(draw);
@@ -3979,42 +4299,9 @@ document.querySelectorAll('.award-item').forEach(item=>{
 
 
 
-// === MAGNETIC BUTTON EFFECTS ===
-(function(){
-  const buttons = document.querySelectorAll('.btn-p, .btn-s, .btn-mag, .btn-wow');
-  
-  buttons.forEach(btn => {
-    btn.classList.add('magnetic-btn');
-    
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
-})();
-
 // === RIPPLE EFFECT ON CLICK ===
 (function(){
-  document.addEventListener('click', (e) => {
-    if(e.target.closest('.btn-p, .btn-s, .btn-mag, .card-3d, .why-card, .sub-expertise-card')) {
-      const ripple = document.createElement('div');
-      ripple.className = 'ripple';
-      ripple.style.left = e.clientX + 'px';
-      ripple.style.top = e.clientY + 'px';
-      ripple.style.width = '100px';
-      ripple.style.height = '100px';
-      document.body.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 800);
-    }
-  });
+  // ripple disabled
 })();
 
 // === ENHANCED PARALLAX ON SCROLL ===
@@ -4277,5 +4564,1389 @@ document.querySelectorAll('.award-item').forEach(item=>{
   #reviewsTrack { animation: none !important; }
 }
 </style>
+
+<!-- ============================================================
+     ██╗    ██╗ ██████╗ ██╗    ██╗    ███████╗███╗   ██╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗███████╗
+     ██║    ██║██╔═══██╗██║    ██║    ██╔════╝████╗  ██║██║  ██║██╔══██╗████╗  ██║██╔════╝██╔════╝
+     ██║ █╗ ██║██║   ██║██║ █╗ ██║    █████╗  ██╔██╗ ██║███████║███████║██╔██╗ ██║██║     █████╗
+     ██║███╗██║██║   ██║██║███╗██║    ██╔══╝  ██║╚██╗██║██╔══██║██╔══██║██║╚██╗██║██║     ██╔══╝
+     ╚███╔███╔╝╚██████╔╝╚███╔███╔╝    ███████╗██║ ╚████║██║  ██║██║  ██║██║ ╚████║╚██████╗███████╗
+      ╚══╝╚══╝  ╚═════╝  ╚══╝╚══╝    ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝
+     WOW ENHANCEMENT PACK — Mind-blowing additions
+     ============================================================ -->
+
+<style>
+/* =============================================
+   1. DIVINE LIGHT AURORA — HERO OVERLAY
+   ============================================= */
+#aurora-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora-beam {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  animation: auroraMove 12s ease-in-out infinite;
+}
+.aurora-beam:nth-child(1) {
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.22) 0%, rgba(232,201,122,0.08) 50%, transparent 80%);
+  top: -200px; left: -200px;
+  animation-delay: 0s; animation-duration: 14s;
+}
+.aurora-beam:nth-child(2) {
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(245,232,192,0.15) 0%, rgba(201,168,76,0.06) 50%, transparent 80%);
+  bottom: -100px; right: -100px;
+  animation-delay: -5s; animation-duration: 18s;
+}
+.aurora-beam:nth-child(3) {
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse, rgba(160,120,48,0.18) 0%, transparent 70%);
+  top: 30%; left: 40%;
+  animation-delay: -9s; animation-duration: 11s;
+}
+@keyframes auroraMove {
+  0%,100% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.7; }
+  25%      { transform: translate(80px,-60px) scale(1.1) rotate(5deg); opacity: 1; }
+  50%      { transform: translate(-40px,80px) scale(0.9) rotate(-3deg); opacity: 0.5; }
+  75%      { transform: translate(60px,40px) scale(1.05) rotate(8deg); opacity: 0.9; }
+}
+
+/* =============================================
+   2. HERO SCANLINE CINEMATIC OVERLAY
+   ============================================= */
+#scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  animation: scanlineShift 8s linear infinite;
+}
+@keyframes scanlineShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+/* =============================================
+   3. MASSIVE SVG BACKGROUND ORNAMENT
+   ============================================= */
+#ornament-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110vmax;
+  height: 110vmax;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.028;
+  animation: ornBgSpin 120s linear infinite;
+}
+@keyframes ornBgSpin { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
+
+/* =============================================
+   4. SECTION MAGIC LINE — glowing horizontal line that reveals on scroll
+   ============================================= */
+.section-magic-line {
+  position: relative;
+  overflow: visible;
+  margin: 0;
+}
+.section-magic-line::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold2), var(--gold), var(--gold2), transparent);
+  box-shadow: 0 0 30px rgba(201,168,76,0.6), 0 0 80px rgba(201,168,76,0.3);
+  transition: width 1.8s cubic-bezier(.25,1,.5,1);
+  z-index: 10;
+}
+.section-magic-line.line-on::before { width: 100%; }
+
+/* =============================================
+   5. LIQUID GOLD TEXT EFFECT — for main name
+   ============================================= */
+.liquid-gold {
+  background: linear-gradient(
+    135deg,
+    #c8a84b 0%,
+    #f5e8c0 15%,
+    #e8c97a 30%,
+    #a07830 45%,
+    #f7e9b0 60%,
+    #c9a84c 75%,
+    #f5e8c0 90%,
+    #c8a84b 100%
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: liquidFlow 6s ease infinite;
+}
+@keyframes liquidFlow {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* =============================================
+   6. PARTICLE CONSTELLATION ENHANCED
+   ============================================= */
+#constellation-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* =============================================
+   7. MAGNETIC HOVER ZONES
+   ============================================= */
+.mag-zone {
+  position: relative;
+  display: inline-block;
+}
+.mag-zone-inner {
+  transition: transform 0.4s cubic-bezier(.25,1,.5,1);
+  display: inline-block;
+}
+
+/* =============================================
+   8. MORPHING GOLD BORDER CARDS
+   ============================================= */
+.morph-card {
+  position: relative;
+  background: var(--dark2);
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(.25,1,.5,1), box-shadow 0.6s;
+}
+.morph-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(201,168,76,0.4) 60deg,
+    transparent 120deg,
+    rgba(232,201,122,0.2) 180deg,
+    transparent 240deg,
+    rgba(201,168,76,0.3) 300deg,
+    transparent 360deg
+  );
+  border-radius: inherit;
+  animation: morphBorder 8s linear infinite;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  padding: 1px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+.morph-card:hover::before { opacity: 1; }
+@keyframes morphBorder {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.morph-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.12);
+}
+
+/* hero-svg-scales disabled per user request */
+#hero-svg-scales { display: none !important; }
+@keyframes scaleFloat {
+  0%,100% { transform: translate(-50%,-50%) scale(1) rotate(0deg); }
+  50%      { transform: translate(-50%,-50%) scale(1.04) rotate(3deg); }
+}
+
+/* =============================================
+   10. GLITCH NAME EFFECT (ENHANCED)
+   ============================================= */
+.ultra-glitch {
+  position: relative;
+  display: inline-block;
+}
+.ultra-glitch::before,
+.ultra-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+.ultra-glitch::before {
+  color: rgba(201,168,76,0.5);
+  animation: ultraGlitchA 6s infinite;
+  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+}
+.ultra-glitch::after {
+  color: rgba(232,201,122,0.3);
+  animation: ultraGlitchB 6s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%);
+}
+@keyframes ultraGlitchA {
+  0%,92%,100% { transform: translateX(0); opacity: 0; }
+  93% { transform: translateX(-4px); opacity: 1; }
+  95% { transform: translateX(4px); opacity: 1; }
+  97% { transform: translateX(-2px); opacity: 0.5; }
+  99% { transform: translateX(0); opacity: 0; }
+}
+@keyframes ultraGlitchB {
+  0%,93%,100% { transform: translateX(0); opacity: 0; }
+  94% { transform: translateX(4px); opacity: 1; }
+  96% { transform: translateX(-3px); opacity: 1; }
+  98% { transform: translateX(2px); opacity: 0.5; }
+}
+
+/* =============================================
+   11. LIGHT RAY BURST on Hero
+   ============================================= */
+#light-rays {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.light-ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(201,168,76,0.3), transparent);
+  transform-origin: top center;
+  animation: rayPulse 4s ease-in-out infinite;
+  filter: blur(1px);
+  opacity: 0;
+}
+@keyframes rayPulse {
+  0%,100% { opacity: 0; height: 0; }
+  20%      { opacity: 0.4; height: 60vh; }
+  80%      { opacity: 0.15; height: 80vh; }
+}
+
+/* =============================================
+   12. SUPER STATS COUNTER GLOW
+   ============================================= */
+.hcount-num {
+  position: relative;
+  transition: text-shadow 0.4s;
+}
+.hcount-num.counting {
+  text-shadow: 0 0 30px rgba(201,168,76,0.6), 0 0 60px rgba(201,168,76,0.3);
+  animation: countGlow 0.1s ease-in-out;
+}
+@keyframes countGlow {
+  0%   { filter: brightness(2); }
+  100% { filter: brightness(1); }
+}
+
+/* =============================================
+   13. SCROLL TRIGGER FLASH
+   ============================================= */
+.section-flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.06), transparent);
+  transition: opacity 1s ease;
+}
+.section-flash.active { opacity: 1; }
+
+/* =============================================
+   14. HERO BOTTOM VIGNETTE ENHANCEMENT
+   ============================================= */
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, var(--noir));
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* =============================================
+   15. FLOATING GOLDEN SYMBOLS
+   ============================================= */
+.gold-float-symbol {
+  position: fixed;
+  font-size: 10px;
+  color: var(--gold);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  font-family: 'Cinzel', serif;
+  animation: floatUp 2s ease-out forwards;
+  text-shadow: 0 0 10px rgba(201,168,76,0.8);
+}
+@keyframes floatUp {
+  0%   { opacity: 0.8; transform: translateY(0) scale(1); }
+  100% { opacity: 0;   transform: translateY(-80px) scale(0.6); }
+}
+
+/* =============================================
+   16. ANIMATED ORNAMENT LINE (BETWEEN SECTIONS)
+   ============================================= */
+.wow-divider {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 2;
+}
+.wow-divider-svg {
+  width: 300px;
+  height: 30px;
+  opacity: 0.4;
+}
+
+/* =============================================
+   17. ABOUT SECTION — IMAGE TILT ON SCROLL
+   ============================================= */
+.about-right {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* =============================================
+   18. MENU LINK GOLD TRAIL
+   ============================================= */
+.nlinks a:hover .nlink-line {
+  box-shadow: 0 0 8px rgba(201,168,76,0.8);
+}
+
+/* =============================================
+   19. FOOTER STARS
+   ============================================= */
+#footer-stars {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.fstar {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: fstarBlink var(--dur, 3s) var(--del, 0s) ease-in-out infinite;
+}
+@keyframes fstarBlink {
+  0%,100% { opacity: 0; transform: scale(0); }
+  50%      { opacity: 0.4; transform: scale(1.5); }
+}
+
+/* =============================================
+   20. CURSOR TRAIL ENHANCED
+   ============================================= */
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  pointer-events: none;
+  z-index: 8999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: trailFade 0.8s ease-out forwards;
+}
+@keyframes trailFade {
+  0%   { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%,-50%) scale(0.2); }
+}
+
+/* =============================================
+   21. BACKGROUND GRID REVEAL
+   ============================================= */
+.grid-reveal-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  background-image: 
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-visible .grid-reveal-bg { opacity: 1; }
+
+/* =============================================
+   22. GLOWING NAV LOGO PULSE
+   ============================================= */
+.nlogo:hover .logo-gold {
+  filter: drop-shadow(0 0 12px rgba(201,168,76,0.8));
+}
+
+/* =============================================
+   23. WHY CARD ENHANCED ICON RINGS
+   ============================================= */
+.why-card-icon-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0);
+  transition: border-color 0.4s, transform 0.4s;
+}
+.why-card:hover .why-card-icon-ring {
+  border-color: rgba(201,168,76,0.2);
+  transform: scale(1.2);
+}
+
+/* =============================================
+   24. HERO TITLE BREATHING GLOW
+   ============================================= */
+.htitle {
+  animation: aup 1.2s .5s forwards, titleBreathe 6s 2s ease-in-out infinite !important;
+}
+@keyframes titleBreathe {
+  0%,100% { text-shadow: 0 0 40px rgba(201,168,76,0.08); }
+  50%      { text-shadow: 0 0 80px rgba(201,168,76,0.22), 0 0 120px rgba(232,201,122,0.1); }
+}
+
+/* =============================================
+   25. SECTIONS PARALLAX SUBTLE BG
+   ============================================= */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Mobile: disable heavy effects */
+@media (max-width: 768px) {
+  #ornament-bg, #light-rays, #aurora-hero { display: none; }
+  .ultra-glitch::before, .ultra-glitch::after { display: none; }
+  #footer-stars { display: none; }
+}
+</style>
+
+<!-- HERO ENHANCEMENTS HTML -->
+<script>
+(function() {
+  // === AURORA BEAMS IN HERO ===
+  const hero = document.getElementById('hero');
+  if (hero) {
+    const aurora = document.createElement('div');
+    aurora.id = 'aurora-hero';
+    aurora.innerHTML = '<div class="aurora-beam"></div><div class="aurora-beam"></div><div class="aurora-beam"></div>';
+    hero.insertBefore(aurora, hero.firstChild);
+
+    // Scanlines
+    const scan = document.createElement('div');
+    scan.id = 'scanlines';
+    hero.insertBefore(scan, hero.firstChild);
+
+    // Light rays
+    const rays = document.createElement('div');
+    rays.id = 'light-rays';
+    const angles = [0, 30, 60, 90, 120, 150, 210, 240, 270, 300, 330];
+    rays.innerHTML = angles.map((a, i) =>
+      `<div class="light-ray" style="transform:rotate(${a}deg);animation-delay:${(i * 0.4).toFixed(1)}s;height:${Math.random()*30+40}vh;opacity:0"></div>`
+    ).join('');
+    hero.insertBefore(rays, hero.firstChild);
+  }
+
+  // === GIANT SVG BACKGROUND ORB ===
+  const ornSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  ornSvg.id = 'ornament-bg';
+  ornSvg.setAttribute('viewBox', '0 0 1000 1000');
+  ornSvg.setAttribute('fill', 'none');
+  ornSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  ornSvg.innerHTML = `
+    <circle cx="500" cy="500" r="490" stroke="#c9a84c" stroke-width="0.5"/>
+    <circle cx="500" cy="500" r="440" stroke="#c9a84c" stroke-width="0.3"/>
+    <circle cx="500" cy="500" r="380" stroke="#c9a84c" stroke-width="0.5"/>
+    <circle cx="500" cy="500" r="310" stroke="#c9a84c" stroke-width="0.3"/>
+    <circle cx="500" cy="500" r="240" stroke="#c9a84c" stroke-width="0.5"/>
+    <circle cx="500" cy="500" r="170" stroke="#c9a84c" stroke-width="0.3"/>
+    <circle cx="500" cy="500" r="100" stroke="#c9a84c" stroke-width="0.5"/>
+    <polygon points="500,10 950,750 50,750" stroke="#c9a84c" stroke-width="0.4"/>
+    <polygon points="500,990 50,250 950,250" stroke="#c9a84c" stroke-width="0.4"/>
+    <rect x="120" y="120" width="760" height="760" stroke="#c9a84c" stroke-width="0.3" transform="rotate(45 500 500)"/>
+    <rect x="80" y="80" width="840" height="840" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="500" y1="0" x2="500" y2="1000" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="0" y1="500" x2="1000" y2="500" stroke="#c9a84c" stroke-width="0.2"/>
+    <line x1="0" y1="0" x2="1000" y2="1000" stroke="#c9a84c" stroke-width="0.15"/>
+    <line x1="1000" y1="0" x2="0" y2="1000" stroke="#c9a84c" stroke-width="0.15"/>
+    <circle cx="500" cy="500" r="8" fill="#c9a84c" opacity="0.3"/>
+    <circle cx="500" cy="500" r="3" fill="#e8c97a"/>
+  `;
+  document.body.appendChild(ornSvg);
+
+  // === CONSTELLATION CANVAS ENHANCED ===
+  const canvas = document.getElementById('constellation-canvas');
+  if (canvas) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    const STARS = 160;
+    const stars = Array.from({length: STARS}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: (Math.random() - 0.5) * 0.18,
+      r: Math.random() * 1.5 + 0.3,
+      a: Math.random(),
+      pulse: Math.random() * Math.PI * 2
+    }));
+
+    let mouseX = canvas.width / 2, mouseY = canvas.height / 2;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; }, { passive: true });
+
+    function drawConst() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections
+      for (let i = 0; i < stars.length; i++) {
+        for (let j = i + 1; j < stars.length; j++) {
+          const dx = stars[i].x - stars[j].x;
+          const dy = stars[i].y - stars[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(stars[i].x, stars[i].y);
+            ctx.lineTo(stars[j].x, stars[j].y);
+            ctx.strokeStyle = `rgba(201,168,76,${0.08 * (1 - dist/120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+        // Mouse influence
+        const mdx = stars[i].x - mouseX;
+        const mdy = stars[i].y - mouseY;
+        const mdist = Math.sqrt(mdx*mdx + mdy*mdy);
+        if (mdist < 150) {
+          ctx.beginPath();
+          ctx.moveTo(stars[i].x, stars[i].y);
+          ctx.lineTo(mouseX, mouseY);
+          ctx.strokeStyle = `rgba(232,201,122,${0.15 * (1 - mdist/150)})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+
+      // Draw stars
+      stars.forEach(s => {
+        s.pulse += 0.02;
+        const pAlpha = 0.3 + Math.sin(s.pulse) * 0.3;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r + Math.sin(s.pulse) * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(201,168,76,${pAlpha})`;
+        ctx.fill();
+
+        // Glow
+        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
+        grad.addColorStop(0, `rgba(232,201,122,${pAlpha * 0.4})`);
+        grad.addColorStop(1, 'transparent');
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        s.x += s.vx;
+        s.y += s.vy;
+        if (s.x < -10) s.x = canvas.width + 10;
+        if (s.x > canvas.width + 10) s.x = -10;
+        if (s.y < -10) s.y = canvas.height + 10;
+        if (s.y > canvas.height + 10) s.y = -10;
+      });
+
+      requestAnimationFrame(drawConst);
+    }
+    drawConst();
+  }
+
+
+  // === SECTION MAGIC LINES ===
+  document.querySelectorAll('.section-divider').forEach(d => {
+    d.classList.add('section-magic-line');
+  });
+  const lineObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('line-on');
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.section-magic-line').forEach(el => lineObs.observe(el));
+
+  // === FOOTER STARS ===
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const fs = document.createElement('div');
+    fs.id = 'footer-stars';
+    footer.style.position = 'relative';
+    footer.style.overflow = 'hidden';
+    for (let i = 0; i < 40; i++) {
+      const star = document.createElement('div');
+      star.className = 'fstar';
+      star.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${(Math.random()*4+2).toFixed(1)}s;--del:-${(Math.random()*4).toFixed(1)}s;`;
+      fs.appendChild(star);
+    }
+    footer.insertBefore(fs, footer.firstChild);
+  }
+
+  // === SECTION FLASH REVEAL ===
+  document.querySelectorAll('#about, #why-us, #domains, #process, #stats, #contact, #local, #timeline').forEach(sec => {
+    const flash = document.createElement('div');
+    flash.className = 'section-flash';
+    sec.style.position = sec.style.position || 'relative';
+    sec.appendChild(flash);
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          flash.classList.add('active');
+          setTimeout(() => flash.classList.remove('active'), 1500);
+        }
+      });
+    }, { threshold: 0.15 });
+    obs.observe(sec);
+  });
+
+  // === LIGHT RAYS ANIMATION TRIGGER ===
+  setTimeout(() => {
+    const rays = document.querySelectorAll('.light-ray');
+    rays.forEach((r, i) => {
+      setTimeout(() => {
+        r.style.animation = `rayPulse ${(Math.random()*3+3).toFixed(1)}s ${(i*0.3).toFixed(1)}s ease-in-out infinite`;
+      }, i * 200);
+    });
+  }, 1500);
+
+  // === APPLY ULTRA GLITCH to hero name ===
+  setTimeout(() => {
+    const khalid = document.getElementById('khalid-el');
+    if (khalid) {
+      khalid.classList.add('ultra-glitch', 'liquid-gold');
+      khalid.setAttribute('data-text', khalid.textContent.trim());
+      // Remove old conflicting styles
+      khalid.style.cssText = '';
+    }
+    const maitre = document.getElementById('maitre-el');
+    if (maitre) {
+      maitre.setAttribute('data-text', 'Maître');
+    }
+  }, 100);
+
+  // === MORPHING BORDER on WHY CARDS ===
+  document.querySelectorAll('.why-card').forEach(c => c.classList.add('morph-card'));
+
+
+})();
+</script>
+
+<!-- INLINE ANIMATED SVG DECORATIVE ORNAMENTS injected into hero -->
+<script>
+(function() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  // Add a huge animated SVG scales icon in hero
+  const scalesSvg = document.createElement('div');
+  scalesSvg.id = 'hero-svg-scales';
+  scalesSvg.innerHTML = `
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer rings -->
+      <circle cx="200" cy="200" r="195" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="60s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="200" r="170" stroke="#e8c97a" stroke-width="0.4" stroke-dasharray="2 12" opacity="0.4">
+        <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="40s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="200" r="145" stroke="#c9a84c" stroke-width="0.6" opacity="0.3"/>
+
+      <!-- Justice scale main structure -->
+      <g transform="translate(200 50)" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round">
+        <!-- Pivot pin -->
+        <circle cx="0" cy="0" r="6" fill="none" stroke="#e8c97a" stroke-width="1.5">
+          <animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Beam -->
+        <line x1="-110" y1="0" x2="110" y2="0"/>
+        <!-- Post -->
+        <line x1="0" y1="0" x2="0" y2="160"/>
+        <!-- Base -->
+        <line x1="-60" y1="160" x2="60" y2="160"/>
+        <!-- Chains left -->
+        <line x1="-110" y1="0" x2="-110" y2="40" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <!-- Chains right -->
+        <line x1="110" y1="0" x2="110" y2="40" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <!-- Left pan -->
+        <ellipse cx="-110" cy="45" rx="28" ry="8" stroke-width="1" fill="rgba(201,168,76,0.04)"/>
+        <!-- Right pan -->
+        <ellipse cx="110" cy="45" rx="28" ry="8" stroke-width="1" fill="rgba(201,168,76,0.04)"/>
+      </g>
+
+      <!-- Corner ornaments -->
+      <g stroke="#c9a84c" stroke-width="0.6" opacity="0.5">
+        <rect x="10" y="10" width="50" height="50" rx="2"/>
+        <rect x="15" y="15" width="40" height="40" rx="2"/>
+        <rect x="340" y="10" width="50" height="50" rx="2"/>
+        <rect x="345" y="15" width="40" height="40" rx="2"/>
+        <rect x="10" y="340" width="50" height="50" rx="2"/>
+        <rect x="15" y="345" width="40" height="40" rx="2"/>
+        <rect x="340" y="340" width="50" height="50" rx="2"/>
+        <rect x="345" y="345" width="40" height="40" rx="2"/>
+      </g>
+
+      <!-- Decorative lines -->
+      <line x1="200" y1="10" x2="200" y2="60" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <line x1="200" y1="340" x2="200" y2="390" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <line x1="10" y1="200" x2="60" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <line x1="340" y1="200" x2="390" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+
+      <!-- Glowing center dot -->
+      <circle cx="200" cy="200" r="3" fill="#e8c97a" opacity="0.5">
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  `;
+  hero.insertBefore(scalesSvg, hero.firstChild);
+})();
+</script>
+
+<!-- ADD WOW ANIMATED SVG DIVIDERS BETWEEN SECTIONS -->
+<script>
+(function() {
+  const dividers = document.querySelectorAll('.section-divider');
+  dividers.forEach(d => {
+    const svgWrap = document.createElement('div');
+    svgWrap.style.cssText = 'text-align:center;position:relative;z-index:3;';
+    svgWrap.innerHTML = `
+      <svg class="wow-divider-svg" viewBox="0 0 300 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.35;display:block;margin:0 auto;">
+        <line x1="0" y1="15" x2="100" y2="15" stroke="#c9a84c" stroke-width="0.5">
+          <animate attributeName="x2" values="0;100;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <polygon points="110,15 120,8 130,15 120,22" stroke="#c9a84c" stroke-width="0.8" fill="none">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+        </polygon>
+        <circle cx="150" cy="15" r="4" stroke="#e8c97a" stroke-width="1" fill="none">
+          <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <polygon points="170,15 180,8 190,15 180,22" stroke="#c9a84c" stroke-width="0.8" fill="none">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+        </polygon>
+        <line x1="200" y1="15" x2="300" y2="15" stroke="#c9a84c" stroke-width="0.5">
+          <animate attributeName="x1" values="300;200;300" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </svg>
+    `;
+    d.style.position = 'relative';
+    d.appendChild(svgWrap);
+  });
+})();
+</script>
+
+<!-- STATS GLOW ON SCROLL -->
+<script>
+// STATS COUNT GLOW EFFECT
+document.querySelectorAll('.hcount-num').forEach(el => {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        el.classList.add('counting');
+        setTimeout(() => el.classList.remove('counting'), 2000);
+      }
+    });
+  }, { threshold: 0.5 });
+  obs.observe(el);
+});
+</script>
+
+<!-- ========== MEGA 3D CAROUSELS + ALL FIXES ========== -->
+<style>
+/* ====================================================
+   NUCLEAR RESET — kill ALL conflicting carousel CSS
+   ==================================================== */
+.reviews-row,.reviews-row-1,.reviews-row-2,
+.reviews-carousel,.reviews-slide,
+.carousel-controls,.carousel-btn { display:none!important; }
+
+/* ====================================================
+   REVIEWS TRACK — bulletproof single animation
+   ==================================================== */
+.google-carousel-wrapper {
+  position:relative!important;
+  overflow:hidden!important;
+  display:block!important;
+  flex:1!important;
+  width:100%!important;
+  min-height:200px;
+}
+.google-carousel-wrapper::before,
+.google-carousel-wrapper::after {
+  content:''!important;
+  position:absolute!important;
+  top:0!important; bottom:0!important;
+  width:120px!important; z-index:10!important;
+  pointer-events:none!important;
+}
+.google-carousel-wrapper::before { left:0!important; background:linear-gradient(to right,#060504 20%,transparent)!important; }
+.google-carousel-wrapper::after  { right:0!important; background:linear-gradient(to left,#060504 20%,transparent)!important; }
+
+#reviewsTrack {
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  gap:20px!important;
+  padding:20px 0!important;
+  width:max-content!important;
+  /* ONE animation, no conflict */
+  animation:reviewsRoll 55s linear infinite!important;
+  will-change:transform!important;
+}
+#reviewsTrack:hover { animation-play-state:paused!important; }
+@keyframes reviewsRoll {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
+}
+.google-review-card { flex-shrink:0!important; width:340px!important; }
+@media(max-width:768px){ .google-review-card{width:280px!important;} }
+@media(max-width:480px){ .google-review-card{width:240px!important;} }
+
+/* ====================================================
+   SECTION DIVIDERS — clean, single line, NO doubles
+   ==================================================== */
+.section-divider {
+  position:relative!important;
+  height:1px!important;
+  margin:0!important;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.3) 30%,rgba(201,168,76,.5) 50%,rgba(201,168,76,.3) 70%,transparent)!important;
+  overflow:visible!important;
+}
+.section-divider::before {
+  content:''!important;
+  position:absolute!important;
+  top:-4px!important; left:10%!important; right:10%!important;
+  height:8px!important;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.12),transparent)!important;
+  filter:blur(4px)!important;
+  pointer-events:none!important;
+}
+.section-divider::after { display:none!important; }
+.sd-diamond {
+  position:absolute!important;
+  top:50%!important; left:50%!important;
+  transform:translate(-50%,-50%)!important;
+  width:20px!important; height:20px!important;
+  background:var(--noir)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0!important;
+}
+.sd-diamond::before {
+  content:'◆'!important;
+  font-size:6px!important;
+  color:var(--gold)!important;
+  opacity:.7!important;
+  animation:ornPulse 2.5s ease-in-out infinite!important;
+}
+
+/* ====================================================
+   3D CARD CAROUSEL — why-cards, awards, domains
+   ==================================================== */
+
+/* Perspective wrapper for 3D tilt effect on all cards */
+.why-card, .award-slide-card, .google-review-card, .process-step, .sub-expertise-card {
+  transform-style: preserve-3d;
+}
+
+/* ====================================================
+   3D ROTATING LOGO TICKER — always scrolls
+   ==================================================== */
+.march { display:block!important; }
+.march-inner { animation:march 28s linear infinite!important; }
+.march-inner:hover { animation-play-state:paused!important; }
+
+/* ====================================================
+   AWARDS CAROUSEL — horizontal auto-scroll
+   ==================================================== */
+.awards-carousel-wrap {
+  position:relative;
+  overflow:hidden;
+  padding:10px 0 30px;
+  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);
+}
+.awards-track {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:18px;
+  width:max-content;
+  animation:awardsRoll 38s linear infinite;
+  will-change:transform;
+}
+.awards-track:hover { animation-play-state:paused; }
+@keyframes awardsRoll {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
+}
+.award-slide-card {
+  flex-shrink:0;
+  width:280px;
+  background:linear-gradient(145deg,#181410,#0f0c08);
+  border:1px solid rgba(201,168,76,.08);
+  border-top:2px solid rgba(201,168,76,.22);
+  padding:28px 22px;
+  position:relative;
+  transition:transform .45s cubic-bezier(.25,1,.5,1), box-shadow .45s, border-color .3s;
+  transform-style:preserve-3d;
+}
+.award-slide-card:hover {
+  transform:translateY(-8px) perspective(600px) rotateX(-4deg);
+  border-color:rgba(201,168,76,.3);
+  box-shadow:0 24px 60px rgba(0,0,0,.6), 0 0 30px rgba(201,168,76,.08);
+}
+.award-slide-icon { font-size:26px; margin-bottom:12px; display:block; }
+.award-slide-year { font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--gold); opacity:.6; margin-bottom:8px; }
+.award-slide-title { font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px; color:var(--white); margin-bottom:10px; }
+.award-slide-desc { font-family:'Cormorant Garamond',serif; font-size:.92rem; color:var(--text); line-height:1.65; font-weight:300; }
+
+/* ====================================================
+   3D STATS COUNTER CUBES
+   ==================================================== */
+.stat-item {
+  perspective:800px;
+  cursor:default;
+}
+.stat-item:hover .stat-num {
+  animation:statFlip .5s cubic-bezier(.25,1,.5,1) forwards;
+  filter:drop-shadow(0 0 14px rgba(201,168,76,.5));
+}
+@keyframes statFlip {
+  0%   { transform:rotateX(0deg); }
+  50%  { transform:rotateX(-12deg) scale(1.05); }
+  100% { transform:rotateX(0deg); }
+}
+
+/* ====================================================
+   3D HERO FLOATING SCALES SVG
+   ==================================================== */
+.hero-3d-scales {
+  position:absolute;
+  inset:0; z-index:2;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-right:8%;
+  opacity:.08;
+}
+.hero-3d-scales svg {
+  width:280px; height:280px;
+  animation:scalesFloat 6s ease-in-out infinite;
+  filter:drop-shadow(0 0 20px rgba(201,168,76,.3));
+}
+@keyframes scalesFloat {
+  0%,100%{ transform:translateY(0) rotateY(0deg); }
+  33%    { transform:translateY(-18px) rotateY(8deg); }
+  66%    { transform:translateY(10px) rotateY(-5deg); }
+}
+
+/* ====================================================
+   3D PROCESS STEP CARDS — flip effect on hover
+   ==================================================== */
+.process-step {
+  perspective:900px;
+  cursor:default;
+}
+.process-step-inner {
+  transition:transform .7s cubic-bezier(.25,1,.5,1);
+  transform-style:preserve-3d;
+}
+.process-step:hover .process-step-inner {
+  transform:perspective(900px) rotateY(-8deg) rotateX(4deg) translateZ(20px);
+}
+.process-step:hover .step-number {
+  color:rgba(201,168,76,.22)!important;
+  transform:scale(1.08);
+  transition:all .5s;
+}
+
+/* ====================================================
+   3D FLIP CARDS — WHY US
+   ==================================================== */
+.why-card {
+  perspective:1000px;
+  transform-style:preserve-3d;
+  cursor:default;
+}
+.why-card:hover {
+  transform:translateY(-14px) perspective(1000px) rotateY(-6deg) rotateX(4deg) scale(1.02)!important;
+}
+
+/* ====================================================
+   3D DOMAIN CARDS — layered depth on hover
+   ==================================================== */
+.sub-expertise-card {
+  transition:transform .4s cubic-bezier(.25,1,.5,1), border-color .3s, background .3s;
+}
+.sub-expertise-card:hover {
+  transform:translateX(6px) perspective(600px) rotateY(-3deg);
+  border-left-color:var(--gold);
+  background:#1c1813;
+}
+
+/* ====================================================
+   3D TIMELINE ITEMS — slide + depth
+   ==================================================== */
+.tl-item:hover {
+  transform:translateX(12px) perspective(600px) rotateY(2deg)!important;
+}
+.tl-item { transition:transform .5s cubic-bezier(.25,1,.5,1)!important; }
+
+/* ====================================================
+   3D FAQ ACCORDION
+   ==================================================== */
+.faq-q {
+  perspective:600px;
+  transition:transform .3s, color .3s;
+}
+.faq-q:hover {
+  transform:perspective(600px) rotateX(-2deg) translateZ(4px);
+  color:var(--gold)!important;
+}
+
+/* ====================================================
+   PHILOSOPHY PILLARS CAROUSEL (mobile = scroll)
+   ==================================================== */
+@media(max-width:900px) {
+  .philosophy-right {
+    overflow:hidden;
+    position:relative;
+  }
+  .philosophy-right::after {
+    content:''; position:absolute; right:0; top:0; bottom:0;
+    width:60px; background:linear-gradient(to left,var(--noir),transparent);
+    pointer-events:none; z-index:2;
+  }
+}
+
+/* ====================================================
+   CONTACT ICON 3D SPIN
+   ==================================================== */
+.cicon {
+  transition:transform .6s cubic-bezier(.34,1.56,.64,1), background .3s, border-color .3s!important;
+}
+.cdetail:hover .cicon {
+  transform:perspective(400px) rotateY(360deg) scale(1.1)!important;
+}
+
+/* ====================================================
+   3D SPINNING ORB — ambient background accents
+   ==================================================== */
+.orb-3d {
+  position:absolute; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle at 35% 35%, rgba(245,232,192,.15), rgba(201,168,76,.04) 50%, transparent);
+  animation:orb3dSpin 20s linear infinite;
+}
+@keyframes orb3dSpin {
+  from { transform:rotate3d(1,1,0,0deg) scale(1); }
+  50%  { transform:rotate3d(1,1,0,180deg) scale(1.08); }
+  to   { transform:rotate3d(1,1,0,360deg) scale(1); }
+}
+
+/* ====================================================
+   HERO PARTICLE GOLD DOTS (pure CSS)
+   ==================================================== */
+.hero-particle {
+  position:absolute; border-radius:50%;
+  background:var(--gold); opacity:0;
+  animation:particleRise linear infinite;
+}
+@keyframes particleRise {
+  0%   { opacity:0; transform:translateY(60px) scale(0); }
+  15%  { opacity:.5; }
+  85%  { opacity:.2; }
+  100% { opacity:0; transform:translateY(-120px) scale(1.5); }
+}
+
+</style>
+
+<script>
+/* ============================================
+   MEGA 3D CAROUSEL ENGINE
+   ============================================ */
+(function() {
+  'use strict';
+
+  /* --- 1. Reviews track: nuclear ensure animation --- */
+  function fixReviewsTrack() {
+    const track = document.getElementById('reviewsTrack');
+    if (!track) return;
+    // Force a reflow to restart animation
+    track.style.animation = 'none';
+    void track.offsetWidth;
+    track.style.animation = 'reviewsRoll 55s linear infinite';
+
+    const wrapper = track.closest('.google-carousel-wrapper');
+    if (wrapper) {
+      wrapper.style.cssText += 'overflow:hidden!important;display:block!important;';
+    }
+  }
+
+  /* --- 2. Awards: replace grid with scrolling carousel --- */
+  function buildAwardsCarousel() {
+    const awardsItems = document.querySelector('.awards-items');
+    if (!awardsItems) return;
+
+    const cards = awardsItems.querySelectorAll('.award-item');
+    const data = Array.from(cards).map(c => ({
+      icon: c.querySelector('.award-icon')?.textContent || '⭐',
+      year: c.querySelector('.award-year')?.textContent || '',
+      title: c.querySelector('.award-title')?.textContent || '',
+      desc: c.querySelector('.award-desc')?.textContent || ''
+    }));
+    if (!data.length) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'awards-carousel-wrap';
+    const track = document.createElement('div');
+    track.className = 'awards-track';
+
+    [...data, ...data].forEach(d => {
+      const el = document.createElement('div');
+      el.className = 'award-slide-card';
+      el.innerHTML = `<span class="award-slide-icon">${d.icon}</span>
+        <div class="award-slide-year">${d.year}</div>
+        <div class="award-slide-title">${d.title}</div>
+        <div class="award-slide-desc">${d.desc}</div>`;
+      track.appendChild(el);
+    });
+
+    wrap.appendChild(track);
+    awardsItems.replaceWith(wrap);
+  }
+
+  /* --- 3. 3D mouse-follow tilt for why-cards --- */
+  function setup3DTilt(selector, strength) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(900px) rotateY(${x * strength}deg) rotateX(${-y * strength * 0.7}deg) translateY(-12px) scale(1.02)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        el.style.transition = 'transform .6s cubic-bezier(.25,1,.5,1)';
+      });
+    });
+  }
+
+  /* --- 4. 3D scroll-driven parallax on sections --- */
+  function setup3DParallax() {
+    const sections = document.querySelectorAll('#why-us, #process, #domains, #testi, #about, #philosophy, #timeline');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.transform = 'perspective(1200px) rotateX(0deg)';
+          e.target.style.opacity = '1';
+        }
+      });
+    }, { threshold: 0.08 });
+    sections.forEach(s => {
+      s.style.transition = 'transform .8s cubic-bezier(.25,1,.5,1), opacity .8s';
+      obs.observe(s);
+    });
+  }
+
+  /* --- 5. 3D floating hero particles --- */
+  function buildHeroParticles() {
+    const hero = document.querySelector('#hero');
+    if (!hero || hero.querySelector('.hero-particles')) return;
+    const cont = document.createElement('div');
+    cont.className = 'hero-particles';
+    cont.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden;';
+    for (let i = 0; i < 22; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const size = Math.random() * 3 + 1;
+      p.style.cssText = `
+        width:${size}px;height:${size}px;
+        left:${Math.random()*100}%;
+        bottom:0;
+        animation-duration:${7 + Math.random() * 11}s;
+        animation-delay:${-(Math.random() * 15)}s;
+        box-shadow:0 0 ${size*3}px rgba(201,168,76,.4);
+      `;
+      cont.appendChild(p);
+    }
+    hero.appendChild(cont);
+  }
+
+  /* --- 6. 3D counter reveal for stats section --- */
+  function setup3DCounters() {
+    document.querySelectorAll('.stat-item').forEach(item => {
+      const numEl = item.querySelector('.stat-num');
+      if (!numEl) return;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          numEl.style.transition = 'filter .4s, transform .4s';
+          obs.disconnect();
+        }
+      }, { threshold: 0.5 });
+      obs.observe(item);
+    });
+  }
+
+  /* --- 7. 3D card-reveal stagger on scroll --- */
+  function setupStaggerReveal(selector, delay) {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px) perspective(800px) rotateX(-15deg)';
+      el.style.transition = `opacity .7s ${i * delay}s cubic-bezier(.25,1,.5,1), transform .7s ${i * delay}s cubic-bezier(.25,1,.5,1)`;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          obs.disconnect();
+        }
+      }, { threshold: 0.15 });
+      obs.observe(el);
+    });
+  }
+
+  /* --- 8. Domain tab panels: 3D flip transition --- */
+  function setup3DTabFlip() {
+    document.querySelectorAll('.tab-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const panels = document.querySelectorAll('.tab-content-panel');
+        panels.forEach(p => {
+          if (p.classList.contains('active')) {
+            p.style.animation = 'panelFlipOut .35s cubic-bezier(.25,1,.5,1) forwards';
+            setTimeout(() => {
+              p.classList.remove('active');
+              p.style.animation = '';
+            }, 350);
+          }
+        });
+        const target = document.getElementById(trigger.dataset.target);
+        if (target) {
+          setTimeout(() => {
+            target.classList.add('active');
+            target.style.animation = 'panelFlipIn .45s cubic-bezier(.25,1,.5,1) forwards';
+            setTimeout(() => target.style.animation = '', 450);
+          }, 360);
+        }
+      });
+    });
+  }
+
+  /* --- 9. Process step 3D tilt --- */
+  function setup3DProcessSteps() {
+    document.querySelectorAll('.process-step').forEach(step => {
+      step.addEventListener('mousemove', e => {
+        const r = step.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        step.style.transform = `perspective(700px) rotateY(${x*10}deg) rotateX(${-y*8}deg) translateZ(16px) scale(1.03)`;
+      });
+      step.addEventListener('mouseleave', () => {
+        step.style.transform = '';
+        step.style.transition = 'transform .5s cubic-bezier(.25,1,.5,1)';
+      });
+    });
+  }
+
+  /* --- 10. Why cards: per-card number highlight --- */
+  function setupWhyCards() {
+    document.querySelectorAll('.why-card').forEach((c, i) => {
+      let numEl = c.querySelector('.why-card-num');
+      if (!numEl) {
+        numEl = document.createElement('div');
+        numEl.className = 'why-card-num';
+        numEl.textContent = String(i + 1).padStart(2, '0');
+        c.appendChild(numEl);
+      }
+    });
+  }
+
+  /* Run all on DOMContentLoaded */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', () => {
+    setTimeout(fixReviewsTrack, 100);
+  });
+
+  function init() {
+    fixReviewsTrack();
+    buildAwardsCarousel();
+    buildHeroParticles();
+    setup3DCounters();
+    setupStaggerReveal('.why-card', 0.07);
+    setupStaggerReveal('.process-step', 0.1);
+    setupStaggerReveal('.tl-item', 0.1);
+    setup3DTabFlip();
+    setupWhyCards();
+  }
+})();
+</script>
+
+<style>
+/* 3D tab transitions */
+@keyframes panelFlipOut {
+  from { opacity:1; transform:perspective(800px) rotateY(0deg); }
+  to   { opacity:0; transform:perspective(800px) rotateY(20deg) translateX(40px); }
+}
+@keyframes panelFlipIn {
+  from { opacity:0; transform:perspective(800px) rotateY(-20deg) translateX(-40px); }
+  to   { opacity:1; transform:perspective(800px) rotateY(0deg); }
+}
+/* Smooth tab panel display */
+.tab-content-panel { display:none; }
+.tab-content-panel.active { display:grid; }
+</style>
+
 </body>
 </html>
