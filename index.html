@@ -3185,7 +3185,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <div class="cdetail"><div class="cicon">📞</div><div><div class="cdlbl" data-i18n="contact.phone">Phone</div><div class="cdval">0661 797 469</div></div></div>
     <div class="cdetail"><div class="cicon">✉️</div><div><div class="cdlbl" data-i18n="contact.email">Email</div><div class="cdval">khalidchafai92@gmail.com</div></div></div>
     <div class="cdetail"><div class="cicon">📍</div><div><div class="cdlbl" data-i18n="contact.address">Address</div><div class="cdval">1st Floor N°8, Résidence Playa Mar<br>Bd Antaki & Moatamid Bnou Abbad<br>Tangier 90000</div></div></div>
-    <div class="cdetail"><div class="cicon">🌐</div><div><div class="cdlbl" data-i18n="contact.website">Website</div><div class="cdval">www.AvocatKhalidChafai.Com</div></div></div>
+    <!-- website removed -->
   </div>
   <div class="rvr">
     <div class="action-box-panel">
@@ -4202,5 +4202,80 @@ document.querySelectorAll('.award-item').forEach(item=>{
 })();
 
 </script>
+
+<!-- ===== BULLETPROOF CAROUSEL FIX ===== -->
+<style>
+/* Kill everything old that could conflict */
+.reviews-row, .reviews-row-1, .reviews-row-2,
+.reviews-carousel, .reviews-slide,
+.carousel-controls, .carousel-btn { display: none !important; }
+
+/* The wrapper that clips */
+.google-carousel-wrapper {
+  position: relative !important;
+  overflow: hidden !important;
+  flex: 1 !important;
+  width: 100% !important;
+}
+
+/* Fade masks */
+.google-carousel-wrapper::before,
+.google-carousel-wrapper::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; bottom: 0 !important;
+  width: 140px !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+.google-carousel-wrapper::before {
+  left: 0 !important;
+  background: linear-gradient(to right, #060504 20%, transparent) !important;
+}
+.google-carousel-wrapper::after {
+  right: 0 !important;
+  background: linear-gradient(to left, #060504 20%, transparent) !important;
+}
+
+/* THE TRACK */
+#reviewsTrack {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 20px !important;
+  padding: 20px 0 !important;
+  width: max-content !important;
+  animation: carouselInfinite 55s linear infinite !important;
+  will-change: transform !important;
+}
+
+#reviewsTrack:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes carouselInfinite {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Cards */
+.google-review-card {
+  flex-shrink: 0 !important;
+  width: 340px !important;
+}
+
+@media (max-width: 768px) {
+  .google-review-card { width: 280px !important; }
+  .google-carousel-wrapper::before,
+  .google-carousel-wrapper::after { width: 60px !important; }
+}
+@media (max-width: 480px) {
+  .google-review-card { width: 240px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #reviewsTrack { animation: none !important; }
+}
+</style>
 </body>
 </html>
