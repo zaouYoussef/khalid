@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="page.title">Maître Khalid Chafai — Lawyer at the Tangier Bar</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;1,300&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <style>
@@ -17,11 +19,11 @@
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--noir);color:var(--text);font-family:'Crimson Pro',serif;font-size:18px;line-height:1.7;overflow-x:hidden}
-section:not(#hero){background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.6' stroke-opacity='0.05'%3E%3Crect x='12' y='12' width='76' height='76'/%3E%3Crect x='12' y='12' width='76' height='76' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='34'/%3E%3C/g%3E%3C/svg%3E") center/150px 150px repeat,linear-gradient(180deg,transparent,rgba(201,168,76,.02) 50%,transparent)}
+section:not(#hero){background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='0.6' stroke-opacity='0.05'%3E%3Crect x='12' y='12' width='76' height='76'/%3E%3Crect x='12' y='12' width='76' height='76' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='34'/%3E%3C/g%3E%3C/svg%3E") center/150px 150px repeat,linear-gradient(180deg,transparent,rgba(201,168,76,.02) 50%,transparent);content-visibility:auto;contain-intrinsic-size:0 600px}
 #gl-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
 .ambient-glow{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
-.ambient-glow .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 20s ease-in-out infinite}
+.ambient-glow .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 20s ease-in-out infinite;will-change:transform}
 .ambient-glow .orb:nth-child(1){width:600px;height:600px;background:radial-gradient(circle,var(--gold),transparent);top:-10%;left:-5%;animation-delay:0s}
 .ambient-glow .orb:nth-child(2){width:450px;height:450px;background:radial-gradient(circle,var(--gold4),transparent);bottom:-5%;right:-5%;animation-delay:-7s}
 .ambient-glow .orb:nth-child(3){width:380px;height:380px;background:radial-gradient(circle,var(--gold2),transparent);top:40%;left:60%;animation-delay:-14s}
@@ -54,12 +56,12 @@ section{position:relative;z-index:2}
 @keyframes ornPulse{0%,100%{opacity:.4}50%{opacity:1}}
 .gline{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative;z-index:2}
 .gline::after{content:'';position:absolute;top:-5px;left:0;right:0;height:10px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);filter:blur(4px)}
-.rv{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1)}
-.rvl{opacity:0;transform:translateX(-70px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1)}
-.rvr{opacity:0;transform:translateX(70px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1)}
-.rvs{opacity:0;transform:scale(.85);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1)}
-.rv.on,.rvl.on,.rvr.on,.rvs.on{opacity:1;transform:none}
-.prog-line{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold4),var(--gold),var(--gold2),var(--gold));background-size:200%;z-index:2000;transform-origin:left;transform:scaleX(0);transition:transform .1s;animation:shimmer 2s linear infinite}
+.rv{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1);will-change:opacity,transform}
+.rvl{opacity:0;transform:translateX(-70px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1);will-change:opacity,transform}
+.rvr{opacity:0;transform:translateX(70px);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1);will-change:opacity,transform}
+.rvs{opacity:0;transform:scale(.85);transition:opacity 1s cubic-bezier(.25,1,.5,1),transform 1s cubic-bezier(.25,1,.5,1);will-change:opacity,transform}
+.rv.on,.rvl.on,.rvr.on,.rvs.on{opacity:1;transform:none;will-change:auto}
+.prog-line{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold4),var(--gold),var(--gold2),var(--gold));background-size:200%;z-index:2000;transform-origin:left;transform:scaleX(0);transition:transform .1s;animation:shimmer 2s linear infinite;will-change:transform}
 .ripple-el{position:fixed;width:60px;height:60px;border-radius:50%;background:rgba(201,168,76,.15);pointer-events:none;animation:rippleFX .8s ease-out forwards;z-index:9000}
 
 
@@ -120,22 +122,174 @@ a:focus-visible,button:focus-visible,.btn-p:focus-visible,.btn-s:focus-visible,.
 .lang-btn.active{opacity:1;color:var(--gold);background:rgba(201,168,76,.12)}
 .lang-btn:not(.active):hover{opacity:1;color:var(--white)}
 
-html[dir="rtl"]{text-align:right;font-size:.95rem}html[dir="rtl"] .slabel{flex-direction:row-reverse}html[dir="rtl"] .slabel::before{display:none}html[dir="rtl"] .slabel::after{content:'';width:44px;height:1px;background:var(--gold);opacity:.4}html[dir="rtl"] .ornament{direction:ltr}html[dir="rtl"] .cinfo{flex-direction:row-reverse}html[dir="rtl"] .cdetail{flex-direction:row-reverse}html[dir="rtl"] .about-quote{border-left:none;border-right:2px solid var(--gold);padding:30px 36px}html[dir="rtl"] .about-quote::before{left:auto;right:20px}html[dir="rtl"] .about-linkedin{flex-direction:row-reverse}html[dir="rtl"] .why-card{direction:rtl}html[dir="rtl"] .licard{direction:rtl}html[dir="rtl"] .licard::before{left:auto;right:0}html[dir="rtl"] .licard:hover{transform:translateX(-8px)}html[dir="rtl"] .licard-num{right:auto;left:32px}html[dir="rtl"] .process-step{direction:rtl}html[dir="rtl"] .step-connector{transform:scaleX(-1)}html[dir="rtl"] .featured-qmark{left:auto;right:-30px}html[dir="rtl"] .lmap-wrap{padding-right:0;padding-left:60px}html[dir="rtl"] .linfo{padding-left:0;padding-right:60px}html[dir="rtl"] .sec-dot .dot-label{right:auto;left:20px}html[dir="rtl"] .nlinks a{font-size:14px}html[dir="rtl"] .htitle{font-size:clamp(3.5rem,8vw,7rem)}html[dir="rtl"] .hsub{font-size:clamp(1.5rem,3vw,2rem)}html[dir="rtl"] .htag{font-size:clamp(1.3rem,2.5vw,1.8rem)}html[dir="rtl"] .hcount-num{font-size:clamp(2.3rem,4vw,3.5rem)}html[dir="rtl"] .hcount-label{font-size:1rem}html[dir="rtl"] .hbadge{font-size:15px}
-/* RTL: keep phone numbers, hero name, stats numbers in LTR direction */
-html[dir="rtl"] .cinfo .phone,
-html[dir="rtl"] .cdval[data-type="phone"],
-html[dir="rtl"] .hcount-num,
-html[dir="rtl"] .hcount-div,
-html[dir="rtl"] .hero-counter{direction:ltr;unicode-bidi:embed}
-html[dir="rtl"] .htitle{direction:rtl;unicode-bidi:embed}
-html[dir="rtl"] #khalid-el,html[dir="rtl"] #maitre-el,html[dir="rtl"] .htitle .gold-line,html[dir="rtl"] .htitle .glitch{direction:ltr;unicode-bidi:embed;display:inline-block}
-html[dir="rtl"] .faq-q{text-align:right}
-html[dir="rtl"] .hbadge{direction:ltr}
-html[dir="rtl"] .gps-coords{direction:ltr}
+/* ===== ARABIC / RTL — FIX CHIRURGICAL ===== */
+
+/* POLICE : Tajawal uniquement sur le texte lisible, jamais sur les éléments décoratifs */
+html[dir="rtl"] body{font-family:'Tajawal',sans-serif}
+html[dir="rtl"] p,
+html[dir="rtl"] .about-text,
+html[dir="rtl"] .about-quote p,
+html[dir="rtl"] .why-card p,
+html[dir="rtl"] .process-step p,
+html[dir="rtl"] .phil-pillar p,
+html[dir="rtl"] .phil-text,
+html[dir="rtl"] .tl-item p,
+html[dir="rtl"] .faq-a p,
+html[dir="rtl"] .sub-expertise-card p,
+html[dir="rtl"] .addr-block,
+html[dir="rtl"] .cdval,
+html[dir="rtl"] .google-count-text,
+html[dir="rtl"] .testi-text,
+html[dir="rtl"] .ftag,
+html[dir="rtl"] .award-desc,
+html[dir="rtl"] .domains-sub,
+html[dir="rtl"] .panel-biz-desc,
+html[dir="rtl"] .panel-ind-desc{
+  font-family:'Tajawal',sans-serif;
+  line-height:1.85;
+}
+
+/* Titres lisibles → Tajawal bold */
+html[dir="rtl"] .stitle,
+html[dir="rtl"] .htitle,
+html[dir="rtl"] .why-card h3,
+html[dir="rtl"] .process-step h3,
+html[dir="rtl"] .phil-pillar h3,
+html[dir="rtl"] .tl-head h3,
+html[dir="rtl"] .faq-q,
+html[dir="rtl"] .licard h3,
+html[dir="rtl"] .panel-side-hero h3,
+html[dir="rtl"] .sub-expertise-card h4,
+html[dir="rtl"] .action-title-block h3,
+html[dir="rtl"] .award-title,
+html[dir="rtl"] .google-brand-info h3{
+  font-family:'Tajawal',sans-serif;
+  font-weight:700;
+  letter-spacing:0;
+}
+
+/* Petits labels traduits → Tajawal, sans letter-spacing ni uppercase */
+html[dir="rtl"] .slabel,
+html[dir="rtl"] .hbadge,
+html[dir="rtl"] .hsub,
+html[dir="rtl"] .htag,
+html[dir="rtl"] .hcount-label,
+html[dir="rtl"] .slbl,
+html[dir="rtl"] .tl-year,
+html[dir="rtl"] .award-year,
+html[dir="rtl"] .about-caption,
+html[dir="rtl"] .stat-label,
+html[dir="rtl"] .google-brand-platform span{
+  font-family:'Tajawal',sans-serif;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+/* Nav liens → Tajawal, taille lisible */
+html[dir="rtl"] .nlinks a,
+html[dir="rtl"] .nlinks a span,
+html[dir="rtl"] .mobile-overlay a,
+html[dir="rtl"] .flinks a{
+  font-family:'Tajawal',sans-serif;
+  font-size:15px;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+/* Boutons CTA traduits → Tajawal */
+html[dir="rtl"] .btn-p,
+html[dir="rtl"] .btn-s,
+html[dir="rtl"] .action-link-btn,
+html[dir="rtl"] .tab-trigger,
+html[dir="rtl"] .google-btn-write{
+  font-family:'Tajawal',sans-serif;
+  letter-spacing:0;
+  text-transform:none;
+  font-size:14px;
+}
+
+/* em doré dans les stitle → Tajawal, pas d'italique */
+html[dir="rtl"] .stitle em{
+  font-family:'Tajawal',sans-serif;
+  font-style:normal;
+  font-weight:700;
+  color:var(--gold);
+}
+
+/* LAYOUT RTL */
+html[dir="rtl"]{text-align:right}
+html[dir="rtl"] .slabel{flex-direction:row-reverse;letter-spacing:0;text-transform:none}
+html[dir="rtl"] .slabel::before{display:none}
+html[dir="rtl"] .slabel::after{content:'';width:44px;height:1px;background:var(--gold);opacity:.4}
+html[dir="rtl"] .ornament{direction:ltr}
+html[dir="rtl"] .cinfo{flex-direction:row-reverse}
+html[dir="rtl"] .cdetail{flex-direction:row-reverse}
+html[dir="rtl"] .about-quote{border-left:none;border-right:2px solid var(--gold);padding:30px 36px 30px 24px}
+html[dir="rtl"] .about-quote::before{left:auto;right:20px}
+html[dir="rtl"] .about-linkedin{flex-direction:row-reverse}
+html[dir="rtl"] .why-card{direction:rtl}
+html[dir="rtl"] .process-step{direction:rtl}
+html[dir="rtl"] .step-connector{transform:scaleX(-1)}
+html[dir="rtl"] .action-link-btn{display:flex!important;justify-content:center;align-items:center;text-align:center;gap:0;unicode-bidi:normal}
+html[dir="rtl"] .action-link-btn .btn-icon-svg{display:none}
+html[dir="rtl"] .action-link-btn span{letter-spacing:0;text-transform:none;font-family:'Tajawal',sans-serif;font-size:15px;text-align:center;width:100%}
+html[dir="rtl"] .fab{display:flex!important;justify-content:center;align-items:center}
+html[dir="rtl"] .floating-actions{right:26px;left:auto}
+html[dir="rtl"] .featured-qmark{left:auto;right:-30px}
+html[dir="rtl"] .lmap-wrap{padding-right:0;padding-left:60px}
+html[dir="rtl"] .linfo{padding-left:0;padding-right:60px}
+html[dir="rtl"] .sec-dot .dot-label{right:auto;left:20px}
+html[dir="rtl"] .licard{direction:rtl}
+html[dir="rtl"] .licard::before{left:auto;right:0}
+html[dir="rtl"] .licard-num{right:auto;left:32px}
+html[dir="rtl"] .faq-q{text-align:right;flex-direction:row-reverse}
+html[dir="rtl"] .faq-a{text-align:right}
+html[dir="rtl"] .flinks{flex-direction:row-reverse;flex-wrap:wrap}
+html[dir="rtl"] .fsoc{flex-direction:row-reverse}
 html[dir="rtl"] .march-inner{animation-direction:reverse}
-/* Phone numbers: always LTR */
-html[dir="rtl"] a[href^="tel"],html[dir="rtl"] a[href^="https://wa"],html[dir="rtl"] .phone{direction:ltr;display:inline-block;unicode-bidi:embed}
-@media(max-width:1100px){html[dir="rtl"] .lmap-wrap{padding-left:0}html[dir="rtl"] .linfo{padding-right:0}html[dir="rtl"] .nlinks a{font-size:12px}html[dir="rtl"] .htitle{font-size:clamp(2.8rem,10vw,4.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1.2rem,4vw,1.5rem)}html[dir="rtl"] .htag{font-size:clamp(1.1rem,3.5vw,1.4rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.8rem,8vw,2.3rem)}html[dir="rtl"] .hcount-label{font-size:.85rem}}@media(max-width:768px){html[dir="rtl"] .htitle{font-size:clamp(2.5rem,11vw,3.5rem)}html[dir="rtl"] .hsub{font-size:clamp(1rem,4.5vw,1.3rem)}html[dir="rtl"] .htag{font-size:clamp(1rem,4vw,1.2rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.6rem,8vw,2rem)}}
+html[dir="rtl"] .phil-pillar{direction:rtl}
+html[dir="rtl"] .award-item{direction:rtl;text-align:right}
+html[dir="rtl"] .testi-author{flex-direction:row-reverse}
+html[dir="rtl"] .google-brand-profile{flex-direction:row-reverse}
+html[dir="rtl"] .google-brand-info{text-align:right}
+html[dir="rtl"] .google-review-card{text-align:right}
+html[dir="rtl"] .tabs-navigation{direction:rtl}
+html[dir="rtl"] .keywords-list{direction:rtl}
+html[dir="rtl"] .sgrid{direction:rtl}
+html[dir="rtl"] .tl-head{flex-direction:row-reverse}
+html[dir="rtl"] .tl-item{padding-left:0;padding-right:40px;border-left:none;border-right:1px solid rgba(201,168,76,.15)}
+html[dir="rtl"] .tl-icon{right:0;left:auto;transform:translateX(50%)}
+
+/* Chiffres et téléphones : toujours LTR */
+html[dir="rtl"] .hcount-num,html[dir="rtl"] .hcount-div,html[dir="rtl"] .hero-counter{direction:ltr;unicode-bidi:embed}
+html[dir="rtl"] .snum,html[dir="rtl"] .stat-num{direction:ltr;unicode-bidi:embed}
+html[dir="rtl"] a[href^="tel"],html[dir="rtl"] a[href^="https://wa"],html[dir="rtl"] .phone,html[dir="rtl"] .cdval[data-type="phone"]{direction:ltr;display:inline-block;unicode-bidi:embed}
+html[dir="rtl"] .gps-coords{direction:ltr}
+html[dir="rtl"] .hbadge{direction:rtl}
+
+/* FAB WhatsApp : icône toujours centrée */
+html[dir="rtl"] .fab-wa,
+html[dir="rtl"] .fab-top{direction:ltr}
+html[dir="rtl"] .fab-wa{display:flex;align-items:center;justify-content:center}
+html[dir="rtl"] .fab-wa svg{display:block;position:relative;z-index:1;flex-shrink:0;margin:0}
+html[dir="rtl"] .fab-tooltip{position:absolute;right:74px;top:50%;transform:translateY(-50%) translateX(-8px);left:auto}
+html[dir="rtl"] .fab-wa:hover .fab-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* Hero name/glitch : désactiver les pseudo-éléments qui cassent en RTL */
+html[dir="rtl"] .ultra-glitch::before,html[dir="rtl"] .ultra-glitch::after{display:none!important}
+html[dir="rtl"] #khalid-el,html[dir="rtl"] #maitre-el,html[dir="rtl"] .htitle .gold-line,html[dir="rtl"] .htitle .glitch{direction:ltr;unicode-bidi:embed;display:inline-block}
+
+/* Tailles hero arabe */
+html[dir="rtl"] .htitle{font-size:clamp(3rem,7vw,6.5rem);direction:rtl;letter-spacing:0}
+html[dir="rtl"] .hsub{font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:0}
+html[dir="rtl"] .htag{font-size:clamp(1.1rem,2.5vw,1.6rem);letter-spacing:0}
+html[dir="rtl"] .hcount-num{font-size:clamp(2.2rem,4vw,3.5rem)}
+html[dir="rtl"] .hcount-label{font-size:.95rem}
+
+/* Responsive RTL */
+@media(max-width:1100px){html[dir="rtl"] .lmap-wrap{padding-left:0}html[dir="rtl"] .linfo{padding-right:0}html[dir="rtl"] .nlinks a{font-size:13px}html[dir="rtl"] .htitle{font-size:clamp(2.5rem,9vw,4rem)}html[dir="rtl"] .hsub{font-size:clamp(1.1rem,3.5vw,1.5rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.7rem,7vw,2.3rem)}}
+@media(max-width:768px){html[dir="rtl"] .htitle{font-size:clamp(2.2rem,10vw,3.2rem)}html[dir="rtl"] .hsub{font-size:clamp(1rem,4vw,1.3rem)}html[dir="rtl"] .htag{font-size:clamp(.95rem,3.5vw,1.1rem)}html[dir="rtl"] .hcount-num{font-size:clamp(1.5rem,7vw,2rem)}html[dir="rtl"] .floating-actions{right:16px;left:auto}html[dir="rtl"] .tl-item{padding-right:30px}}
+@media(max-width:480px){html[dir="rtl"] .htitle{font-size:clamp(1.9rem,9vw,2.5rem)}}
 
 /* ===== COMPREHENSIVE RESPONSIVE ===== */
 /* 2560px+ ultra-wide */
@@ -191,7 +345,7 @@ body.cursor-down .cursor-ring{width:30px;height:30px}
 .fab-top:hover{border-color:var(--gold);background:rgba(201,168,76,.08);transform:translateY(-3px)}
 .fab-tooltip{position:absolute;right:74px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--dark2);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;padding:9px 16px;white-space:nowrap;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .fab-wa:hover .fab-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
-@media(max-width:768px){.floating-actions{right:16px;bottom:16px;gap:12px}html[dir="rtl"] .floating-actions{left:16px}.fab-wa{width:50px;height:50px}.fab-wa svg{width:22px;height:22px}.fab-top{width:38px;height:38px}.fab-tooltip{display:none}}
+@media(max-width:768px){.floating-actions{right:16px;bottom:16px;gap:12px}html[dir="rtl"] .floating-actions{right:16px;left:auto}.fab-wa{width:50px;height:50px}.fab-wa svg{width:22px;height:22px}.fab-top{width:38px;height:38px}.fab-tooltip{display:none}}
 
 /* ----- Graceful image fallbacks (no broken images, stays luxurious) ----- */
 .lawyer-frame.img-failed,.seal-center-photo.img-failed,.office-frame.img-failed{
@@ -2061,10 +2215,18 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
   .hero-office-bg { background-position: 30% top !important; }
 }
 
-/* --- Lang bar: inline inside nav, no fixed/absolute overlap --- */
+/* --- Lang bar: desktop inline, mobile fixed --- */
 .lang-bar { position: static !important; top: auto !important; right: auto !important; z-index: auto !important; border-radius: 3px !important; }
-@media(max-width:768px){ .lang-btn { padding: 6px 7px !important; font-size: 6px !important; } }
-@media(max-width:480px){ .lang-btn { padding: 5px 5px !important; font-size: 6px !important; letter-spacing: 0 !important; } }
+@media(max-width:768px){
+  .lang-bar{position:fixed!important;top:10px;right:72px;z-index:9999!important;display:flex!important;gap:3px;background:rgba(6,5,4,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,.25);border-radius:6px;padding:4px 3px}
+  .lang-bar .lang-btn{padding:5px 8px!important;font-size:7px!important;letter-spacing:1px!important;border-radius:3px!important}
+  html[dir="rtl"] .lang-bar{right:auto;left:72px}
+}
+@media(max-width:480px){
+  .lang-bar{top:8px;right:62px;padding:3px 2px}
+  .lang-bar .lang-btn{padding:4px 6px!important;font-size:6px!important}
+  html[dir="rtl"] .lang-bar{right:auto;left:62px}
+}
 
 /* --- Awards carousel: smooth and visible --- */
 .awards-carousel-wrap {
@@ -2203,8 +2365,8 @@ function imgFallback(img,mono,icon,sub){
 <div class="floating-actions">
   <button class="fab fab-top" id="backToTop" aria-label="Back to top">↑</button>
   <a href="https://wa.me/212661797469" target="_blank" class="fab fab-wa" aria-label="WhatsApp">
-    <span class="fab-tooltip" data-i18n="local.cta">Book an appointment</span>
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.455 5.356 1.456 5.393 0 9.782-4.386 9.785-9.782.002-2.614-1.011-5.071-2.854-6.916C17.09 1.967 14.633.953 12.016.953c-5.397 0-9.786 4.388-9.789 9.784-.002 2.115.564 4.135 1.64 5.918l-1.012 3.695 3.792-.995z"/></svg>
+    <span class="fab-tooltip" data-i18n="local.cta">Book an appointment</span>
   </a>
 </div>
 
@@ -2473,8 +2635,7 @@ function imgFallback(img,mono,icon,sub){
 <section id="about">
   <div class="about-pattern"></div>
   <div class="about-left rvl">
-    <div class="slabel" data-i18n="about.label">Our Firm</div>
-    <h2 class="stitle"><span class="title-reveal"><span data-i18n="about.title1">A dedicated <em>defense</em></span> <span data-i18n="about.title2">for your rights</span></span></h2>
+    <h2 class="stitle" style="text-align:center"><span class="title-reveal"><span data-i18n="about.title1">A dedicated <em>defense</em></span> <span data-i18n="about.title2">for your rights</span></span></h2>
     <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
     <p class="about-text" data-i18n="about.text">Our legal practice is built on <b>active listening</b>, a relationship of trust based on <b>transparency</b> and a committed defense, combining <b>rigor and humanity</b> at every stage of your legal journey.</p>
     <div class="about-quote"><p data-i18n="about.quote">A committed lawyer for your interests, by your side to defend your rights, with rigor and kindness throughout the process.</p></div>
@@ -2482,7 +2643,7 @@ function imgFallback(img,mono,icon,sub){
   </div>
   <div class="about-right rvs">
     <div class="lawyer-profile-wrapper">
-      <div class="lawyer-frame"><img src="avocat.png" alt="Maître Khalid Chafai" class="lawyer-img" onerror="imgFallback(this,'KC','⚖','MAÎTRE K. CHAFAI')"></div>
+      <div class="lawyer-frame"><img src="avocat.png" alt="Maître Khalid Chafai" class="lawyer-img" loading="lazy" decoding="async" onerror="imgFallback(this,'KC','⚖','MAÎTRE K. CHAFAI')"></div>
       <div class="lawyer-caption"><h4>Me K. Chafai</h4><p data-i18n="about.caption">Lawyer at the Tangier Bar</p></div>
     </div>
     
@@ -2503,7 +2664,7 @@ function imgFallback(img,mono,icon,sub){
   </div>
 </section>
 
-<div class="about-stats rvs"><div class="astat"><div class="astat-num">11+</div><div class="astat-label" data-i18n="about.stats1">Years of experience</div></div><div class="astat"><div class="astat-num">500+</div><div class="astat-label" data-i18n="about.stats2">Cases handled</div></div><div class="astat"><div class="astat-num">4</div><div class="astat-label" data-i18n="about.stats4">Languages</div></div><div class="astat"><div class="astat-num">12</div><div class="astat-label" data-i18n="about.stats4b">Areas of expertise</div></div></div>
+<div class="about-stats rvs"><div class="astat"><div class="astat-num">11+</div><div class="astat-label" data-i18n="about.stats1">Years of experience</div></div><div class="astat"><div class="astat-num">500+</div><div class="astat-label" data-i18n="about.stats2">Cases handled</div></div><div class="astat"><div class="astat-num">4</div><div class="astat-label" data-i18n="about.stats4">Languages</div></div><div class="astat"><div class="astat-num">16</div><div class="astat-label" data-i18n="about.stats4b">Areas of expertise</div></div></div>
 
 <style>
 #why-us{padding:120px 80px;max-width:1300px;margin:0 auto;position:relative;z-index:2;overflow:hidden}
@@ -3325,10 +3486,10 @@ function imgFallback(img,mono,icon,sub){
 <section id="google-reviews-section" class="rv">
   <div class="google-reviews-container">
     <div class="google-brand-card">
-      <div class="google-brand-profile"><img src="logo.jpeg" alt="CHAFAI Law Firm" class="google-avatar"><div class="google-brand-info"><h3>CHAFAI Law Firm<br>Attorney at Law<br>Tangier</h3></div></div>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <img src="google_logo.png" alt="Google" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath fill=%22%23EA4335%22 d=%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22/%3E%3Cpath fill=%22%234285F4%22 d=%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22/%3E%3Cpath fill=%22%23FBBC05%22 d=%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22/%3E%3Cpath fill=%22%2334A853%22 d=%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22/%3E%3C/svg%3E'" style="width:32px;height:32px;object-fit:contain">
-        <span style="font-family:'Cinzel',serif;font-size:13px;color:var(--white);letter-spacing:1px">Google</span>
+      <div class="google-brand-profile"><img src="logo.jpeg" alt="CHAFAI Law Firm" class="google-avatar"><div class="google-brand-info"><h3>M. Khalid Chafai</h3></div></div>
+      <div class="google-brand-platform">
+        <img src="google_logo.png" alt="Google" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath fill=%22%23EA4335%22 d=%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22/%3E%3Cpath fill=%22%234285F4%22 d=%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22/%3E%3Cpath fill=%22%23FBBC05%22 d=%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22/%3E%3Cpath fill=%22%2334A853%22 d=%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22/%3E%3C/svg%3E'">
+        <span>Google</span>
       </div>
       <div class="google-brand-stars">★★★★★</div>
       <div class="google-count-text" data-i18n="reviews.count">23 Google reviews</div>
@@ -3469,6 +3630,19 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .btn-p::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.5s cubic-bezier(.25,1,.5,1)}
 .btn-p:hover::before{transform:scaleX(1)}
 .btn-p:hover{color:var(--noir)}
+/* Cache le bouton WhatsApp quand le site est en mode RTL (arabe) */
+html[dir="rtl"] .floating-actions {
+    display: none !important;
+}
+
+
+html {
+    scroll-behavior: smooth; /* Permet un défilement fluide */
+}
+
+[id] {
+    scroll-margin-top: 80px; /* Ajustez cette valeur selon la hauteur de votre navbar */
+}
 .btn-p span{position:relative;z-index:1}
 .btn-p .btn-arrow{position:relative;z-index:1;transition:transform .4s}
 .btn-p:hover .btn-arrow{transform:translateX(6px)}
@@ -3482,7 +3656,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <div class="section-divider"><span class="sd-diamond"></span></div>
 
-<section><div id="contact">
+<section id="contact"><div>
   <div class="contact-inner">
     <div class="rvl contact-header">
       <h2 class="stitle" style="text-align:center"><span class="title-reveal"><span data-i18n="contact.title1">Let's talk about</span></span><br><span class="title-reveal"><span data-i18n="contact.title2">your <em>case</em></span></span></h2>
@@ -3606,7 +3780,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <script>
 
 
-(function(){const cv=document.getElementById('gl-canvas');const gl=cv.getContext('webgl',{alpha:true,antialias:true});if(!gl)return;function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;gl.viewport(0,0,cv.width,cv.height)}resize();window.addEventListener('resize',resize);const vs='attribute vec2 a_pos;attribute float a_sz;uniform vec2 u_res;void main(){vec2 clip=(a_pos/u_res)*2.0-1.0;clip.y*=-1.0;gl_Position=vec4(clip,0,1);gl_PointSize=a_sz;}';const fs='precision mediump float;void main(){vec2 c=gl_PointCoord*2.0-1.0;float d=dot(c,c);if(d>1.0)discard;float a=0.5*(1.0-d);gl_FragColor=vec4(0.784,0.659,0.298,a*0.6);}';function mk(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s}const prog=gl.createProgram();gl.attachShader(prog,mk(gl.VERTEX_SHADER,vs));gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fs));gl.linkProgram(prog);gl.useProgram(prog);const N=500;const pos=new Float32Array(N*2),sz=new Float32Array(N);const vx=new Float32Array(N),vy=new Float32Array(N),life=new Float32Array(N),maxL=new Float32Array(N);for(let i=0;i<N;i++){pos[i*2]=Math.random()*cv.width;pos[i*2+1]=Math.random()*cv.height;sz[i]=Math.random()*3+.5;vx[i]=(Math.random()-.5)*.4;vy[i]=(Math.random()-.5)*.4-.15;life[i]=Math.random()*500;maxL[i]=Math.random()*400+200}const posBuf=gl.createBuffer(),szBuf=gl.createBuffer();gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);const aPos=gl.getAttribLocation(prog,'a_pos'),aSz=gl.getAttribLocation(prog,'a_sz');const uRes=gl.getUniformLocation(prog,'u_res');function draw(){for(let i=0;i<N;i++){pos[i*2]+=vx[i];pos[i*2+1]+=vy[i];life[i]++;if(life[i]>maxL[i]||pos[i*2+1]<-10||pos[i*2]<-10||pos[i*2]>cv.width+10){pos[i*2]=Math.random()*cv.width;pos[i*2+1]=cv.height+10;life[i]=0}}gl.clear(gl.COLOR_BUFFER_BIT);gl.uniform2f(uRes,cv.width,cv.height);gl.bindBuffer(gl.ARRAY_BUFFER,posBuf);gl.bufferData(gl.ARRAY_BUFFER,pos,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(aPos);gl.vertexAttribPointer(aPos,2,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,szBuf);gl.bufferData(gl.ARRAY_BUFFER,sz,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(aSz);gl.vertexAttribPointer(aSz,1,gl.FLOAT,false,0,0);gl.drawArrays(gl.POINTS,0,N);requestAnimationFrame(draw)}draw()})();
+(function(){if(window.innerWidth<768){document.getElementById('gl-canvas')?.remove();return;}const cv=document.getElementById('gl-canvas');const gl=cv.getContext('webgl',{alpha:true,antialias:true});if(!gl)return;function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;gl.viewport(0,0,cv.width,cv.height)}resize();window.addEventListener('resize',resize);const vs='attribute vec2 a_pos;attribute float a_sz;uniform vec2 u_res;void main(){vec2 clip=(a_pos/u_res)*2.0-1.0;clip.y*=-1.0;gl_Position=vec4(clip,0,1);gl_PointSize=a_sz;}';const fs='precision mediump float;void main(){vec2 c=gl_PointCoord*2.0-1.0;float d=dot(c,c);if(d>1.0)discard;float a=0.5*(1.0-d);gl_FragColor=vec4(0.784,0.659,0.298,a*0.6);}';function mk(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s}const prog=gl.createProgram();gl.attachShader(prog,mk(gl.VERTEX_SHADER,vs));gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fs));gl.linkProgram(prog);gl.useProgram(prog);const N=500;const pos=new Float32Array(N*2),sz=new Float32Array(N);const vx=new Float32Array(N),vy=new Float32Array(N),life=new Float32Array(N),maxL=new Float32Array(N);for(let i=0;i<N;i++){pos[i*2]=Math.random()*cv.width;pos[i*2+1]=Math.random()*cv.height;sz[i]=Math.random()*3+.5;vx[i]=(Math.random()-.5)*.4;vy[i]=(Math.random()-.5)*.4-.15;life[i]=Math.random()*500;maxL[i]=Math.random()*400+200}const posBuf=gl.createBuffer(),szBuf=gl.createBuffer();gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);const aPos=gl.getAttribLocation(prog,'a_pos'),aSz=gl.getAttribLocation(prog,'a_sz');const uRes=gl.getUniformLocation(prog,'u_res');function draw(){for(let i=0;i<N;i++){pos[i*2]+=vx[i];pos[i*2+1]+=vy[i];life[i]++;if(life[i]>maxL[i]||pos[i*2+1]<-10||pos[i*2]<-10||pos[i*2]>cv.width+10){pos[i*2]=Math.random()*cv.width;pos[i*2+1]=cv.height+10;life[i]=0}}gl.clear(gl.COLOR_BUFFER_BIT);gl.uniform2f(uRes,cv.width,cv.height);gl.bindBuffer(gl.ARRAY_BUFFER,posBuf);gl.bufferData(gl.ARRAY_BUFFER,pos,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(aPos);gl.vertexAttribPointer(aPos,2,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,szBuf);gl.bufferData(gl.ARRAY_BUFFER,sz,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(aSz);gl.vertexAttribPointer(aSz,1,gl.FLOAT,false,0,0);gl.drawArrays(gl.POINTS,0,N);requestAnimationFrame(draw)}draw()})();
 
 const progressBar=document.getElementById('prog'),timelineBarEl=document.getElementById('timelineBar'),timelineFill=document.getElementById('timelineFill');
 const dpattern=document.getElementById('dpattern'),domainsSection=document.getElementById('domains');
@@ -3648,7 +3822,10 @@ document.addEventListener('click',e=>{
 
 
 
-function splitAndAnimate(el,delay=0){const text=el.textContent;el.innerHTML='';[...text].forEach((ch,i)=>{const s=document.createElement('span');s.className='split-char';s.style.animationDelay=`${delay+i*.04}s`;s.textContent=ch==' '?'\u00A0':ch;el.appendChild(s)})}
+function splitAndAnimate(el,delay=0){
+  if(document.documentElement.dir==='rtl'){el.style.opacity='1';return;}
+  const text=el.textContent;el.innerHTML='';[...text].forEach((ch,i)=>{const s=document.createElement('span');s.className='split-char';s.style.animationDelay=`${delay+i*.04}s`;s.textContent=ch==' '?'\u00A0':ch;el.appendChild(s)})
+}
 
 const slabelObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.splitted){e.target.dataset.splitted=true;splitAndAnimate(e.target,.15);e.target.addEventListener('animationend',()=>{e.target.style.opacity='1';},{once:true})}})},{threshold:.15});
 document.querySelectorAll('.slabel').forEach(el=>slabelObs.observe(el));
@@ -3681,7 +3858,7 @@ function animateFeaturedText(){const el=document.getElementById('featuredText');
 
 setInterval(()=>{const g=document.querySelector('.htitle .glitch');if(g){g.classList.add('active');setTimeout(()=>g.classList.remove('active'),400)}},4000);
 
-(function(){if(window.innerWidth<768)return;const cv=document.getElementById('smoke-canvas'),ctx=cv?.getContext('2d');if(!cv||!ctx)return;function resize(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight}resize();window.addEventListener('resize',resize);const COLORS=['rgba(201,168,76,','rgba(232,201,122,'];const smokes=[];for(let i=0;i<45;i++)smokes.push(mkSmoke());function mkSmoke(){return{x:Math.random()*100,y:75+Math.random()*25,vx:(Math.random()-.5)*.1,vy:-(Math.random()*.15+.04),r:40+Math.random()*50,opacity:Math.random()*.06+.01,life:0,maxL:250+Math.random()*250,color:COLORS[Math.floor(Math.random()*COLORS.length)]}}function drawSmoke(){ctx.clearRect(0,0,cv.width,cv.height);smokes.forEach(s=>{s.x+=s.vx;s.y+=s.vy;s.life++;const t=s.life/s.maxL;const op=s.opacity*(t<.3?t/.3:1-((t-.3)/.7));if(op>0){const g=ctx.createRadialGradient(s.x/100*cv.width,s.y/100*cv.height,0,s.x/100*cv.width,s.y/100*cv.height,s.r);g.addColorStop(0,s.color+op+')');g.addColorStop(1,s.color+'0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(s.x/100*cv.width,s.y/100*cv.height,s.r,0,Math.PI*2);ctx.fill()}if(s.life>s.maxL)Object.assign(s,mkSmoke())});requestAnimationFrame(drawSmoke)}drawSmoke()})();
+(function(){if(window.innerWidth<768)return;const cv=document.getElementById('smoke-canvas'),ctx=cv?.getContext('2d');if(!cv||!ctx)return;function resize(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight}resize();window.addEventListener('resize',resize);const COLORS=['rgba(201,168,76,','rgba(232,201,122,'];const smokes=[];const PARTICLE_COUNT=window.innerWidth<1100?20:45;for(let i=0;i<PARTICLE_COUNT;i++)smokes.push(mkSmoke());function mkSmoke(){return{x:Math.random()*100,y:75+Math.random()*25,vx:(Math.random()-.5)*.1,vy:-(Math.random()*.15+.04),r:40+Math.random()*50,opacity:Math.random()*.06+.01,life:0,maxL:250+Math.random()*250,color:COLORS[Math.floor(Math.random()*COLORS.length)]}}function drawSmoke(){ctx.clearRect(0,0,cv.width,cv.height);smokes.forEach(s=>{s.x+=s.vx;s.y+=s.vy;s.life++;const t=s.life/s.maxL;const op=s.opacity*(t<.3?t/.3:1-((t-.3)/.7));if(op>0){const g=ctx.createRadialGradient(s.x/100*cv.width,s.y/100*cv.height,0,s.x/100*cv.width,s.y/100*cv.height,s.r);g.addColorStop(0,s.color+op+')');g.addColorStop(1,s.color+'0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(s.x/100*cv.width,s.y/100*cv.height,s.r,0,Math.PI*2);ctx.fill()}if(s.life>s.maxL)Object.assign(s,mkSmoke())});requestAnimationFrame(drawSmoke)}drawSmoke()})();
 
 (function(){function revealChars(el,delayBase,isGold){const txt=el.textContent;el.innerHTML='';el.style.opacity='1';[...txt].forEach((ch,i)=>{const s=document.createElement('span');s.className='reveal-char';s.style.animationDelay=`${delayBase+i*.05}s`;s.textContent=ch===' '?'\u00A0':ch;if(isGold){s.style.background='linear-gradient(135deg,var(--gold5) 0%,var(--gold2) 30%,var(--gold) 60%,var(--gold4) 100%)';s.style.backgroundSize='300%';s.style.webkitBackgroundClip='text';s.style.webkitTextFillColor='transparent';s.style.backgroundClip='text';s.style.animation=`charReveal .6s cubic-bezier(.22,1,.36,1) ${delayBase+i*.05}s forwards, shimmer 3s linear infinite`}el.appendChild(s)})}setTimeout(()=>{const maitre=document.getElementById('maitre-el'),khalid=document.getElementById('khalid-el');if(maitre)revealChars(maitre,1.2,false);if(khalid)revealChars(khalid,1.6,true)},350)})();
 
@@ -3720,7 +3897,9 @@ document.querySelectorAll('.process-step').forEach(step=>{step.addEventListener(
 
 
 // 3. Stagger gold chars - split .title-reveal em into staggered characters
-(function(){document.querySelectorAll('.title-reveal em').forEach(em=>{const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.sCharred){e.target.dataset.sCharred='true';const txt=e.target.textContent;e.target.innerHTML='';[...txt].forEach((ch,i)=>{const s=document.createElement('span');s.className='st-char';s.textContent=ch===' '?'\u00A0':ch;s.classList.add('gold-char');s.style.animationDelay=`${.4+i*.03}s`;e.target.appendChild(s)})}})});obs.observe(em)})})();
+(function(){document.querySelectorAll('.title-reveal em').forEach(em=>{const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.sCharred){e.target.dataset.sCharred='true';
+  if(document.documentElement.dir==='rtl'){e.target.style.opacity='1';return;}
+  const txt=e.target.textContent;e.target.innerHTML='';[...txt].forEach((ch,i)=>{const s=document.createElement('span');s.className='st-char';s.textContent=ch===' '?'\u00A0':ch;s.classList.add('gold-char');s.style.animationDelay=`${.4+i*.03}s`;e.target.appendChild(s)})}})});obs.observe(em)})})();
 
 
 
@@ -3843,7 +4022,7 @@ fr:{
 'about.stats1':'Années d\'expérience','about.stats2':'Dossiers traités','about.stats3':'Dossiers gagnés','about.stats4':'Langues','about.stats4b':'Domaines d\'expertise',
 'linkedin.label':'Profil LinkedIn','linkedin.creds':'Master en Droit des Affaires · Doctorant en Droit de la Concurrence',
 'why.label':'Pourquoi Nous Choisir','why.title1':'L\'excellence juridique','why.title2':'à votre <em>service</em>',
-'why.c1t':'Expertise Pointue','why.c1p':'Plus de 15 ans de pratique dans 12 domaines juridiques pour une défense sur mesure.',
+'why.c1t':'Expertise Pointue','why.c1p':'Plus de 15 ans de pratique dans 16 domaines juridiques pour une défense sur mesure.',
 'why.c2t':'Relation de Confiance','why.c2p':'Transparence totale, écoute attentive et disponibilité constante pour chaque client.',
 'why.c3t':'Réactivité Maximale','why.c3p':'Traitement rapide de chaque dossier avec des solutions juridiques efficaces.',
 'why.c4t':'Vision Internationale','why.c4p':'Pratique en arabe, français, anglais et espagnol pour une clientèle internationale.',
@@ -3900,7 +4079,7 @@ fr:{
 'aw.y1':'Google Reviews · 2024','aw.t1':'4,9 / 5 Étoiles','aw.d1':'Plus de 220 avis clients vérifiés sur Google, témoignant d\'une excellence constante en représentation juridique.',
 'aw.y2':'Barreau de Tanger','aw.t2':'Membre en règle','aw.d2':'11 ans de pratique éthique et rigoureuse, en pleine conformité avec les standards déontologiques du Barreau de Tanger.',
 'aw.y3':'Pratique Multilingue','aw.t3':'4 Langues · International','aw.d3':'L\'un des rares cabinets du nord du Maroc capable de représenter des clients en arabe, français, anglais et espagnol.',
-'aw.y4':'11 Ans de Résultats','aw.t4':'98 % de Succès','aw.d4':'Un bilan constant de résultats positifs dans 12 domaines juridiques — construit dossier par dossier, client par client.',
+'aw.y4':'11 Ans de Résultats','aw.t4':'98 % de Succès','aw.d4':'Un bilan constant de résultats positifs dans 16 domaines juridiques — construit dossier par dossier, client par client.',
 'aw.y5':'Confiance Client','aw.t5':'500+ Dossiers Résolus','aw.d5':'Des centaines de particuliers et d\'entreprises ont confié à Maître Chafai leurs affaires juridiques les plus délicates.',
 'aw.y6':'Engagement Pro Bono','aw.t6':'Accès à la Justice','aw.d6':'Engagé à rendre la représentation juridique de qualité accessible — parce que le droit à une défense solide ne devrait pas dépendre des moyens.',
 'panel.biz.title':'Entreprises','panel.biz.desc':'Accompagnement juridique sur mesure pour structurer, développer et sécuriser vos activités au Maroc et à l\'international.','panel.biz.cta':'Découvrir l\'offre entreprises →',
@@ -4080,12 +4259,14 @@ localStorage.setItem('lang',lang);
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
 document.documentElement.dir=lang==='ar'?'rtl':'ltr';
 document.documentElement.lang=lang;
+
 document.querySelectorAll('[data-i18n]').forEach(el=>{
   const key=el.dataset.i18n;
   const txt=I18N[lang][key]||I18N.en[key]||'';
   if(txt.includes('<'))el.innerHTML=txt;else el.textContent=txt;
   if(el.hasAttribute('data-text'))el.dataset.text=txt;
 });
+
 document.querySelectorAll('.nlinks a').forEach(a=>{
   const span=a.querySelector('span');
   const dataKey=a.getAttribute('href').slice(1);
@@ -4102,7 +4283,29 @@ document.querySelectorAll('.sec-dot').forEach((d,i)=>{
   const map={en:['Home','About','Why Us','Areas','Process','Reviews','Contact','Access'],fr:['Accueil','Cabinet','Pourquoi','Domaines','Processus','Avis','Contact','Accès'],ar:['الرئيسية','المكتب','لماذا','المجالات','الخطوات','التقييمات','اتصال','وصول'],es:['Inicio','Despacho','Por Qué','Áreas','Proceso','Opiniones','Contacto','Acceso']};
   const label=d.querySelector('.dot-label');
   if(label)label.textContent=(map[lang]||map.en)[i]||'';
-})};
+});
+
+/* Glitch : désactiver en arabe pour éviter artefacts visuels */
+const khalid=document.getElementById('khalid-el');
+if(khalid){
+  if(lang==='ar'){khalid.classList.remove('ultra-glitch');}
+  else{khalid.classList.add('ultra-glitch','liquid-gold');}
+}
+
+/* Réinitialiser les slabels : annuler le split précédent et relancer l'animation */
+document.querySelectorAll('.slabel').forEach(el=>{
+  if(el.dataset.splitted){
+    delete el.dataset.splitted;
+    el.style.opacity='';
+  }
+  /* En arabe : montrer directement sans découpe */
+  if(lang==='ar'){
+    el.innerHTML=I18N.ar[el.dataset.i18n]||el.textContent;
+    el.style.opacity='1';
+    el.dataset.splitted='true';
+  }
+});
+}
 const savedLang=localStorage.getItem('lang')||'en';
 applyLang(savedLang);
 document.dispatchEvent(new Event('langChanged'));
@@ -5131,11 +5334,14 @@ document.querySelectorAll('.award-item').forEach(item=>{
     });
   }, 1500);
 
-  // === APPLY ULTRA GLITCH to hero name ===
+  // === APPLY ULTRA GLITCH to hero name (seulement hors arabe) ===
   setTimeout(() => {
+    const currentLang = localStorage.getItem('lang') || 'en';
     const khalid = document.getElementById('khalid-el');
     if (khalid) {
-      khalid.classList.add('ultra-glitch', 'liquid-gold');
+      if(currentLang !== 'ar'){
+        khalid.classList.add('ultra-glitch', 'liquid-gold');
+      }
       khalid.setAttribute('data-text', khalid.textContent.trim());
       // Remove old conflicting styles
       khalid.style.cssText = '';
@@ -5512,7 +5718,7 @@ document.querySelectorAll('.hcount-num').forEach(el => {
     requestAnimationFrame(step);
   }
 
-  /* --- 3. Mobile auto-scroll for reviews & awards --- */
+  /* --- 3. Mobile auto-scroll for reviews & awards (RTL-aware) --- */
   function startMobileScroll(el, speed) {
     if (!el || el.getAttribute('data-scroll-init')) return;
     el.setAttribute('data-scroll-init', '1');
@@ -5521,8 +5727,13 @@ document.querySelectorAll('.hcount-num').forEach(el => {
       if (prev) {
         max = el.scrollWidth - el.clientWidth;
         if (max > 0) {
-          el.scrollLeft += (now - prev) * speed;
-          if (el.scrollLeft >= max) el.scrollLeft = 0;
+          if (document.documentElement.dir === 'rtl') {
+            el.scrollLeft -= (now - prev) * speed;
+            if (el.scrollLeft <= -max) el.scrollLeft = 0;
+          } else {
+            el.scrollLeft += (now - prev) * speed;
+            if (el.scrollLeft >= max) el.scrollLeft = 0;
+          }
         }
       }
       prev = now;
@@ -6035,6 +6246,44 @@ document.querySelectorAll('.hcount-num').forEach(el => {
   .slabel{font-size:7px!important;letter-spacing:3px!important}
   .stitle{font-size:clamp(1.1rem,6vw,1.4rem)!important;margin-bottom:14px!important}
 }
+
+/* ===== ARABIC RTL MOBILE OVERRIDES ===== */
+@media(max-width:768px){
+  html[dir="rtl"] .htitle{font-size:clamp(1.8rem,10vw,2.6rem)!important}
+  html[dir="rtl"] .hsub{font-size:clamp(1.3rem,5vw,1.6rem)!important}
+  html[dir="rtl"] .htag{font-size:clamp(1.2rem,4.5vw,1.4rem)!important}
+  html[dir="rtl"] .hbadge{font-size:12px!important}
+  html[dir="rtl"] .hcount-num{font-size:clamp(1.4rem,7vw,1.7rem)!important}
+  html[dir="rtl"] .hcount-label{font-size:.85rem!important}
+  html[dir="rtl"] .stitle{font-size:clamp(1.3rem,6vw,1.7rem)!important}
+  html[dir="rtl"] .slabel{justify-content:flex-start!important}
+  html[dir="rtl"] .slabel::after{width:30px!important}
+  html[dir="rtl"] .about-quote{border-left:none!important;border-right:2px solid var(--gold)!important;padding:14px 20px 14px 16px!important}
+  html[dir="rtl"] .cinfo{flex-direction:row-reverse!important}
+  html[dir="rtl"] .cdetail{flex-direction:row-reverse!important}
+  html[dir="rtl"] .about-linkedin{flex-direction:row-reverse!important}
+  html[dir="rtl"] .why-card{text-align:right!important}
+  html[dir="rtl"] .process-step{text-align:right!important}
+  html[dir="rtl"] .licard{text-align:right!important}
+  html[dir="rtl"] .faq-q{text-align:right!important}
+  html[dir="rtl"] .faq-a-inner{text-align:right!important}
+  html[dir="rtl"] .step-icon-wrap{margin:0 auto 16px!important}
+  html[dir="rtl"] .timeline-track{direction:rtl!important}
+  html[dir="rtl"] .tl-head{flex-direction:row-reverse!important}
+}
+@media(max-width:480px){
+  html[dir="rtl"] .htitle{font-size:clamp(1.5rem,9vw,2.2rem)!important}
+  html[dir="rtl"] .hsub{font-size:clamp(1.1rem,5vw,1.3rem)!important}
+  html[dir="rtl"] .htag{font-size:clamp(1rem,4.5vw,1.2rem)!important}
+  html[dir="rtl"] .hbadge{font-size:11px!important}
+  html[dir="rtl"] .hcount-num{font-size:clamp(1.2rem,7vw,1.4rem)!important}
+  html[dir="rtl"] .hcount-label{font-size:.75rem!important}
+  html[dir="rtl"] .stitle{font-size:clamp(1.2rem,6vw,1.4rem)!important}
+  html[dir="rtl"] .about-quote{border-left:none!important;border-right:2px solid var(--gold)!important;padding:14px 18px 14px 14px!important}
+  html[dir="rtl"] .phil-pillar{text-align:right!important}
+  html[dir="rtl"] .award-item{text-align:right!important}
+}
+
 /* Landscape phones — compact */
 @media(max-height:500px)and(orientation:landscape){
   #hero{padding:50px 16px 20px!important;min-height:auto!important;height:auto!important}
@@ -6067,6 +6316,81 @@ document.querySelectorAll('.hcount-num').forEach(el => {
   .licard{padding:14px 18px!important}
   .loc-hero{margin-bottom:20px!important}
 }
+
+/* ===== GOOGLE REVIEWS BRAND CARD REDESIGN ===== */
+.google-brand-card{
+  background:linear-gradient(160deg,#1e1a14 0%,#141110 100%)!important;
+  border:1px solid rgba(201,168,76,.15)!important;
+  border-radius:12px!important;
+  padding:36px 32px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  position:relative!important;
+  box-shadow:0 20px 50px rgba(0,0,0,.4),inset 0 1px 0 rgba(201,168,76,.08)!important
+}
+.google-brand-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),rgba(201,168,76,.3),var(--gold),transparent)!important;
+  opacity:.6
+}
+.google-brand-profile{
+  display:flex!important;gap:18px!important;align-items:center!important;margin-bottom:18px!important
+}
+.google-avatar{
+  width:72px!important;height:72px!important;border-radius:10px!important;
+  border:2px solid rgba(201,168,76,.35)!important;object-fit:cover!important;
+  box-shadow:0 8px 25px rgba(0,0,0,.5)!important
+}
+.google-brand-info h3{
+  font-family:'Cinzel',serif!important;font-size:16px!important;
+  color:var(--white)!important;line-height:1.3!important;margin-bottom:4px!important;letter-spacing:1px!important
+}
+.google-brand-platform{
+  display:flex!important;align-items:center!important;gap:10px!important;margin-bottom:12px!important
+}
+.google-brand-platform img{width:28px!important;height:28px!important;object-fit:contain!important}
+.google-brand-platform span{
+  font-family:'Cinzel',serif!important;font-size:12px!important;
+  color:rgba(255,255,255,.5)!important;letter-spacing:2px!important;text-transform:uppercase!important
+}
+.google-brand-stars{
+  color:#ffb400!important;font-size:20px!important;margin:14px 0 8px!important;letter-spacing:3px!important
+}
+.google-count-text{
+  font-family:'Crimson Pro',serif!important;font-size:15px!important;
+  color:var(--text)!important;opacity:.85!important;margin-bottom:22px!important
+}
+.google-btn-write{
+  display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:var(--gold)!important;
+  border:1px solid rgba(201,168,76,.35)!important;padding:12px 28px!important;
+  font-family:'Cinzel',serif!important;font-size:10px!important;letter-spacing:3px!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  transition:all .4s cubic-bezier(.25,1,.5,1)!important;
+  position:relative!important;overflow:hidden!important
+}
+.google-btn-write:hover{
+  border-color:var(--gold)!important;color:var(--noir)!important;
+  background:linear-gradient(135deg,var(--gold2),var(--gold))!important;
+  box-shadow:0 8px 30px rgba(201,168,76,.25)!important
+}
+@media(max-width:768px){
+  .google-brand-card{padding:28px 24px!important}
+  .google-avatar{width:60px!important;height:60px!important}
+  .google-brand-info h3{font-size:14px!important}
+  .google-brand-stars{font-size:18px!important}
+  .google-btn-write{padding:10px 22px!important;font-size:9px!important}
+}
+@media(max-width:480px){
+  .google-brand-card{padding:22px 18px!important}
+  .google-avatar{width:50px!important;height:50px!important}
+  .google-brand-info h3{font-size:12px!important}
+  .google-brand-stars{font-size:16px!important;margin:10px 0 6px!important}
+  .google-count-text{font-size:13px!important;margin-bottom:18px!important}
+  .google-btn-write{padding:10px 20px!important;font-size:8px!important;letter-spacing:2px!important}
+}
+
 </style>
 
 </body>
