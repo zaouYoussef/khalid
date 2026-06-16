@@ -1769,91 +1769,7 @@ h1.revealed::after, h2.revealed::after {
    🔥 MEGA WOW UPGRADE — Responsive + Mind-blowing
    ===================================================== */
 
-/* === SINGLE-ROW TRACK inside carousel wrapper === */
-.google-carousel-wrapper{
-  position:relative;
-  overflow:hidden;
-  flex:1;
-}
-.google-carousel-wrapper::before,.google-carousel-wrapper::after{
-  content:'';
-  position:absolute;top:0;bottom:0;
-  width:160px;z-index:10;pointer-events:none;
-}
-.google-carousel-wrapper::before{left:0;background:linear-gradient(to right,var(--noir) 10%,transparent);}
-.google-carousel-wrapper::after{right:0;background:linear-gradient(to left,var(--noir) 10%,transparent);}
 
-/* Ensure old rows hidden */
-.reviews-row,.reviews-row-1,.reviews-row-2{display:none!important}
-.reviews-carousel{display:none!important}
-
-/* The NEW track */
-.reviews-track{
-  display:flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  gap:22px;
-  padding:24px 0;
-  width:max-content;
-  animation:singleTrackL 60s linear infinite;
-  will-change:transform;
-}
-.reviews-track:hover{animation-play-state:paused}
-@keyframes singleTrackL{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-/* === PREMIUM CARD V2 === */
-.google-review-card{
-  background:linear-gradient(145deg,#1b1711,#110e09)!important;
-  border:1px solid rgba(201,168,76,.08)!important;
-  border-top:2px solid rgba(201,168,76,.22)!important;
-  padding:30px 26px 26px!important;
-  width:340px;
-  flex-shrink:0;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  position:relative;
-  overflow:hidden;
-  transition:transform .45s cubic-bezier(.25,1,.5,1), box-shadow .45s, border-color .3s;
-  cursor:default;
-}
-.google-review-card::before{
-  content:'"';
-  position:absolute;
-  bottom:-20px;right:12px;
-  font-family:'Cormorant Garamond',serif;
-  font-size:130px;
-  line-height:1;
-  color:var(--gold);
-  opacity:.03;
-  pointer-events:none;
-}
-.google-review-card::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(201,168,76,.04),transparent 50%);
-  opacity:0;
-  transition:opacity .4s;
-}
-.google-review-card:hover{
-  transform:translateY(-8px) scale(1.01)!important;
-  box-shadow:0 28px 56px rgba(0,0,0,.65), 0 0 40px rgba(201,168,76,.1)!important;
-  border-color:rgba(201,168,76,.35)!important;
-}
-.google-review-card:hover::after{opacity:1}
-
-/* Mobile tweaks */
-@media(max-width:768px){
-  .google-review-card{width:280px!important;padding:22px 18px 20px!important}
-  .reviews-track{gap:16px;padding:16px 0}
-}
-@media(max-width:480px){
-  .google-review-card{width:240px!important}
-}
 
 /* === HERO ENHANCEMENTS === */
 #hero::after{
@@ -1980,11 +1896,6 @@ footer{padding:70px clamp(16px,5vw,80px)!important}
 /* === RING CLEANUP ON MOBILE === */
 @media(max-width:768px){
   .ring,.ambient-glow,.hero-scales-bg,.arabic-watermark,.hero-marble,.corner-bracket,.scale-num,.seal-ring,.title-flash,#smoke-canvas{display:none!important}
-}
-
-/* === SCROLL FADE FOR REVIEWS TRACK MOBILE === */
-@media(max-width:480px){
-  .google-carousel-wrapper::before,.google-carousel-wrapper::after{width:60px!important}
 }
 
 /* === BEAUTIFUL SECTION HEADERS — always centered === */
@@ -2572,61 +2483,28 @@ function imgFallback(img,mono,icon,sub){
     <div class="ornament"><div class="bar"></div><div class="diamond"></div><div class="bar"></div></div>
   </div>
 
-  <!-- Auto-scrolling track (mobile/tablet) -->
-  <div class="aw-scroll-outer">
-    <div class="aw-scroll-track" id="awScrollTrack">
-      <!-- Set A -->
-      <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
-      <!-- Set B — duplicate for seamless loop -->
-      <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
-      <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
-    </div>
+  <!-- Mobile / tablet — horizontal scroll -->
+  <div class="aw3d-flat-row">
+    <div class="aw3d-flat-card"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+    <div class="aw3d-flat-card"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
   </div>
 
   <!-- Desktop — 3D circular rotating carousel -->
   <div class="aw3d-stage">
     <div class="aw3d-ring" id="awRing">
-      <div class="aw3d-card" style="transform:rotateY(0deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
-      <div class="aw3d-card" style="transform:rotateY(60deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
-      <div class="aw3d-card" style="transform:rotateY(120deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
-      <div class="aw3d-card" style="transform:rotateY(180deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
-      <div class="aw3d-card" style="transform:rotateY(240deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
-      <div class="aw3d-card" style="transform:rotateY(300deg) translateZ(var(--aw3d-radius))"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(0deg) translateZ(420px)"><span class="aw3d-icon">⭐</span><div class="aw3d-year" data-i18n="aw.y1">Google Reviews · 2024</div><div class="aw3d-title" data-i18n="aw.t1">4.9 / 5 Stars</div><div class="aw3d-desc" data-i18n="aw.d1">Over 220 verified client reviews on Google, reflecting consistent excellence in legal representation and client service.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(60deg) translateZ(420px)"><span class="aw3d-icon">🏛️</span><div class="aw3d-year" data-i18n="aw.y2">Barreau de Tanger</div><div class="aw3d-title" data-i18n="aw.t2">Member in Good Standing</div><div class="aw3d-desc" data-i18n="aw.d2">11 years of ethical, rigorous practice in full compliance with the Tangier Bar Association's professional standards.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(120deg) translateZ(420px)"><span class="aw3d-icon">🌍</span><div class="aw3d-year" data-i18n="aw.y3">Multilingual Practice</div><div class="aw3d-title" data-i18n="aw.t3">4 Languages · International</div><div class="aw3d-desc" data-i18n="aw.d3">One of the few firms in Northern Morocco capable of representing clients in Arabic, French, English and Spanish simultaneously.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(180deg) translateZ(420px)"><span class="aw3d-icon">📊</span><div class="aw3d-year" data-i18n="aw.y4">11 Years Track Record</div><div class="aw3d-title" data-i18n="aw.t4">98% Success Rate</div><div class="aw3d-desc" data-i18n="aw.d4">A consistent record of successful outcomes across 12 legal domains — built case by case, client by client.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(240deg) translateZ(420px)"><span class="aw3d-icon">🤝</span><div class="aw3d-year" data-i18n="aw.y5">Client Trust</div><div class="aw3d-title" data-i18n="aw.t5">500+ Cases Resolved</div><div class="aw3d-desc" data-i18n="aw.d5">Hundreds of individuals and corporations have trusted Maître Chafai with their most sensitive legal matters.</div></div>
+      <div class="aw3d-card" style="transform:rotateY(300deg) translateZ(420px)"><span class="aw3d-icon">⚖️</span><div class="aw3d-year" data-i18n="aw.y6">Pro Bono Commitment</div><div class="aw3d-title" data-i18n="aw.t6">Access to Justice</div><div class="aw3d-desc" data-i18n="aw.d6">Committed to making quality legal representation accessible — because the right to a strong defense should not depend on one's means.</div></div>
     </div>
   </div>
 </section>
-
-<script>
-(function(){
-  function kickAwardsRing(){
-    var ring = document.getElementById('awRing');
-    if(!ring) return;
-    ring.style.animation = 'none';
-    void ring.offsetWidth;
-    ring.style.animation = 'aw3dSpin 46s linear infinite';
-    ring.style.willChange = 'transform';
-
-    // Pause on hover
-    ring.addEventListener('mouseenter', function(){ ring.style.animationPlayState = 'paused'; });
-    ring.addEventListener('mouseleave', function(){ ring.style.animationPlayState = 'running'; });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', kickAwardsRing);
-  } else {
-    kickAwardsRing();
-  }
-  window.addEventListener('load', function(){ setTimeout(kickAwardsRing, 200); });
-})();
-</script>
 
 <style>
 /* ===== AWARDS — 3D circular carousel (desktop) + scroll fallback (mobile/tablet) ===== */
@@ -2661,7 +2539,6 @@ function imgFallback(img,mono,icon,sub){
   .aw3d-flat-row { display: none; }
 
   .aw3d-stage {
-    --aw3d-radius: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2681,13 +2558,7 @@ function imgFallback(img,mono,icon,sub){
     position: relative;
     width: 1px; height: 1px;
     transform-style: preserve-3d;
-    animation: aw3dSpin 46s linear infinite;
     will-change: transform;
-  }
-  .aw3d-ring:hover { animation-play-state: paused; }
-  @keyframes aw3dSpin {
-    from { transform: rotateY(0deg); }
-    to   { transform: rotateY(360deg); }
   }
 
   .aw3d-card {
@@ -2699,7 +2570,6 @@ function imgFallback(img,mono,icon,sub){
     border-top: 2px solid rgba(201,168,76,.28);
     border-radius: 14px;
     padding: 26px 20px;
-    backface-visibility: hidden;
     box-shadow: 0 30px 70px rgba(0,0,0,.55);
     transition: border-color .4s, box-shadow .4s;
   }
@@ -2710,7 +2580,6 @@ function imgFallback(img,mono,icon,sub){
 }
 
 @media(min-width:1440px){
-  .aw3d-stage { --aw3d-radius: 460px; height: 500px; }
   .aw3d-card { width: 260px; height: 300px; margin: -150px 0 0 -130px; padding: 30px 24px; }
 }
 
@@ -2994,9 +2863,58 @@ function imgFallback(img,mono,icon,sub){
 .google-count-text{font-family:'Crimson Pro',serif;font-size:14px;color:var(--text);opacity:.8;margin-bottom:20px}
 .google-btn-write{display:inline-block;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2);padding:10px 24px;font-family:'Crimson Pro',serif;font-size:14px;text-decoration:none;border-radius:4px;transition:all .3s ease;cursor:none}
 .google-btn-write:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.05)}
-.google-carousel-wrapper{position:relative;overflow:hidden;flex:1}
+/* ===== 3D ROTATING CAROUSEL ===== */
+.carousel-3d-wrap{
+  perspective:1200px;
+  height:380px;
+  position:relative;
+  flex:1;
+  overflow:visible;
+}
+.carousel-3d-stage{
+  width:100%;height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+}
+.carousel-3d-card{
+  position:absolute;
+  top:50%;left:50%;
+  width:220px;height:280px;
+  margin-left:-110px;margin-top:-140px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+.carousel-3d-card .google-review-card{
+  width:100%!important;height:100%!important;
+  padding:16px 14px 12px!important;
+  display:flex;flex-direction:column;
+  margin:0;border-radius:10px;
+}
+.carousel-3d-card .google-card-text{font-size:.82rem;flex:1;overflow:hidden}
+.carousel-3d-card .google-user-icon-placeholder{width:30px;height:30px;font-size:12px}
+.carousel-3d-card .google-user-meta h4{font-size:8px;letter-spacing:1px}
+.carousel-3d-card .google-user-meta span{font-size:8px}
+.carousel-3d-card .google-card-header{margin-bottom:6px}
+.carousel-3d-card .google-stars-row{margin-bottom:6px}
+
+@media(max-width:1100px){
+  .carousel-3d-wrap{perspective:900px;height:300px}
+  .carousel-3d-card{width:180px;height:230px;margin-left:-90px;margin-top:-115px}
+  .carousel-3d-card .google-review-card{padding:12px 10px 10px!important}
+  .carousel-3d-card .google-card-text{font-size:.72rem}
+  .carousel-3d-card .google-user-icon-placeholder{width:24px;height:24px;font-size:10px}
+  .carousel-3d-card .google-user-meta h4{font-size:7px}
+  .carousel-3d-card .google-user-meta span{font-size:7px}
+}
+@media(max-width:768px){
+  .carousel-3d-wrap{display:none}
+  .reviews-mobile-wrap{display:block!important}
+}
+.reviews-mobile-wrap{display:none;overflow-x:auto;padding:8px 0}
+.reviews-mobile-inner{display:flex;gap:16px;flex-wrap:nowrap;width:max-content;padding:0 16px}
+.reviews-mobile-inner .google-review-card{width:280px;flex-shrink:0}
 .google-review-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.google-review-card-inner{display:contents}
 .google-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
 .google-user-box{display:flex;gap:14px;align-items:center}
 .google-user-icon-placeholder{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:600;color:#fff;font-size:17px;flex-shrink:0}
@@ -3009,56 +2927,6 @@ function imgFallback(img,mono,icon,sub){
 .google-card-text{font-family:'Crimson Pro',serif;font-size:15px;color:#d1c7b7;line-height:1.7}
 .google-card-readmore{font-family:'Crimson Pro',serif;font-size:13px;color:#7c7467;text-decoration:none;transition:color .3s;display:inline-block;margin-top:10px}
 .google-card-readmore:hover{color:var(--gold)}
-
-/* ===== REVIEWS CAROUSEL — SINGLE ROW INFINITE AUTO-SCROLL ===== */
-#testi{padding:80px 0 120px;overflow:hidden;position:relative;z-index:2}
-.theader{text-align:center;max-width:720px;margin:0 auto 40px;padding:0 20px}
-
-/* Single-row infinite scroll */
-.reviews-carousel{
-  position:relative;
-  overflow:hidden;
-  padding:20px 0;
-}
-.reviews-carousel::before,.reviews-carousel::after{
-  content:'';
-  position:absolute;
-  top:0;bottom:0;
-  width:220px;
-  z-index:10;
-  pointer-events:none;
-}
-.reviews-carousel::before{
-  left:0;
-  background:linear-gradient(to right,var(--noir) 20%,transparent);
-}
-.reviews-carousel::after{
-  right:0;
-  background:linear-gradient(to left,var(--noir) 20%,transparent);
-}
-
-/* ONE track that scrolls left, seamlessly */
-.reviews-track{
-  display:flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  gap:24px;
-  width:max-content;
-  animation:trackScrollL 55s linear infinite;
-  will-change:transform;
-}
-.reviews-track:hover{animation-play-state:paused}
-
-@keyframes trackScrollL{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-/* Kill the old rows */
-.reviews-row,.reviews-row-1,.reviews-row-2{display:none!important}
-.reviews-slide{display:none!important}
-.carousel-controls{display:none!important}
-.carousel-btn{display:none!important}
 
 /* ===== PREMIUM REVIEW CARD REDESIGN ===== */
 .google-review-card{
@@ -3152,7 +3020,7 @@ function imgFallback(img,mono,icon,sub){
   border-top:2px solid rgba(201,168,76,.25);
   padding:32px 28px 28px;
   flex-shrink:0;
-  width:360px;
+  width:340px;
   display:flex;
   flex-direction:column;
   gap:16px;
@@ -3324,41 +3192,38 @@ function imgFallback(img,mono,icon,sub){
       <div class="google-count-text" data-i18n="reviews.count">23 Google reviews</div>
       <a href="#contact" class="google-btn-write" data-i18n="reviews.write">Write a review</a>
     </div>
-    <div class="google-carousel-wrapper">
-      <div class="reviews-carousel">
-        <!-- SINGLE ROW — scrolls left infinitely -->
-      </div><!-- /old placeholder, new track is outside below -->
-      <!-- NEW SINGLE-ROW TRACK -->
-      <div class="reviews-track" id="reviewsTrack">
-        <!-- Set A -->
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">M</div><div class="google-user-meta"><h4>Mabchour Said</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Our company recently engaged Khalid Chafai for a significant corporate litigation matter, and his performance was nothing short of exemplary.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">L</div><div class="google-user-meta"><h4>Lamine Jamal</h4><span>il y a 10 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had the privilege of being represented by Khalid Chafai for a sensitive personal injury case. He demonstrated genuine empathy and thorough command of the law.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">K</div><div class="google-user-meta"><h4>KHALIL BOUCHIKHI</h4><span>il y a 7 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had a great experience working with Mr. Khalid Chafii in Tangier. He is a highly professional and competent lawyer, very attentive and respectful.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">N</div><div class="google-user-meta"><h4>Najat Boukhars</h4><span>il y a un an</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Maître Khalid Chafii est un avocat sérieux, compétent, loyal et surtout très professionnel. Il a su défendre mes droits avec une grande détermination.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#388e3c">M</div><div class="google-user-meta"><h4>Mouloud Ahammad</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Je recommande vivement maître KHALID CHAFAI ! Il a été très professionnel, compétent et à l'écoute de mes besoins. Un avocat de confiance.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#d32f2f">Y</div><div class="google-user-meta"><h4>Youssef Fenni</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">بصراحة، الأستاذ خليد الشافعي محامي كفء ومتمكن بزاف. كيعرف يخدم بجدية وكيعطي وقت كبير للملفات ديال الناس.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">M</div><div class="google-user-meta"><h4>Mohamed Chaouni</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Maître Khalid Chafai est un avocat exceptionnel à Tanger. Son professionnalisme et sa grande connaissance du droit sont impressionnants.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#1976d2">R</div><div class="google-user-meta"><h4>Riad Yamoun</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">M. Khalid Chafai a représenté mes intérêts avec une détermination incroyable dans une affaire délicate. Son approche stratégique est remarquable.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">I</div><div class="google-user-meta"><h4>Issam Driouach</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had the pleasure of working with Khalid Chafai, and I cannot recommend him highly enough. His professionalism and attention to detail were exceptional.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#c2185b">N</div><div class="google-user-meta"><h4>Noureddine Ettajy</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">J'ai récemment fait appel à M. Khalid Chafai pour une affaire complexe, et je ne pourrais qu'être plus satisfait du résultat.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#f57c00">A</div><div class="google-user-meta"><h4>Akram Lakout</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Lawyer Khalid Chafai is an expert in his field. His depth of knowledge and strategic analysis were crucial in resolving my case.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#455a64">A</div><div class="google-user-meta"><h4>Abdellatif Stitou</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">الأستاذ خالد الشافعي يقدم خدمات بجودة عالية. قام بشرح كل شيء بطريقة مبسطة وسهلة. تعامله واضح واحترافي.</p></div>
-        <!-- Set B — exact duplicate for seamless loop -->
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">M</div><div class="google-user-meta"><h4>Mabchour Said</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Our company recently engaged Khalid Chafai for a significant corporate litigation matter, and his performance was nothing short of exemplary.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">L</div><div class="google-user-meta"><h4>Lamine Jamal</h4><span>il y a 10 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had the privilege of being represented by Khalid Chafai for a sensitive personal injury case. He demonstrated genuine empathy and thorough command of the law.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">K</div><div class="google-user-meta"><h4>KHALIL BOUCHIKHI</h4><span>il y a 7 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had a great experience working with Mr. Khalid Chafii in Tangier. He is a highly professional and competent lawyer, very attentive and respectful.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">N</div><div class="google-user-meta"><h4>Najat Boukhars</h4><span>il y a un an</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Maître Khalid Chafii est un avocat sérieux, compétent, loyal et surtout très professionnel. Il a su défendre mes droits avec une grande détermination.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#388e3c">M</div><div class="google-user-meta"><h4>Mouloud Ahammad</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Je recommande vivement maître KHALID CHAFAI ! Il a été très professionnel, compétent et à l'écoute de mes besoins. Un avocat de confiance.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#d32f2f">Y</div><div class="google-user-meta"><h4>Youssef Fenni</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">بصراحة، الأستاذ خليد الشافعي محامي كفء ومتمكن بزاف. كيعرف يخدم بجدية وكيعطي وقت كبير للملفات ديال الناس.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">M</div><div class="google-user-meta"><h4>Mohamed Chaouni</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Maître Khalid Chafai est un avocat exceptionnel à Tanger. Son professionnalisme et sa grande connaissance du droit sont impressionnants.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#1976d2">R</div><div class="google-user-meta"><h4>Riad Yamoun</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">M. Khalid Chafai a représenté mes intérêts avec une détermination incroyable dans une affaire délicate. Son approche stratégique est remarquable.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">I</div><div class="google-user-meta"><h4>Issam Driouach</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">I had the pleasure of working with Khalid Chafai, and I cannot recommend him highly enough. His professionalism and attention to detail were exceptional.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#c2185b">N</div><div class="google-user-meta"><h4>Noureddine Ettajy</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">J'ai récemment fait appel à M. Khalid Chafai pour une affaire complexe, et je ne pourrais qu'être plus satisfait du résultat.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#f57c00">A</div><div class="google-user-meta"><h4>Akram Lakout</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">Lawyer Khalid Chafai is an expert in his field. His depth of knowledge and strategic analysis were crucial in resolving my case.</p></div>
-        <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#455a64">A</div><div class="google-user-meta"><h4>Abdellatif Stitou</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span></div><p class="google-card-text">الأستاذ خالد الشافعي يقدم خدمات بجودة عالية. قام بشرح كل شيء بطريقة مبسطة وسهلة. تعامله واضح واحترافي.</p></div>
-      </div><!-- /reviews-track -->
-    </div><!-- /google-carousel-wrapper -->
-    </div><!-- /google-reviews-container -->
+    <div class="carousel-3d-wrap">
+      <div class="carousel-3d-stage">
+        <div class="carousel-3d-card" style="transform:rotateY(0deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">M</div><div class="google-user-meta"><h4>Mabchour Said</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Our company recently engaged Khalid Chafai for a significant corporate litigation matter, and his performance was nothing short of exemplary.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(30deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">L</div><div class="google-user-meta"><h4>Lamine Jamal</h4><span>il y a 10 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had the privilege of being represented by Khalid Chafai for a sensitive personal injury case. He demonstrated genuine empathy and thorough command of the law.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(60deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">K</div><div class="google-user-meta"><h4>KHALIL BOUCHIKHI</h4><span>il y a 7 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had a great experience working with Mr. Khalid Chafii in Tangier. He is a highly professional and competent lawyer, very attentive and respectful.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(90deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">N</div><div class="google-user-meta"><h4>Najat Boukhars</h4><span>il y a un an</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Maître Khalid Chafii est un avocat sérieux, compétent, loyal et surtout très professionnel. Il a su défendre mes droits avec une grande détermination.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(120deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#388e3c">M</div><div class="google-user-meta"><h4>Mouloud Ahammad</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Je recommande vivement maître KHALID CHAFAI ! Il a été très professionnel, compétent et à l'écoute de mes besoins. Un avocat de confiance.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(150deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#d32f2f">Y</div><div class="google-user-meta"><h4>Youssef Fenni</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">بصراحة، الأستاذ خليد الشافعي محامي كفء ومتمكن بزاف. كيعرف يخدم بجدية وكيعطي وقت كبير للملفات ديال الناس.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(180deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">M</div><div class="google-user-meta"><h4>Mohamed Chaouni</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Maître Khalid Chafai est un avocat exceptionnel à Tanger. Son professionnalisme et sa grande connaissance du droit sont impressionnants.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(210deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#1976d2">R</div><div class="google-user-meta"><h4>Riad Yamoun</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">M. Khalid Chafai a représenté mes intérêts avec une détermination incroyable dans une affaire délicate. Son approche stratégique est remarquable.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(240deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">I</div><div class="google-user-meta"><h4>Issam Driouach</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had the pleasure of working with Khalid Chafai, and I cannot recommend him highly enough. His professionalism and attention to detail were exceptional.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(270deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#c2185b">N</div><div class="google-user-meta"><h4>Noureddine Ettajy</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">J'ai récemment fait appel à M. Khalid Chafai pour une affaire complexe, et je ne pourrais qu'être plus satisfait du résultat.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(300deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#f57c00">A</div><div class="google-user-meta"><h4>Akram Lakout</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Lawyer Khalid Chafai is an expert in his field. His depth of knowledge and strategic analysis were crucial in resolving my case.</p></div></div>
+        <div class="carousel-3d-card" style="transform:rotateY(330deg) translateZ(420px)"><div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#455a64">A</div><div class="google-user-meta"><h4>Abdellatif Stitou</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">الأستاذ خالد الشافعي يقدم خدمات بجودة عالية. قام بشرح كل شيء بطريقة مبسطة وسهلة. تعامله واضح واحترافي.</p></div></div>
+      </div>
+      <div class="reviews-mobile-wrap">
+        <div class="reviews-mobile-inner">
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">M</div><div class="google-user-meta"><h4>Mabchour Said</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Our company recently engaged Khalid Chafai for a significant corporate litigation matter, and his performance was nothing short of exemplary.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">L</div><div class="google-user-meta"><h4>Lamine Jamal</h4><span>il y a 10 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had the privilege of being represented by Khalid Chafai for a sensitive personal injury case. He demonstrated genuine empathy and thorough command of the law.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#5d4037">K</div><div class="google-user-meta"><h4>KHALIL BOUCHIKHI</h4><span>il y a 7 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had a great experience working with Mr. Khalid Chafii in Tangier. He is a highly professional and competent lawyer, very attentive and respectful.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">N</div><div class="google-user-meta"><h4>Najat Boukhars</h4><span>il y a un an</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Maître Khalid Chafii est un avocat sérieux, compétent, loyal et surtout très professionnel. Il a su défendre mes droits avec une grande détermination.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#388e3c">M</div><div class="google-user-meta"><h4>Mouloud Ahammad</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Je recommande vivement maître KHALID CHAFAI ! Il a été très professionnel, compétent et à l'écoute de mes besoins. Un avocat de confiance.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#d32f2f">Y</div><div class="google-user-meta"><h4>Youssef Fenni</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">بصراحة، الأستاذ خليد الشافعي محامي كفء ومتمكن بزاف. كيعرف يخدم بجدية وكيعطي وقت كبير للملفات ديال الناس.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#0288d1">M</div><div class="google-user-meta"><h4>Mohamed Chaouni</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Maître Khalid Chafai est un avocat exceptionnel à Tanger. Son professionnalisme et sa grande connaissance du droit sont impressionnants.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#1976d2">R</div><div class="google-user-meta"><h4>Riad Yamoun</h4><span>il y a 8 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">M. Khalid Chafai a représenté mes intérêts avec une détermination incroyable dans une affaire délicate. Son approche stratégique est remarquable.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#7b1fa2">I</div><div class="google-user-meta"><h4>Issam Driouach</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">I had the pleasure of working with Khalid Chafai, and I cannot recommend him highly enough. His professionalism and attention to detail were exceptional.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#c2185b">N</div><div class="google-user-meta"><h4>Noureddine Ettajy</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">J'ai récemment fait appel à M. Khalid Chafai pour une affaire complexe, et je ne pourrais qu'être plus satisfait du résultat.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#f57c00">A</div><div class="google-user-meta"><h4>Akram Lakout</h4><span>il y a 9 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">Lawyer Khalid Chafai is an expert in his field. His depth of knowledge and strategic analysis were crucial in resolving my case.</p></div>
+          <div class="google-review-card"><div class="google-card-header"><div class="google-user-box"><div class="google-user-icon-placeholder" style="background-color:#455a64">A</div><div class="google-user-meta"><h4>Abdellatif Stitou</h4><span>il y a 11 mois</span></div></div><img class="google-g-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%E8%AA%8D%E8%AD%89%E5%BE%BD%E7%AB%A0.svg" alt="Google"></div><div class="google-stars-row"><span class="google-star-active">★★★★★</span><span class="google-verified-badge">●</span></div><p class="google-card-text">الأستاذ خالد الشافعي يقدم خدمات بجودة عالية. قام بشرح كل شيء بطريقة مبسطة وسهلة. تعامله واضح واحترافي.</p></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -4509,87 +4374,12 @@ document.querySelectorAll('.award-item').forEach(item=>{
 
 </script>
 
-<!-- ===== BULLETPROOF CAROUSEL FIX ===== -->
-<style>
-/* Kill everything old that could conflict */
-.reviews-row, .reviews-row-1, .reviews-row-2,
-.reviews-carousel, .reviews-slide,
-.carousel-controls, .carousel-btn { display: none !important; }
-
-/* The wrapper that clips */
-.google-carousel-wrapper {
-  position: relative !important;
-  overflow: hidden !important;
-  flex: 1 !important;
-  width: 100% !important;
-}
-
-/* Fade masks */
-.google-carousel-wrapper::before,
-.google-carousel-wrapper::after {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important; bottom: 0 !important;
-  width: 140px !important;
-  z-index: 10 !important;
-  pointer-events: none !important;
-}
-.google-carousel-wrapper::before {
-  left: 0 !important;
-  background: linear-gradient(to right, #060504 20%, transparent) !important;
-}
-.google-carousel-wrapper::after {
-  right: 0 !important;
-  background: linear-gradient(to left, #060504 20%, transparent) !important;
-}
-
-/* THE TRACK */
-#reviewsTrack {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 20px !important;
-  padding: 20px 0 !important;
-  width: max-content !important;
-  animation: carouselInfinite 55s linear infinite !important;
-  will-change: transform !important;
-}
-
-#reviewsTrack:hover {
-  animation-play-state: paused !important;
-}
-
-@keyframes carouselInfinite {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Cards */
-.google-review-card {
-  flex-shrink: 0 !important;
-  width: 340px !important;
-}
-
-@media (max-width: 768px) {
-  .google-review-card { width: 280px !important; }
-  .google-carousel-wrapper::before,
-  .google-carousel-wrapper::after { width: 60px !important; }
-}
-@media (max-width: 480px) {
-  .google-review-card { width: 240px !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #reviewsTrack { animation: none !important; }
-}
-</style>
-
 <!-- ============================================================
      ██╗    ██╗ ██████╗ ██╗    ██╗    ███████╗███╗   ██╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗███████╗
      ██║    ██║██╔═══██╗██║    ██║    ██╔════╝████╗  ██║██║  ██║██╔══██╗████╗  ██║██╔════╝██╔════╝
      ██║ █╗ ██║██║   ██║██║ █╗ ██║    █████╗  ██╔██╗ ██║███████║███████║██╔██╗ ██║██║     █████╗
      ██║███╗██║██║   ██║██║███╗██║    ██╔══╝  ██║╚██╗██║██╔══██║██╔══██║██║╚██╗██║██║     ██╔══╝
-     ╚███╔███╔╝╚██████╔╝╚███╔███╔╝    ███████╗██║ ╚████║██║  ██║██║  ██║██║ ╚████║╚██████╗███████╗
+     ╚███╔███╔╝╚██████╔╝╚███╔██╔╝    ███████╗██║ ╚████║██║  ██║██║  ██║██║ ╚████║╚██████╗███████╗
       ╚══╝╚══╝  ╚═════╝  ╚══╝╚══╝    ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝
      WOW ENHANCEMENT PACK — Mind-blowing additions
      ============================================================ -->
@@ -5422,55 +5212,6 @@ document.querySelectorAll('.hcount-num').forEach(el => {
 <!-- ========== MEGA 3D CAROUSELS + ALL FIXES ========== -->
 <style>
 /* ====================================================
-   NUCLEAR RESET — kill ALL conflicting carousel CSS
-   ==================================================== */
-.reviews-row,.reviews-row-1,.reviews-row-2,
-.reviews-carousel,.reviews-slide,
-.carousel-controls,.carousel-btn { display:none!important; }
-
-/* ====================================================
-   REVIEWS TRACK — bulletproof single animation
-   ==================================================== */
-.google-carousel-wrapper {
-  position:relative!important;
-  overflow:hidden!important;
-  display:block!important;
-  flex:1!important;
-  width:100%!important;
-  min-height:200px;
-}
-.google-carousel-wrapper::before,
-.google-carousel-wrapper::after {
-  content:''!important;
-  position:absolute!important;
-  top:0!important; bottom:0!important;
-  width:120px!important; z-index:10!important;
-  pointer-events:none!important;
-}
-.google-carousel-wrapper::before { left:0!important; background:linear-gradient(to right,#060504 20%,transparent)!important; }
-.google-carousel-wrapper::after  { right:0!important; background:linear-gradient(to left,#060504 20%,transparent)!important; }
-
-#reviewsTrack {
-  display:flex!important;
-  flex-direction:row!important;
-  flex-wrap:nowrap!important;
-  gap:20px!important;
-  padding:20px 0!important;
-  width:max-content!important;
-  /* ONE animation, no conflict */
-  animation:reviewsRoll 55s linear infinite!important;
-  will-change:transform!important;
-}
-#reviewsTrack:hover { animation-play-state:paused!important; }
-@keyframes reviewsRoll {
-  from { transform:translateX(0); }
-  to   { transform:translateX(-50%); }
-}
-.google-review-card { flex-shrink:0!important; width:340px!important; }
-@media(max-width:768px){ .google-review-card{width:280px!important;} }
-@media(max-width:480px){ .google-review-card{width:240px!important;} }
-
-/* ====================================================
    SECTION DIVIDERS — clean, single line, NO doubles
    ==================================================== */
 .section-divider {
@@ -5736,22 +5477,60 @@ document.querySelectorAll('.hcount-num').forEach(el => {
 (function() {
   'use strict';
 
-  /* --- 1. Reviews track: nuclear ensure animation --- */
+  /* --- 1. Reviews 3D carousel: JS rAF rotation --- */
+  var _reviewsAnimStarted = false;
   function fixReviewsTrack() {
-    const track = document.getElementById('reviewsTrack');
-    if (!track) return;
-    // Force a reflow to restart animation
-    track.style.animation = 'none';
-    void track.offsetWidth;
-    track.style.animation = 'reviewsRoll 55s linear infinite';
-
-    const wrapper = track.closest('.google-carousel-wrapper');
-    if (wrapper) {
-      wrapper.style.cssText += 'overflow:hidden!important;display:block!important;';
+    if (_reviewsAnimStarted) return;
+    var stage = document.querySelector('.carousel-3d-stage');
+    if (!stage) return;
+    _reviewsAnimStarted = true;
+    var angle = 0, prev = 0, SPEED = 0.009;
+    function step(now) {
+      if (prev) {
+        angle = (angle + (now - prev) * SPEED) % 360;
+        stage.style.transform = 'rotateY(' + angle + 'deg)';
+      }
+      prev = now;
+      requestAnimationFrame(step);
     }
+    requestAnimationFrame(step);
   }
 
-  /* --- 2. Awards: replace grid with scrolling carousel --- */
+  /* --- 2. Awards 3D ring: JS rAF rotation --- */
+  var _awardsAnimStarted = false;
+  function kickAwardsRing() {
+    if (_awardsAnimStarted) return;
+    var ring = document.getElementById('awRing');
+    if (!ring) return;
+    _awardsAnimStarted = true;
+    var angle = 0, prev = 0, SPEED = 0.007;
+    function step(now) {
+      if (prev) {
+        angle = (angle + (now - prev) * SPEED) % 360;
+        ring.style.transform = 'rotateY(' + angle + 'deg)';
+      }
+      prev = now;
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* --- 3. Mobile auto-scroll for reviews & awards --- */
+  function startMobileScroll(el, speed) {
+    if (!el) return;
+    var prev = 0;
+    function step(now) {
+      if (prev && el.offsetParent !== null) {
+        el.scrollLeft += (now - prev) * speed;
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) el.scrollLeft = 0;
+      }
+      prev = now;
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* --- 4. Awards: replace grid with scrolling carousel --- */
   function buildAwardsCarousel() {
     const awardsItems = document.querySelector('.awards-items');
     if (!awardsItems) return;
@@ -5936,10 +5715,16 @@ document.querySelectorAll('.hcount-num').forEach(el => {
   }
   window.addEventListener('load', () => {
     setTimeout(fixReviewsTrack, 100);
+    setTimeout(kickAwardsRing, 100);
+    setTimeout(function(){startMobileScroll(document.querySelector('.reviews-mobile-wrap'), 0.06)}, 100);
+    setTimeout(function(){startMobileScroll(document.querySelector('.aw3d-flat-row'), 0.05)}, 100);
   });
 
   function init() {
     fixReviewsTrack();
+    kickAwardsRing();
+    startMobileScroll(document.querySelector('.reviews-mobile-wrap'), 0.06);
+    startMobileScroll(document.querySelector('.aw3d-flat-row'), 0.05);
     buildAwardsCarousel();
     buildHeroParticles();
     setup3DCounters();
